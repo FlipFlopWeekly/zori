@@ -1,7 +1,7 @@
 Zori
 ====
 
-A Real-time link sharer using Firebase as its backend and AngularJS on the frontend
+A real-time link sharer using Firebase as its backend and AngularJS on the frontend
 
 ## Working on the project
 
