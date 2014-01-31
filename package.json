@@ -1,0 +1,25 @@
+{
+  "name": "zori",
+  "version": "0.0.0",
+  "description": "A real-time link sharer using Firebase as its backend and AngularJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "node_modules/.bin/karma start karma.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FlipFlopWeekly/zori"
+  },
+  "keywords": [
+    "link",
+    "share",
+    "flipflop",
+    "angularjs",
+    "firebase"
+  ],
+  "author": "FlipFlopWeekly",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FlipFlopWeekly/zori/issues"
+  }
+}
