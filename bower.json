@@ -1,0 +1,25 @@
+{
+  "name": "zori",
+  "version": "0.0.0",
+  "homepage": "https://github.com/FlipFlopWeekly/zori",
+  "authors": [
+    "FlipFlop Crew"
+  ],
+  "description": "Real-time link sharer using Firebase as its backend and AngularJS on the frontend",
+  "main": "app.js",
+  "keywords": [
+    "link",
+    "share",
+    "angularjs",
+    "flipflop",
+    "firebase"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
