@@ -11,6 +11,7 @@ var app = express();
 
 var APP_ROOT = __dirname + '/source';
 
+// Compiles sass into CSS and minifies it.
 gulp.task('sass', function () {
   return gulp.src([
       'source/sass/*.scss',
@@ -38,6 +39,7 @@ gulp.task('watch', ['serve', 'sass'], function () {
       return console.log(err);
     }
 
+    // Run the sass task for all .scss files.
     gulp.watch('source/sass/**/*.scss', ['sass']);
 
     gulp.watch([
