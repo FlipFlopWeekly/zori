@@ -77,6 +77,7 @@ gulp.task('build', ['sass'], function () {
   );
 });
 
+// Default developer working task.
 gulp.task('work', ['watch', 'open']);
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['work']);
