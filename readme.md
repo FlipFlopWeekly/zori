@@ -1,10 +1,13 @@
-Zori
+Zori [![devDependency Status](https://david-dm.org/FlipFlopWeekly/zori/dev-status.png)](https://david-dm.org/FlipFlopWeekly/zori#info=devDependencies)
 ====
 
 A real-time link sharer using Firebase as its backend and AngularJS on the frontend
 
 ## Installation
 
+    # Get the Sass compiler:
+    gem install sass
+    
     # Get NPM dependencies:
     npm install
 
