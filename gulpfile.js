@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var path = require('path');
+var open = require('open');
 var sass = require('gulp-ruby-sass');
 var autoprefix = require('gulp-autoprefixer');
 var minify = require('gulp-minify-css');
@@ -10,6 +11,19 @@ var server = lr();
 var app = express();
 
 var APP_ROOT = __dirname + '/source';
+var APP_PORT = 4000;
+
+// Opens a browser with the application path.
+gulp.task('open', ['serve'], function(){
+  open('http://localhost:' + APP_PORT);
+});
+
+// Statically serves files and adds the LiveReload script.
+gulp.task('serve', function () {
+  app.use(require('connect-livereload')());
+  app.use(express.static(APP_ROOT));
+  app.listen(APP_PORT);
+});
 
 // Compiles sass into CSS and minifies it.
 gulp.task('sass', function () {
@@ -23,13 +37,6 @@ gulp.task('sass', function () {
       relativeTo: APP_ROOT
     }))
     .pipe(gulp.dest('source/assets/css'));
-});
-
-// Statically serves files and adds the LiveReload script.
-gulp.task('serve', function () {
-  app.use(require('connect-livereload')());
-  app.use(express.static(APP_ROOT));
-  app.listen(4000);
 });
 
 // Watches for file changes and reloads browser pages.
@@ -57,4 +64,4 @@ gulp.task('watch', ['serve', 'sass'], function () {
   });
 });
 
-gulp.task('default', ['']);
+gulp.task('default', ['watch']);
