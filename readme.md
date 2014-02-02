@@ -8,13 +8,13 @@ A real-time link sharer using Firebase as its backend and AngularJS on the front
     # Get the Sass compiler:
     gem install sass
     
-    # Get NPM dependencies:
-    npm install
-
     # Install global NPM dependencies:
     npm -g install bower
     npm -g install gulp
     npm -g install karma
+
+    # Get NPM dependencies:
+    npm install
 
     # Also to be able to run tests from CLI
     # without browser window popping consider
