@@ -40,7 +40,7 @@ gulp.task('sass', function () {
 });
 
 // Watches for file changes and reloads browser pages.
-gulp.task('watch', ['serve', 'sass'], function () {
+gulp.task('watch', ['sass'], function () {
   server.listen(35729, function (err) {
     if (err) {
       return console.log(err);
@@ -63,5 +63,7 @@ gulp.task('watch', ['serve', 'sass'], function () {
     });
   });
 });
+
+gulp.task('work', ['watch', 'open']);
 
 gulp.task('default', ['watch']);
