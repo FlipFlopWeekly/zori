@@ -6,6 +6,7 @@ var autoprefix = require('gulp-autoprefixer');
 var minify = require('gulp-minify-css');
 var express = require ('express');
 var lr = require('tiny-lr');
+var es = require('event-stream');
 
 var server = lr();
 var app = express();
@@ -62,6 +63,18 @@ gulp.task('watch', ['sass'], function () {
       });
     });
   });
+});
+
+// Builds the project for production.
+gulp.task('build', ['sass'], function () {
+  return es.concat(
+    gulp.src(['source/index.html'])
+      .pipe(gulp.dest('build')),
+    gulp.src(['source/assets/**/*'])
+      .pipe(gulp.dest('build/assets')),
+    gulp.src(['source/vendor/**/*'])
+      .pipe(gulp.dest('build/vendor'))
+  );
 });
 
 gulp.task('work', ['watch', 'open']);
