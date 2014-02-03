@@ -46,6 +46,18 @@ It is currently hosted [on Firebase Hosting (beta)](https://shining-fire-3337.fi
     # https://shining-fire-3337.firebaseapp.com/
     # to access the running app.
 
+
+## TODO List
+
+- Add Travis-CI
+- Add Coderwall
+- Add CodeClimate
+- Add Jasmine tests
+- Add JS to build process (currently broken without it)
+- Add Firebase
+- Logos, content, etc
+- Code!
+
 ## Credits
 
 Copyright (c) 2014 [FlipFlop Crew](https://github.com/FlipFlopWeekly)
