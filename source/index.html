@@ -17,17 +17,20 @@
   <![endif]-->
 </head>
 <body>
-  <div class="container">
 
-    <div>
-      <h1>Zori</h1>
-      <p class="lead">
-        Hello world
-        <br>
-        Here is zori's index.html <span class="glyphicon glyphicon-tree-conifer"></span>
-      </p>
-    </div>
+<!-- Content -->
+<div data-ui-view></div>
 
-  </div> <!-- /.container -->
+<!-- Scripts -->
+<script src="vendor/requirejs/require.js"></script>
+<script>
+  // obtain requirejs config
+  require(['require', './js/config-require'], function (require, config) {
+
+    window.require.config(config);
+    require(['./js/main.js']);
+  });
+</script>
+
 </body>
 </html>
