@@ -23,6 +23,15 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.1.0"
+    "bootstrap": "~3.1.0",
+    "angular": "1.2.10",
+    "angular-ui-router": "0.2.7",
+    "angular-resource": "1.2.10",
+    "angular-mocks": "1.2.10",
+    "angular-scenario": "1.2.10",
+    "requirejs": "latest",
+    "requirejs-domready": "latest",
+    "requirejs-text": "latest",
+    "requirejs-plugins": "latest"
   }
 }

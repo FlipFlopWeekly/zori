@@ -1,0 +1,30 @@
+<div class="container">
+  <section>
+    <h1>Zori</h1>
+    <p class="lead">
+      Here is the {{test}} view.
+    </p>
+  </section>
+
+  <section>
+  <header id="header">
+    <h1>links</h1>
+    <form id="link-form" ng-submit="addLink()">
+      <input id="new-link" placeholder="What do you want to share?" ng-model="newLink" autofocus>
+    </form>
+  </header>
+  <section id="main" ng-show="links.length" ng-cloak>
+    <ul id="link-list">
+      <li ng-repeat="link in links track by $index" ng-class="{editing: link == editedLink}">
+        <div class="view">
+          <label ng-dblclick="editLink(link)">{{link.url}}</label>
+          <button class="destroy" ng-click="removeLink(link)"></button>
+        </div>
+        <form ng-submit="doneEditing(link)">
+          <input class="edit" ng-trim="false" ng-model="link.url" ng-blur="doneEditing(link)" links-focus="link == editedLink">
+        </form>
+      </li>
+    </ul>
+  </section>
+</section>
+</div>
