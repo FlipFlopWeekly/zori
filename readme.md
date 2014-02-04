@@ -30,6 +30,16 @@ A real-time link sharer using Firebase as its backend and AngularJS on the front
     # Once it is done, just run:
     gulp work
 
+This command will:
+
+- Launch an express instance to serve the files
+- Launch the app in your favorite browser
+- Watch for file modification and automatically compile / refresh your browser
+
+## Troubleshooting
+
+TODO
+
 ## Deployment
 
 Zori only contains static files, it can thus be deployed everywhere static files can be served (S3, EC2, Dropbox, GitHub Pages, Heroku, etc).
@@ -57,6 +67,7 @@ It is currently hosted [on Firebase Hosting (beta)](https://shining-fire-3337.fi
 - Add Firebase
 - Logos, content, etc
 - Code!
+- Troubleshooting installation: git, node, ruby, npm, proxy, admin rights
 
 ## Credits
 
