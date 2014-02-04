@@ -35,7 +35,19 @@ This command will:
 
 ## Troubleshooting
 
-TODO
+The main project dependencies are:
+- git
+- node (+ npm), to get on [the official website](http://nodejs.org/)
+
+You also need a web server to serve the static files. Fortunately, there is one included in the gulp build file.
+
+To get up and running behind a corporate proxy, you'll have to:
+- `npm config set proxy http://proxy.company.com:8080`
+- `npm config set https-proxy http://proxy.company.com:8080`
+- `export HTTP_PROXY=http://proxy.company.com:8080`
+- `export HTTPS_PROXY=http://proxy.company.com:8080`
+- There also is an equivalent parameter for windows prompts
+- Note that `npm install -g` must be ran with administrative privileges.
 
 ## Deployment
 
