@@ -1,9 +1,7 @@
 var gulp = require('gulp');
 var path = require('path');
 var open = require('open');
-var sass = require('gulp-ruby-sass');
-var autoprefix = require('gulp-autoprefixer');
-var minify = require('gulp-minify-css');
+var csso = require('gulp-csso');
 var express = require ('express');
 var lr = require('tiny-lr');
 var es = require('event-stream');
@@ -26,33 +24,16 @@ gulp.task('serve', function () {
   app.listen(APP_PORT);
 });
 
-// Compiles sass into CSS and minifies it.
-gulp.task('sass', function () {
-  return gulp.src([
-      'source/sass/*.scss',
-      '!source/sass/_*.scss'
-    ])
-    .pipe(sass())
-    .pipe(autoprefix())
-    .pipe(minify({
-      relativeTo: APP_ROOT
-    }))
-    .pipe(gulp.dest('source/assets/css'));
-});
-
 // Watches for file changes and reloads browser pages.
-gulp.task('watch', ['sass'], function () {
+gulp.task('watch', function () {
   server.listen(35729, function (err) {
     if (err) {
       return console.log(err);
     }
 
-    // Run the sass task for all .scss files.
-    gulp.watch('source/sass/**/*.scss', ['sass']);
-
     gulp.watch([
       'source/index.html',
-      'source/assets/css/*.css',
+      'source/assets/**/*',
       'source/js/**/*',
       '!source/js/**/*.spec.js'
     ], function (evt) {
@@ -66,12 +47,17 @@ gulp.task('watch', ['sass'], function () {
 });
 
 // Builds the project for production.
-gulp.task('build', ['sass'], function () {
+gulp.task('build', function () {
   return es.concat(
     gulp.src(['source/index.html'])
       .pipe(gulp.dest('build')),
-    gulp.src(['source/assets/**/*'])
-      .pipe(gulp.dest('build/assets')),
+    gulp.src(['source/assets/css/*'])
+      .pipe(csso())
+      .pipe(gulp.dest('build/assets/css')),
+    gulp.src(['source/assets/fonts/*'])
+      .pipe(gulp.dest('build/assets/fonts')),
+    gulp.src(['source/assets/images/*'])
+      .pipe(gulp.dest('build/assets/images')),
     gulp.src(['source/vendor/**/*'])
       .pipe(gulp.dest('build/vendor'))
   );

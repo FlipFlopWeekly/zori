@@ -1,1 +1,7 @@
-h1{color:seagreen}[ng-cloak]{display:none}
+h1 {
+  color: seagreen;
+}
+
+[ng-cloak] {
+  display: none;
+}
