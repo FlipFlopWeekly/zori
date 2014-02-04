@@ -1,4 +1,4 @@
-[Zori](https://shining-fire-3337.firebaseapp.com/) [![devDependency Status](https://david-dm.org/FlipFlopWeekly/zori/dev-status.png)](https://david-dm.org/FlipFlopWeekly/zori#info=devDependencies)
+[Zori](https://shining-fire-3337.firebaseapp.com/) [![devDependency Status](https://david-dm.org/FlipFlopWeekly/zori/dev-status.png)](https://david-dm.org/FlipFlopWeekly/zori#info=devDependencies) [![Code Climate](https://codeclimate.com/github/FlipFlopWeekly/zori.png)](https://codeclimate.com/github/FlipFlopWeekly/zori)
 ====
 
 A real-time link sharer using Firebase as its backend and AngularJS on the frontend
@@ -61,7 +61,6 @@ It is currently hosted [on Firebase Hosting (beta)](https://shining-fire-3337.fi
 
 - Add Travis-CI
 - Add Coderwall
-- Add CodeClimate
 - Add Jasmine tests
 - Add JS to build process (currently broken without it)
 - Add Firebase
