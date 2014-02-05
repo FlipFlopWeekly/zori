@@ -46,7 +46,7 @@ To get up and running behind a corporate proxy, you'll have to:
 - `npm config set https-proxy http://proxy.company.com:8080`
 - `export HTTP_PROXY=http://proxy.company.com:8080`
 - `export HTTPS_PROXY=http://proxy.company.com:8080`
-- There also is an equivalent parameter for windows prompts
+- There also is an equivalent parameter for Windows : SET HTTP_PROXY=http://proxy.company.com:8080
 - Note that `npm install -g` must be ran with administrative privileges.
 
 ## Deployment
