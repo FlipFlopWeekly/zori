@@ -8,15 +8,9 @@ A real-time link sharer using Firebase as its backend and AngularJS on the front
     # Install global NPM dependencies:
     npm -g install bower
     npm -g install gulp
-    npm -g install karma
 
     # Install project NPM dependencies:
     npm install
-
-    # Also to be able to run tests from CLI
-    # without browser window popping consider
-    # to install PhantomJS:
-    # http://phantomjs.org/download.html
 
 ## Contributing
     
@@ -75,7 +69,6 @@ It is currently hosted [on Firebase Hosting (beta)](https://shining-fire-3337.fi
 - Add Firebase
 - Logos, content, etc
 - Code!
-- Troubleshooting installation: git, node, ruby, npm, proxy, admin rights
 
 ## Credits
 
