@@ -14,9 +14,7 @@ A real-time link sharer using Firebase as its backend and AngularJS on the front
 
 ## Contributing
     
-    # Every dependency needed to get the app
-    # running is committed into the repository,
-    # however, you may want to install the development
+    # You may want to install the development
     # dependencies (above) to make your life easier.
     # Once it is done, just run:
     gulp work
@@ -30,8 +28,8 @@ This command will:
 ## Troubleshooting
 
 The main project dependencies are:
-- git
-- node (+ npm), to get on [the official website](http://nodejs.org/)
+- git to contribute to the code base
+- node (+ npm) to build the project
 
 You also need a web server to serve the static files. Fortunately, there is one included in the gulp build file.
 
@@ -40,8 +38,8 @@ To get up and running behind a corporate proxy, you'll have to:
 - `npm config set https-proxy http://proxy.company.com:8080`
 - `export HTTP_PROXY=http://proxy.company.com:8080`
 - `export HTTPS_PROXY=http://proxy.company.com:8080`
-- There also is an equivalent parameter for Windows : SET HTTP_PROXY=http://proxy.company.com:8080
-- Note that `npm install -g` must be ran with administrative privileges.
+- There also is an equivalent parameter for Windows: `SET HTTP_PROXY=http://proxy.company.com:8080`
+- Note that `npm install -g` must be ran with administrative privileges (`sudo` or Windows equivalent)
 
 ## Deployment
 
