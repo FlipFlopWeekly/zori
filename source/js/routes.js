@@ -6,8 +6,8 @@
 
 define(['./app', './config'], function (app) {
 
-  app.config(['$stateProvider', '$urlRouterProvider', /*'$locationProvider',*/
-    function ($stateProvider, $urlRouterProvider/*, $locationProvider*/) {
+  app.config(['$stateProvider', '$urlRouterProvider',
+    function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
       .state('home', {
