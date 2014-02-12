@@ -1,36 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Fresh music links for your ears">
-  <meta name="keyword" content="realtime, music, sharing, links">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zori</title>
-  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="assets/css/main.css">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Fresh music links for your ears">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zori</title>
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+  </head>
+  <body>
+    <div data-ui-view></div>
 
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
-</head>
-<body>
-
-<!-- Content -->
-<div data-ui-view></div>
-
-<!-- Scripts -->
-<script src="vendor/requirejs/require.js"></script>
-<script>
-  // obtain requirejs config
-  require(['require', './js/config-require'], function (require, config) {
-
-    window.require.config(config);
-    require(['./js/main.js']);
-  });
-</script>
-
-</body>
+    <script src="vendor/requirejs/require.js"></script>
+    <script>
+      require(['require', './js/config-require'], function (require, config) {
+        window.require.config(config);
+        require(['./js/main.js']);
+      });
+    </script>
+  </body>
 </html>
