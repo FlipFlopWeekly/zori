@@ -1,9 +1,10 @@
-'use strict';
 /**
  * Links controller definition
  * @scope Controllers
  */
 define(['./module', './link-service'], function (controllers) {
+  'use strict';
+
   controllers.controller('LinkController', ['$scope', 'linkStorage',
     function LinkController($scope, linkStorage) {
       $scope.test = 'link';
