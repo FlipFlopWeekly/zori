@@ -82,7 +82,6 @@ gulp.task('build', function () {
 
 // Compiles with RequireJS' r.js.
 gulp.task('compile', function () {
-  var configRequire = require('./source/js/config-require.js');
   var config = {
     baseUrl: 'source/js',
     name: 'main',
@@ -91,11 +90,12 @@ gulp.task('compile', function () {
     wrap: true,
     stubModules : ['text']
   };
-  extend(config, configRequire);
+
+  extend(config, require('./source/js/config-require.js'));
 
   return rjs(config)
     .pipe(uglify())
-    .pipe(gulp.dest('./build/js/'));
+    .pipe(gulp.dest('build/js'));
 });
 
 // Default developer working task.
