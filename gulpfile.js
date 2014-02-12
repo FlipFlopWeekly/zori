@@ -10,6 +10,7 @@ var replace = require('gulp-replace');
 var rjs = require('gulp-requirejs');
 var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
+var stylish = require('jshint-stylish');
 
 var server = lr();
 var app = express();
@@ -102,7 +103,7 @@ gulp.task('compile', function () {
 gulp.task('quality', function () {
   return gulp.src('source/js/**/*.js')
     .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('default'));
+    .pipe(jshint.reporter(stylish));
 });
 
 // Default developer working task.
