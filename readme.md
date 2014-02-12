@@ -6,8 +6,9 @@ A real-time link sharer using Firebase as its backend and AngularJS on the front
 ## Installation
     
     # Install global NPM dependencies:
-    npm -g install bower
-    npm -g install gulp
+    npm install -g gulp
+    npm install -g jshint
+    npm install -g bower
 
     # Install project NPM dependencies:
     npm install

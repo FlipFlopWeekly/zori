@@ -9,6 +9,7 @@ var extend = require('extend');
 var replace = require('gulp-replace');
 var rjs = require('gulp-requirejs');
 var uglify = require('gulp-uglify');
+var jshint = require('gulp-jshint');
 
 var server = lr();
 var app = express();
@@ -96,6 +97,12 @@ gulp.task('compile', function () {
   return rjs(config)
     .pipe(uglify())
     .pipe(gulp.dest('build/js'));
+});
+
+gulp.task('quality', function () {
+  return gulp.src('source/js/**/*.js')
+    .pipe(jshint('.jshintrc'))
+    .pipe(jshint.reporter('default'));
 });
 
 // Default developer working task.
