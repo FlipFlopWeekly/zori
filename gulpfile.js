@@ -88,7 +88,8 @@ gulp.task('compile', function () {
     name: 'main',
     optimize: 'none',
     out: 'main.js',
-    wrap: true
+    wrap: true,
+    stubModules : ['text']
   };
   extend(config, configRequire);
 
