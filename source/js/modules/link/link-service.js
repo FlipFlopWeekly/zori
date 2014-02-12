@@ -1,10 +1,9 @@
-/*global define*/
-'use strict';
-
 /**
  * Services that persists and retrieves links from localStorage.
  */
 define(['./module'], function (services) {
+  'use strict';
+
 	services.factory('linkStorage', function () {
 		var STORAGE_ID = 'zori-link';
 

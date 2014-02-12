@@ -1,4 +1,3 @@
-'use strict';
 /**
  * loads sub modules and wraps them up into the main module
  * this should be used for top-level module definitions only
@@ -10,6 +9,7 @@ define([
   './modules/home/index',
   './modules/link/index',
 ], function (ng) {
+  'use strict';
 
   return ng.module('app', [
     'app.constants',
