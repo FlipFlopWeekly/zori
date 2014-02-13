@@ -71,8 +71,10 @@ gulp.task('build', function () {
     gulp.src(['source/assets/images/*'])
       .pipe(gulp.dest('build/assets/images')),
     // Build vendor files.
-    gulp.src(['source/vendor/**/*'])
-      .pipe(gulp.dest('build/vendor')),
+    gulp.src(['source/vendor/bootstrap/dist/css/*.min.css'])
+      .pipe(gulp.dest('build/vendor/bootstrap/dist/css')),
+    gulp.src(['source/vendor/bootstrap/dist/fonts/*'])
+      .pipe(gulp.dest('build/vendor/bootstrap/dist/fonts')),
     gulp.src(['build/vendor/requirejs/require.js'])
       .pipe(uglify())
       .pipe(gulp.dest('build/vendor/requirejs')),
