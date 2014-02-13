@@ -58,6 +58,7 @@ gulp.task('build', function () {
     // Build main sources.
     gulp.src(['source/index.html'])
       .pipe(replace("require(['./js/main.js'])", "require(['./js/main.js'], function () { require(['main']); })"))
+      .pipe(replace("vendor/bootstrap-css-only", "assets"))
       .pipe(gulp.dest('build')),
     gulp.src(['source/js/config-require.js'])
       .pipe(uglify())
@@ -71,14 +72,14 @@ gulp.task('build', function () {
     gulp.src(['source/assets/images/*'])
       .pipe(gulp.dest('build/assets/images')),
     // Build vendor files.
-    gulp.src(['source/vendor/bootstrap/dist/css/*.min.css'])
-      .pipe(gulp.dest('build/vendor/bootstrap/dist/css')),
-    gulp.src(['source/vendor/bootstrap/dist/fonts/*'])
-      .pipe(gulp.dest('build/vendor/bootstrap/dist/fonts')),
-    gulp.src(['build/vendor/requirejs/require.js'])
+    gulp.src(['source/vendor/bootstrap-css-only/css/*.min.css'])
+      .pipe(gulp.dest('build/assets/css')),
+    gulp.src(['source/vendor/bootstrap-css-only/fonts/*'])
+      .pipe(gulp.dest('build/assets/fonts')),
+    gulp.src(['source/vendor/requirejs/require.js'])
       .pipe(uglify())
       .pipe(gulp.dest('build/vendor/requirejs')),
-    gulp.src(['build/vendor/requirejs-domready/domReady.js'])
+    gulp.src(['source/vendor/requirejs-domready/domReady.js'])
       .pipe(uglify())
       .pipe(gulp.dest('build/vendor/requirejs-domready'))
   );

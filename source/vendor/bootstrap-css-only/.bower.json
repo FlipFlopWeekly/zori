@@ -1,0 +1,31 @@
+{
+  "name": "bootstrap-css-only",
+  "version": "3.1.0",
+  "keywords": [
+    "twitter",
+    "bootstrap",
+    "twitter-bootstrap",
+    "css"
+  ],
+  "main": [
+    "css/bootstrap.css"
+  ],
+  "homepage": "http://getbootstrap.com/",
+  "author": {
+    "name": "Twitter Inc."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fyockm/bootstrap-css-only.git"
+  },
+  "_release": "3.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "3.1.0",
+    "commit": "88f3aa4241b967485b3aad265ad495f4ae7ef8e8"
+  },
+  "_source": "git://github.com/fyockm/bootstrap-css-only.git",
+  "_target": "~3.1.0",
+  "_originalSource": "bootstrap-css-only",
+  "_direct": true
+}
