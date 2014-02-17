@@ -72,7 +72,7 @@ gulp.task('build', ['compile'], function () {
     gulp.src(['source/assets/images/*'])
       .pipe(gulp.dest('build/assets/images')),
     // Build vendor files.
-    gulp.src(['source/vendor/bootstrap-css-only/css/*.min.css'])
+    gulp.src(['source/vendor/bootstrap-css-only/css/bootstrap.min.css'])
       .pipe(gulp.dest('build/assets/css')),
     gulp.src(['source/vendor/bootstrap-css-only/fonts/*'])
       .pipe(gulp.dest('build/assets/fonts')),
