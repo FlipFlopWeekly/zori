@@ -40,8 +40,7 @@ gulp.task('watch', function () {
     gulp.watch([
       'source/index.html',
       'source/assets/**/*',
-      'source/js/**/*',
-      '!source/js/**/*.spec.js'
+      'source/js/**/*'
     ], function (evt) {
       server.changed({
         body: {
