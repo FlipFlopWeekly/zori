@@ -7,7 +7,7 @@ var lr = require('tiny-lr');
 var es = require('event-stream');
 var extend = require('extend');
 var replace = require('gulp-replace');
-var rjs = require('gulp-requirejs');
+var rjs = require('requirejs');
 var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
@@ -53,7 +53,7 @@ gulp.task('watch', function () {
 });
 
 // Builds the project for production.
-gulp.task('build', function () {
+gulp.task('build', ['compile'], function () {
   return es.concat(
     // Build main sources.
     gulp.src(['source/index.html'])
@@ -90,17 +90,15 @@ gulp.task('compile', function () {
   var config = {
     baseUrl: 'source/js',
     name: 'main',
-    optimize: 'none',
-    out: 'main.js',
+    optimize: 'uglify2',
+    out: 'build/js/main.js',
     wrap: true,
     stubModules : ['text']
   };
 
   extend(config, require('./source/js/config-require.js'));
 
-  return rjs(config)
-    .pipe(uglify())
-    .pipe(gulp.dest('build/js'));
+  return rjs.optimize(config);
 });
 
 gulp.task('quality', function () {
