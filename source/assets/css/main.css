@@ -5,3 +5,8 @@ h1 {
 [ng-cloak] {
   display: none;
 }
+
+.admin-panel .link-list {
+  padding-left: 0;
+  list-style-type: none;
+}
