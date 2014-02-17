@@ -51,6 +51,9 @@ It is currently hosted [on Firebase Hosting (beta)](https://shining-fire-3337.fi
     # Install the Firebase Command Line Tools
     npm install -g firebase-tools
 
+    # Build the project
+    gulp build
+
     # Run the deploy command
     firebase deploy
 
