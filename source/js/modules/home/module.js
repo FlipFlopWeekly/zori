@@ -1,7 +1,7 @@
 /**
  * Attach controllers to this module
  **/
-define(['angular', '../../config'], function (ng) {
+define(['angular', '../../config', '../../services'], function (ng) {
   'use strict';
-  return ng.module('app.home', ['app.constants']);
+  return ng.module('app.home', ['app.constants', 'app.services']);
 });

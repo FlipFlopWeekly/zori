@@ -2,7 +2,7 @@
  * Links controller definition
  * @scope Controllers
  */
-define(['./module', './link-service'], function (controllers) {
+define(['./module'], function (controllers) {
   'use strict';
 
   controllers.controller('LinkController', ['$scope', 'linkStorage',

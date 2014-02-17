@@ -6,13 +6,15 @@ define([
   'angular',
   'angular-ui-router',
   './config',
+  './services',
   './modules/home/index',
-  './modules/link/index',
+  './modules/link/index'
 ], function (ng) {
   'use strict';
 
   return ng.module('app', [
     'app.constants',
+    'app.services',
     'app.home',
     'app.link',
     'ui.router'
