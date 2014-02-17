@@ -14,9 +14,9 @@
       </div>
     </form>
   </header>
-  <section id="main" ng-show="links.length" ng-cloak>
+  <section id="main">
     <ul id="link-list" class="link-list">
-      <li ng-repeat="link in links track by $index" ng-class="{editing: link == editedLink}">
+      <li ng-repeat="(id, link) in links" ng-class="{editing: link == editedLink}">
         <form ng-submit="doneEditing(link)" role="form">
           <div class="form-group">
             <div class="input-group">

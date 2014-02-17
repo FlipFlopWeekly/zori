@@ -5,16 +5,13 @@
 define(['./module'], function (controllers) {
   'use strict';
 
-  controllers.controller('LinkController', ['$scope', 'linkStorage',
-    function LinkController($scope, linkStorage) {
-      $scope.test = 'link';
-
-      var links = $scope.links = linkStorage.get();
+  controllers.controller('LinkController', ['$scope', 'linkStorage', '$firebase',
+    function LinkController($scope, linkStorage, $firebase) {
+      var fireRef = new Firebase('https://shining-fire-3337.firebaseio.com/');
 
       $scope.newLink = '';
 
       $scope.$watch('links', function () {
-        linkStorage.put(links);
       }, true);
 
       $scope.addLink = function () {
@@ -22,31 +19,32 @@ define(['./module'], function (controllers) {
         if (!newLink.length) {
           return;
         }
-
-        links.push({
+        $scope.links.$add({
           url: newLink
         });
-
         $scope.newLink = '';
       };
 
-      $scope.editLink = function (link) {
-        $scope.editedLink = link;
+      $scope.editLink = function (id) {
+        $scope.editedLink = $scope.links[id];
       };
 
 
-      $scope.doneEditing = function (link) {
+      $scope.doneEditing = function (id) {
+        var link = $scope.link[id];
         $scope.editedLink = null;
         link.url = link.url.trim();
 
         if (!link.url) {
-          $scope.removeLink(link);
+          $scope.removeLink(id);
         }
       };
 
-      $scope.removeLink = function (link) {
-        links.splice(links.indexOf(link), 1);
+      $scope.removeLink = function (id) {
+        $scope.todos.$remove(id);
       };
+
+      $scope.links = $firebase(fireRef);
     }
   ]);
 });

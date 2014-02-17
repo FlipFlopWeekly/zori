@@ -8,15 +8,28 @@ define({
   paths: {
     'angular'               : '../vendor/angular/angular',
     'angular-ui-router'     : '../vendor/angular-ui-router/release/angular-ui-router',
+    'firebase'              : '../vendor/firebase/firebase',
+    'angularfire'           : '../vendor/angularfire/angularfire',
     'text'                  : '../vendor/requirejs-text/text'
   },
 
   shim: {
     'angular': {
-      'exports': 'angular'
+      exports: 'angular'
     },
     'angular-ui-router' : {
-      'deps': ['angular']
-    }
+      deps: [
+        'angular'
+      ]
+    },
+    'firebase': {
+      exports: 'Firebase'
+    },
+    'angularfire' : {
+      deps: [
+        'angular',
+        'firebase'
+      ]
+    },
   }
 });
