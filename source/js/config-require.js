@@ -8,7 +8,6 @@ define({
   paths: {
     'angular'               : '../vendor/angular/angular',
     'angular-ui-router'     : '../vendor/angular-ui-router/release/angular-ui-router',
-    'domReady'              : '../vendor/requirejs-domready/domReady',
     'text'                  : '../vendor/requirejs-text/text'
   },
 

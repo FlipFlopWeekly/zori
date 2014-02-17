@@ -57,8 +57,9 @@ gulp.task('build', ['compile'], function () {
   return es.concat(
     // Build main sources.
     gulp.src(['source/index.html'])
+      .pipe(replace('vendor/requirejs/', 'js/'))
       .pipe(replace("require(['./js/main.js'])", "require(['./js/main.js'], function () { require(['main']); })"))
-      .pipe(replace("vendor/bootstrap-css-only", "assets"))
+      .pipe(replace('vendor/bootstrap-css-only', 'assets'))
       .pipe(gulp.dest('build')),
     gulp.src(['source/js/config-require.js'])
       .pipe(uglify())
@@ -78,10 +79,7 @@ gulp.task('build', ['compile'], function () {
       .pipe(gulp.dest('build/assets/fonts')),
     gulp.src(['source/vendor/requirejs/require.js'])
       .pipe(uglify())
-      .pipe(gulp.dest('build/vendor/requirejs')),
-    gulp.src(['source/vendor/requirejs-domready/domReady.js'])
-      .pipe(uglify())
-      .pipe(gulp.dest('build/vendor/requirejs-domready'))
+      .pipe(gulp.dest('build/js'))
   );
 });
 

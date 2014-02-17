@@ -26,7 +26,6 @@
     "angular": "1.2.10",
     "angular-ui-router": "0.2.7",
     "requirejs": "latest",
-    "requirejs-domready": "latest",
     "requirejs-text": "latest",
     "bootstrap-css-only": "~3.1.0"
   }
