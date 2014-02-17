@@ -101,6 +101,7 @@ gulp.task('compile', function () {
   return rjs.optimize(config);
 });
 
+// Asserts code quality with various static code analysis tools.
 gulp.task('quality', function () {
   return gulp.src('source/js/**/*.js')
     .pipe(jshint('.jshintrc'))
