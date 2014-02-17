@@ -27,6 +27,8 @@
     "angular-ui-router": "0.2.7",
     "requirejs": "latest",
     "requirejs-text": "latest",
-    "bootstrap-css-only": "~3.1.0"
+    "bootstrap-css-only": "~3.1.0",
+    "firebase": "~1.0.6",
+    "angularfire": "~0.6.0"
   }
 }
