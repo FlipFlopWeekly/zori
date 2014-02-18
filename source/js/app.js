@@ -8,7 +8,7 @@ define([
   './config',
   './services',
   './modules/home/index',
-  './modules/link/index'
+  './modules/admin/index'
 ], function (ng) {
   'use strict';
 
@@ -16,7 +16,7 @@ define([
     'app.constants',
     'app.services',
     'app.home',
-    'app.link',
+    'app.admin',
     'ui.router'
   ]);
 });

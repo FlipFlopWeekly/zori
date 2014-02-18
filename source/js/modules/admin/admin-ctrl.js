@@ -1,12 +1,12 @@
 /**
- * Home controller definition
+ * Admin controller definition
  * @scope Controllers
  */
 define(['./module'], function (controllers) {
   'use strict';
 
-  controllers.controller('HomeController', ['$scope', 'linkStorage', '$firebase',
-    function HomeController($scope, linkStorage, $firebase) {
+  controllers.controller('AdminController', ['$scope', 'linkStorage', '$firebase',
+    function AdminController($scope, linkStorage, $firebase) {
       var fireRef = new Firebase('https://shining-fire-3337.firebaseio.com/');
 
       $scope.newLink = '';

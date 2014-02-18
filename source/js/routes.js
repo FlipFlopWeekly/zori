@@ -7,8 +7,8 @@ define([
   './app',
   './config',
   'text!./modules/home/home.html',
-  'text!./modules/link/link.html'
-], function (app, conf, homeTpl, linkTpl) {
+  'text!./modules/admin/admin.html'
+], function (app, conf, homeTpl, adminTpl) {
   'use strict';
 
   app.config(['$stateProvider', '$urlRouterProvider',
@@ -23,10 +23,10 @@ define([
     ;
 
     $stateProvider
-      .state('link', {
-        url: '/link',
-        template: linkTpl,
-        controller : 'LinkController'
+      .state('admin', {
+        url: '/admin',
+        template: adminTpl,
+        controller : 'AdminController'
       })
     ;
 
