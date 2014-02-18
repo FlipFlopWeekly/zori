@@ -54,7 +54,7 @@ gulp.task('watch', function () {
 
 // Builds the project for production.
 gulp.task('build', ['compile'], function () {
-  return es.concat(
+  return es.merge(
     // Build main sources.
     gulp.src(['source/index.html'])
       .pipe(replace('vendor/requirejs/', 'js/'))
@@ -101,7 +101,7 @@ gulp.task('compile', function () {
 
 // Asserts code quality with various static code analysis tools.
 gulp.task('quality', function () {
-  return es.concat(
+  return es.merge(
     gulp.src('source/js/**/*.js')
       .pipe(jshint('.jshintrc'))
       .pipe(jshint.reporter(stylish)),
