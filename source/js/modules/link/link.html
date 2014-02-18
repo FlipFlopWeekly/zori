@@ -24,7 +24,7 @@
               <input class="edit form-control" ng-trim="false" ng-model="link.url" ng-focus="editLink(id)" ng-blur="doneEditing(id)">
 
               <div class="input-group-btn">
-                <a href="{{link.url}}" class="btn btn-default" target="_blank"><span class="glyphicon glyphicon-new-window"></span></a>
+                <a ng-href="{{link.url}}" class="btn btn-default" target="_blank"><span class="glyphicon glyphicon-new-window"></span></a>
                 <button type="button" class="btn btn-default" ng-click="removeLink(id)"><span class="glyphicon glyphicon-remove"></span></button>
               </div>
 
