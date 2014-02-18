@@ -67,9 +67,9 @@ It is currently hosted [on Firebase Hosting (beta)](https://shining-fire-3337.fi
 - Add Travis-CI
 - Add Coderwall
 - Add Jasmine tests
-- Add Firebase
 - Logos, content, etc
 - Code!
+- Deploy to a custom domain / subdomain
 
 ## Credits
 
