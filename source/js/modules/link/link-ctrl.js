@@ -31,7 +31,7 @@ define(['./module'], function (controllers) {
 
 
       $scope.doneEditing = function (id) {
-        var link = $scope.link[id];
+        var link = $scope.links[id];
         $scope.editedLink = null;
         link.url = link.url.trim();
 
@@ -41,7 +41,8 @@ define(['./module'], function (controllers) {
       };
 
       $scope.removeLink = function (id) {
-        $scope.todos.$remove(id);
+        console.log(id);
+        $scope.links.$remove(id);
       };
 
       $scope.links = $firebase(fireRef);
