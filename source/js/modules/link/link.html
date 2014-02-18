@@ -8,7 +8,7 @@
 
   <section>
   <header id="header">
-    <form id="link-form" ng-submit="addLink()" role="form">
+    <form id="link-form" ng-submit="addLink()">
       <div class="form-group">
         <input id="new-link" class="form-control" placeholder="Add a new link" ng-model="newLink" autofocus>
       </div>
@@ -16,16 +16,18 @@
   </header>
   <section id="main">
     <ul id="link-list" class="link-list">
-      <li ng-repeat="(id, link) in links" ng-class="{editing: link == editedLink}">
-        <form ng-submit="doneEditing(id)" role="form">
+      <li ng-repeat="(id, link) in links">
+        <form ng-submit="doneEditing(id)">
           <div class="form-group">
             <div class="input-group">
-              <input class="edit form-control" ng-trim="false" ng-model="link.url" ng-blur="doneEditing(id)" links-focus="link == editedLink">
+
+              <input class="edit form-control" ng-trim="false" ng-model="link.url" ng-focus="editLink(id)" ng-blur="doneEditing(id)">
 
               <div class="input-group-btn">
                 <a href="{{link.url}}" class="btn btn-default" target="_blank"><span class="glyphicon glyphicon-new-window"></span></a>
                 <button type="button" class="btn btn-default" ng-click="removeLink(id)"><span class="glyphicon glyphicon-remove"></span></button>
               </div>
+
             </div>
           </div>
         </form>

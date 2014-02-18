@@ -32,16 +32,16 @@ define(['./module'], function (controllers) {
 
       $scope.doneEditing = function (id) {
         var link = $scope.links[id];
-        $scope.editedLink = null;
         link.url = link.url.trim();
+        $scope.links.$save();
 
         if (!link.url) {
           $scope.removeLink(id);
         }
+        $scope.editedLink = null;
       };
 
       $scope.removeLink = function (id) {
-        console.log(id);
         $scope.links.$remove(id);
       };
 
