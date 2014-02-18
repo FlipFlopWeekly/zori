@@ -11,6 +11,7 @@ var rjs = require('requirejs');
 var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
+var recess = require('gulp-recess');
 
 var server = lr();
 var app = express();
@@ -100,9 +101,13 @@ gulp.task('compile', function () {
 
 // Asserts code quality with various static code analysis tools.
 gulp.task('quality', function () {
-  return gulp.src('source/js/**/*.js')
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter(stylish));
+  return es.concat(
+    gulp.src('source/js/**/*.js')
+      .pipe(jshint('.jshintrc'))
+      .pipe(jshint.reporter(stylish)),
+    gulp.src('source/assets/css/*')
+      .pipe(recess())
+  );
 });
 
 // Default developer working task.
