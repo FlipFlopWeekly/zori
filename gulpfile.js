@@ -100,7 +100,7 @@ gulp.task('compile', function () {
 });
 
 // Asserts code quality with various static code analysis tools.
-gulp.task('quality', function () {
+gulp.task('lint', function () {
   return es.concat(
     gulp.src('source/js/**/*.js')
       .pipe(jshint('.jshintrc'))
