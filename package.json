@@ -2,9 +2,7 @@
   "name": "zori",
   "version": "0.3.0",
   "description": "Real-time link sharer using Firebase as its backend and AngularJS on the frontend",
-  "scripts": {
-    "test": "node_modules/.bin/karma start karma.js"
-  },
+  "homepage": "https://github.com/FlipFlopWeekly/zori",
   "repository": {
     "type": "git",
     "url": "git://github.com/FlipFlopWeekly/zori"
@@ -17,6 +15,20 @@
     "firebase"
   ],
   "author": "FlipFlop Crew",
+  "contributors": [
+    {
+      "name" : "iGitScor",
+      "url" : "https://github.com/iGitScor"
+    },
+    {
+      "name" : "Monsieur Luge",
+      "url" : "https://github.com/MonsieurLuge"
+    },
+    {
+      "name" : "Thibaud Colas",
+      "url" : "https://github.com/ThibWeb"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/FlipFlopWeekly/zori/issues"
