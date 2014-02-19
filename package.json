@@ -17,16 +17,16 @@
   "author": "FlipFlop Crew",
   "contributors": [
     {
-      "name" : "iGitScor",
-      "url" : "https://github.com/iGitScor"
+      "name": "iGitScor",
+      "url": "https://github.com/iGitScor"
     },
     {
-      "name" : "Monsieur Luge",
-      "url" : "https://github.com/MonsieurLuge"
+      "name": "Monsieur Luge",
+      "url": "https://github.com/MonsieurLuge"
     },
     {
-      "name" : "Thibaud Colas",
-      "url" : "https://github.com/ThibWeb"
+      "name": "Thibaud Colas",
+      "url": "https://github.com/ThibWeb"
     }
   ],
   "license": "MIT",
@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "tiny-lr": "0.0.5",
-    "gulp": "~3.5.0",
+    "gulp": "~3.5.2",
     "connect-livereload": "~0.3.2",
     "express": "~3.4.8",
     "open": "0.0.4",
