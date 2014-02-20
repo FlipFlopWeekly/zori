@@ -2,15 +2,25 @@
   <section>
     <h1>Zori</h1>
     <p class="lead">
-      Where you can manage links.
+      Chausse tes sandales, et foule le sable qu'aucun esclave n'a pi&eacute;tin&eacute; !
     </p>
-    <quote>Chausse tes sandales, et foule le sable qu'aucun esclave n'a pi&eacute;tin&eacute; !</quote>
+    <hr />
   </section>
 
   <section>
-  <header id="header">
+  <section id="main">
+    <ul id="link-list" class="link-list">
+      <li ng-repeat="(id, link) in links">
+          <div class="form-group pull-left">
+            <a ng-href="{{link.url}}" class="btn btn-default category" ng-class="link.category" target="_blank"><span class="glyphicon glyphicon glyphicon-volume-up"></span></a>
+          </div>
+      </li>
+    </ul>
+    <br />
+  </section>
+    <footer id="footer">
     <form id="link-form" ng-submit="addLink()">
-      <div class="form-group">
+      <div class="form-group pull-left">
         <div class="input-group">
           <input id="new-link" class="form-control" placeholder="Add a new link" ng-model="newLink" autofocus>
 
@@ -21,26 +31,6 @@
         </div>
       </div>
     </form>
-  </header>
-  <section id="main">
-    <ul id="link-list" class="link-list">
-      <li ng-repeat="(id, link) in links">
-        <form ng-submit="doneEditing(id)">
-          <div class="form-group">
-            <div class="input-group">
-
-              <input class="edit form-control" ng-trim="false" ng-model="link.url" ng-focus="editLink(id)" ng-blur="doneEditing(id)">
-
-              <div class="input-group-btn">
-                <a ng-href="{{link.url}}" class="btn btn-default" target="_blank"><span class="glyphicon glyphicon-new-window"></span></a>
-                <button type="button" class="btn btn-default" ng-click="removeLink(id)"><span class="glyphicon glyphicon-remove"></span></button>
-              </div>
-
-            </div>
-          </div>
-        </form>
-      </li>
-    </ul>
-  </section>
+  </footer>
 </section>
 </div>
