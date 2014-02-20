@@ -11,8 +11,8 @@
   <section id="main">
     <ul id="link-list" class="link-list">
       <li ng-repeat="(id, link) in links">
-          <div class="form-group pull-left">
-            <a ng-href="{{link.url}}" class="btn btn-default category" ng-class="link.category" target="_blank"><span class="glyphicon glyphicon glyphicon-volume-up"></span></a>
+          <div class="form-group pull-left category-block">
+            <a ng-href="{{link.url}}" class="btn category" ng-class="link.category" target="_blank"><span class="glyphicon glyphicon glyphicon-volume-up"></span></a>
           </div>
       </li>
     </ul>

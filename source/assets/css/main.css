@@ -33,18 +33,36 @@ p.lead {
 /********************************************************
 	Zori specific : categories
 ********************************************************/
+.category-block {
+	display: block;
+	width: 20px;
+	overflow: hidden;
+	margin-right: 1px;
+}
+
 .category {
-	width: 5px:
+	border-radius: 0;
+	padding: 2px;
+	width: 100%;
 }
 
 .soundcloud {
   background-color: rgb(255, 15, 0);
+  border: 1px solid white;
   color: white;
   height: 100px;
 }
 
 .youtube {
-  background-color: rgb(255, 15, 0);
+  background-color: rgb(251, 0, 22);
+  border: 1px solid white;
   color: white;
   height: 20px;
+}
+
+.dailymotion {
+  background-color: rgb(0, 75, 114);
+  border: 1px solid white;
+  color: rgb( 254, 211, 5);
+  height: 70px;
 }
