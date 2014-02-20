@@ -2,7 +2,7 @@
   <section>
     <h1>Zori</h1>
     <p class="lead">
-      Chausse tes sandales, et foule le sable qu'aucun esclave n'a pi&eacute;tin&eacute; !
+      "Chausse tes sandales, et foule le sable qu'aucun esclave n'a pi&eacute;tin&eacute; !"
     </p>
     <hr />
   </section>
@@ -10,10 +10,8 @@
   <section>
   <section id="main">
     <ul id="link-list" class="link-list">
-      <li ng-repeat="(id, link) in links">
-          <div class="form-group pull-left category-block">
-            <a ng-href="{{link.url}}" class="btn category" ng-class="link.category" target="_blank"><span class="glyphicon glyphicon glyphicon-volume-up"></span></a>
-          </div>
+      <li ng-repeat="(id, link) in links" class="form-group pull-left category-block">
+            <a ng-href="{{link.url}}" class="btn category" ng-class="link.category" target="_blank" style="height:{{(link.nbClick + 1) * 30}}px"><span class="glyphicon glyphicon glyphicon-volume-up"></span></a>
       </li>
     </ul>
     <br />
@@ -22,7 +20,7 @@
     <form id="link-form" ng-submit="addLink()">
       <div class="form-group pull-left">
         <div class="input-group">
-          <input id="new-link" class="form-control" placeholder="Add a new link" ng-model="newLink" autofocus>
+          <input id="new-link" class="form-control" placeholder="Ajouter un nouveau lien" ng-model="newLink" autofocus>
 
           <div class="input-group-btn">
             <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
