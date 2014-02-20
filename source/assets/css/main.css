@@ -1,7 +1,3 @@
-h1 {
-  color: seagreen;
-}
-
 [ng-cloak] {
   display: none;
 }
@@ -9,4 +5,46 @@ h1 {
 .admin-panel .link-list {
   padding-left: 0;
   list-style-type: none;
+}
+
+/********************************************************
+	Global HTML Elements
+********************************************************/
+body {
+  background: url("../images/dark_dotted_@2X.png") repeat;
+}
+
+/********************************************************
+	Generic HTML Elements (p, a, li...)
+********************************************************/
+h1 {
+  font-size: 24px;
+  color: rgb(110, 110, 110);
+}
+
+p {
+  color: lightgray;
+}
+
+p.lead {
+  font-size: 14px;
+}
+
+/********************************************************
+	Zori specific : categories
+********************************************************/
+.category {
+	width: 5px:
+}
+
+.soundcloud {
+  background-color: rgb(255, 15, 0);
+  color: white;
+  height: 100px;
+}
+
+.youtube {
+  background-color: rgb(255, 15, 0);
+  color: white;
+  height: 20px;
 }
