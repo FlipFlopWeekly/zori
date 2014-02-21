@@ -55,14 +55,19 @@ p.lead {
 }
 
 .soundcloud {
-  background-color: rgb(255, 15, 0);
+  background-color: #F76700;
+  background-image: linear-gradient(#F76700,#FA3219);
   color: white;
   height: 100px;
   margin-top: -50px;
 }
 
 .youtube {
-  background-color: rgb(251, 0, 22);
+  background-image: -webkit-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
+  background-image: linear-gradient(bottom, #6D0202 22%, rgb(201, 0, 0) 61%); 
   color: white;
   height: 20px;
   margin-top: -10px;
