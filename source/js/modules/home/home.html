@@ -1,45 +1,37 @@
-<div class="container admin-panel">
-  <section>
-    <h1>Zori</h1>
-    <p class="lead">
-      Where you can manage links.
-    </p>
-  </section>
+<div id="front-panel" class="container">
+    <section id="front-panel-header">
+        <h1>Zori</h1>
+        <quote class="lead">
+        "Chausse tes sandales, et foule le sable qu'aucun esclave n'a pi&eacute;tin&eacute; !"
+        </quote>
+    </section>
+    
+    <section id="front-panel-links" class="text-center">
+        <ul id="link-list" class="link-list">
+            <li ng-repeat="(id, link) in links" class="form-group pull-left category-block">
+                <a ng-href="{{link.url}}" class="btn category" ng-class="link.category" target="_blank" style="height:{{(link.nbClick + 1) * 30}}px; margin-top:{{-((link.nbClick + 1) * 30) / 2}}px"></a>
+            </li>
+        </ul>
+    </section>
 
-  <section>
-  <header id="header">
-    <form id="link-form" ng-submit="addLink()">
-      <div class="form-group">
-        <div class="input-group">
-          <input id="new-link" class="form-control" placeholder="Add a new link" ng-model="newLink" autofocus>
-
-          <div class="input-group-btn">
-            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
-          </div>
-
-        </div>
-      </div>
-    </form>
-  </header>
-  <section id="main">
-    <ul id="link-list" class="link-list">
-      <li ng-repeat="(id, link) in links">
-        <form ng-submit="doneEditing(id)">
-          <div class="form-group">
+    <section id="front-panel-footer">
+        <form id="link-form" ng-submit="addLink()">
+          <div class="form-group pull-left">
             <div class="input-group">
-
-              <input class="edit form-control" ng-trim="false" ng-model="link.url" ng-focus="editLink(id)" ng-blur="doneEditing(id)">
-
+              <input id="new-link" class="form-control" placeholder="Ajouter un nouveau lien" ng-model="newLink" autofocus>
+    
               <div class="input-group-btn">
-                <a ng-href="{{link.url}}" class="btn btn-default" target="_blank"><span class="glyphicon glyphicon-new-window"></span></a>
-                <button type="button" class="btn btn-default" ng-click="removeLink(id)"><span class="glyphicon glyphicon-remove"></span></button>
+                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
               </div>
-
             </div>
           </div>
         </form>
-      </li>
-    </ul>
-  </section>
-</section>
+    </section>
 </div>
+
+<footer id="footer">
+    <div class="content-wrapper">
+        *copyright* <span class="separator">|</span> *infos*
+    </div>
+</form>
+</footer>

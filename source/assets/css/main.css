@@ -1,7 +1,3 @@
-h1 {
-  color: seagreen;
-}
-
 [ng-cloak] {
   display: none;
 }
@@ -9,4 +5,141 @@ h1 {
 .admin-panel .link-list {
   padding-left: 0;
   list-style-type: none;
+  display: inline-block;
+}
+
+/********************************************************
+	Global HTML Elements
+********************************************************/
+body {
+  background: url("../images/dark_dotted_@2X.png") repeat;
+}
+
+/********************************************************
+	Generic HTML Elements (p, a, li...)
+********************************************************/
+h1 {
+  font-size: 24px;
+  color: rgb(110, 110, 110);
+}
+
+p {
+  color: lightgray;
+}
+
+p.lead {
+  font-size: 14px;
+}
+
+/********************************************************
+	Zori specific : layout
+********************************************************/
+
+#front-panel {
+    padding: 0;
+}
+
+#front-panel section {
+    padding: 0 15px;
+}
+
+#front-panel-header {}
+
+#front-panel-links {}
+
+#front-panel-footer {}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2em;
+}
+
+/********************************************************
+	Zori specific : categories
+********************************************************/
+.category-block {
+  display: block;
+  width: 8px;
+  overflow: hidden;
+  margin-right: 1px;
+  height: 250px;
+  vertical-align: middle;
+}
+
+.category {
+  border-radius: 0;
+  padding: 2px;
+  width: 100%;
+  min-height: 30px;
+  position: relative;
+  top: 50%;
+  display: block;
+  /* Default color */
+  background-color: rgb(180, 180, 180);
+}
+
+.soundcloud {
+  background-color: #F76700;
+  background-image: linear-gradient(#F76700,#FA3219);
+  color: white;
+  height: 100px;
+  margin-top: -50px;
+}
+
+.youtube {
+  background-image: -webkit-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
+  background-image: -moz-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
+  background-image: -o-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
+  background-image: -ms-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
+  background-image: linear-gradient(bottom, #6D0202 22%, rgb(201, 0, 0) 61%); 
+  color: white;
+  height: 20px;
+  margin-top: -10px;
+}
+
+.dailymotion {
+  background-color: rgb(0, 75, 114);
+  color: rgb( 254, 211, 5);
+  height: 70px;
+  margin-top: -35px;
+}
+
+.dailymotion:hover {
+  color: rgb( 234, 191, 0);
+}
+
+/********************************************************
+	Zori specific : Front
+********************************************************/
+
+#front-panel-header h1 {
+    width: 3em;
+    height: 1.5em;
+    margin: 0 auto;
+    color: #FFFFFF;
+    font-size: 3em;
+    line-height: 1.5em;
+    text-align: center;
+    background-color: #FE6B1B;
+    border-radius: 0 0 10px 10px;
+}
+
+#front-panel-header quote {
+    font-size: 1em;
+    color: #666666;
+}
+
+#front-panel-header quote:hover {
+    cursor: pointer;
+    color: #FE6B1B;
+}
+
+footer {
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 2em;
+    font-size: 0.8em;
+    background-color: #FE6B1B;
 }
