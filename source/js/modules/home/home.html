@@ -1,11 +1,4 @@
-<div id="front-panel" class="container">
-    <section id="front-panel-header">
-        <h1>Zori</h1>
-        <quote class="lead">
-        "Chausse tes sandales, et foule le sable qu'aucun esclave n'a pi&eacute;tin&eacute; !"
-        </quote>
-    </section>
-    
+<div class="container-fluid front-panel">
     <section id="front-panel-links" class="text-center">
         <ul id="link-list" class="link-list">
             <li ng-repeat="(id, link) in links" class="form-group pull-left category-block">
@@ -19,7 +12,7 @@
           <div class="form-group pull-left">
             <div class="input-group">
               <input id="new-link" class="form-control" placeholder="Ajouter un nouveau lien" ng-model="newLink" autofocus>
-    
+
               <div class="input-group-btn">
                 <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
               </div>
@@ -28,10 +21,3 @@
         </form>
     </section>
 </div>
-
-<footer id="footer">
-    <div class="content-wrapper">
-        *copyright* <span class="separator">|</span> *infos*
-    </div>
-</form>
-</footer>

@@ -1,18 +1,12 @@
-[ng-cloak] {
-  display: none;
-}
-
-.admin-panel .link-list {
-  padding-left: 0;
-  list-style-type: none;
-  display: inline-block;
-}
-
 /********************************************************
 	Global HTML Elements
 ********************************************************/
 body {
   background: url("../images/dark_dotted_@2X.png") repeat;
+}
+
+[ng-cloak] {
+  display: none;
 }
 
 /********************************************************
@@ -35,30 +29,24 @@ p.lead {
 	Zori specific : layout
 ********************************************************/
 
-#front-panel {
+.front-panel {
     padding: 0;
 }
 
-#front-panel section {
+.front-panel section {
     padding: 0 15px;
 }
 
-#front-panel-header {}
+.header {}
 
-#front-panel-links {}
+.front-panel-links {}
 
-#front-panel-footer {}
-
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2em;
-}
+.front-panel-footer {}
 
 /********************************************************
 	Zori specific : categories
 ********************************************************/
+
 .category-block {
   display: block;
   width: 8px;
@@ -93,7 +81,7 @@ footer {
   background-image: -moz-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
   background-image: -o-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
   background-image: -ms-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
-  background-image: linear-gradient(bottom, #6D0202 22%, rgb(201, 0, 0) 61%); 
+  background-image: linear-gradient(bottom, #6D0202 22%, rgb(201, 0, 0) 61%);
   color: white;
   height: 20px;
   margin-top: -10px;
@@ -111,10 +99,10 @@ footer {
 }
 
 /********************************************************
-	Zori specific : Front
+	Zori specific : Header
 ********************************************************/
 
-#front-panel-header h1 {
+.header h1 {
     width: 3em;
     height: 1.5em;
     margin: 0 auto;
@@ -126,20 +114,36 @@ footer {
     border-radius: 0 0 10px 10px;
 }
 
-#front-panel-header quote {
+.header blockquote {
     font-size: 1em;
     color: #666666;
+    border-left: none;
+    text-align: center;
 }
 
-#front-panel-header quote:hover {
+.header blockquote:hover {
     cursor: pointer;
     color: #FE6B1B;
 }
 
+/********************************************************
+  Zori specific : Footer
+********************************************************/
+
 footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     color: #FFFFFF;
     text-align: center;
-    line-height: 2em;
-    font-size: 0.8em;
     background-color: #FE6B1B;
+}
+
+/********************************************************
+  Zori specific : Admin
+********************************************************/
+
+.admin-panel .link-list {
+  padding-left: 0;
+  list-style-type: none;
 }
