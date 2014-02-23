@@ -23,6 +23,12 @@ This command will:
 - Launch an express instance to serve the files
 - Launch the app in your favorite browser
 - Watch for file modification and automatically compile / refresh your browser
+    
+    # If you don't want to bother installing node & npm,
+    # just use a simple static file server like:
+    cd source/
+    python -m SimpleHTTPServer 4000
+    # Then go to http://localhost:4000/
 
 ## Troubleshooting
 
@@ -58,16 +64,6 @@ It is currently hosted [on Firebase Hosting (beta)](https://shining-fire-3337.fi
     # Voilà, you can go to
     # https://shining-fire-3337.firebaseapp.com/
     # to access the running app.
-
-
-## TODO List
-
-- Add Travis-CI
-- Add Coderwall
-- Add Jasmine tests
-- Logos, content, etc
-- Code!
-- Deploy to a custom domain / subdomain
 
 ## Credits
 
