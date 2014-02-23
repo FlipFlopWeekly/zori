@@ -24,10 +24,9 @@ This command will:
 - Launch the app in your favorite browser
 - Watch for file modification and automatically compile / refresh your browser
 
-## Contributing
+Another option if you don't want to bother installing node & npm:
      
-    # If you don't want to bother installing node & npm,
-    # just use a simple static file server like:
+    # Just use a simple static file server like:
     cd source/
     python -m SimpleHTTPServer 4000
     # Then go to http://localhost:4000/
