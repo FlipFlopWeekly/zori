@@ -30,11 +30,11 @@ p.lead {
 ********************************************************/
 
 .front-panel {
-    padding: 0;
+  padding: 0;
 }
 
 .front-panel section {
-    padding: 0 15px;
+  padding: 0 15px;
 }
 
 .header {}
@@ -103,27 +103,27 @@ p.lead {
 ********************************************************/
 
 .header h1 {
-    width: 3em;
-    height: 1.5em;
-    margin: 0 auto;
-    color: #FFFFFF;
-    font-size: 3em;
-    line-height: 1.5em;
-    text-align: center;
-    background-color: #FE6B1B;
-    border-radius: 0 0 10px 10px;
+  width: 3em;
+  height: 1.5em;
+  margin: 0 auto;
+  color: #FFFFFF;
+  font-size: 3em;
+  line-height: 1.5em;
+  text-align: center;
+  background-color: #FE6B1B;
+  border-radius: 0 0 10px 10px;
 }
 
 .header blockquote {
-    font-size: 1em;
-    color: #666666;
-    border-left: none;
-    text-align: center;
+  font-size: 1em;
+  color: #666666;
+  border-left: none;
+  text-align: center;
 }
 
 .header blockquote:hover {
-    cursor: pointer;
-    color: #FE6B1B;
+  cursor: pointer;
+  color: #FE6B1B;
 }
 
 /********************************************************
@@ -131,12 +131,12 @@ p.lead {
 ********************************************************/
 
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    color: #FFFFFF;
-    text-align: center;
-    background-color: #FE6B1B;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #FFFFFF;
+  text-align: center;
+  background-color: #FE6B1B;
 }
 
 /********************************************************
