@@ -23,7 +23,9 @@ This command will:
 - Launch an express instance to serve the files
 - Launch the app in your favorite browser
 - Watch for file modification and automatically compile / refresh your browser
-    
+
+## Contributing
+     
     # If you don't want to bother installing node & npm,
     # just use a simple static file server like:
     cd source/
