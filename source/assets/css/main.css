@@ -65,38 +65,51 @@ p.lead {
   top: 50%;
   display: block;
   /* Default color */
-  background-color: rgb(180, 180, 180);
+    background: rgb(198,198,198); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(198,198,198,1) 50%, rgba(165,165,165,1) 51%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(198,198,198,1)), color-stop(51%,rgba(165,165,165,1)));
+    background: -webkit-linear-gradient(top,  rgba(198,198,198,1) 50%,rgba(165,165,165,1) 51%);
+    background: -o-linear-gradient(top,  rgba(198,198,198,1) 50%,rgba(165,165,165,1) 51%);
+    background: -ms-linear-gradient(top,  rgba(198,198,198,1) 50%,rgba(165,165,165,1) 51%);
+    background: linear-gradient(to bottom,  rgba(198,198,198,1) 50%,rgba(165,165,165,1) 51%);
 }
 
 .soundcloud {
-  background-color: #F76700;
-  background-image: linear-gradient(#F76700,#FA3219);
-  color: white;
-  height: 100px;
-  margin-top: -50px;
+    height: 100px;
+    margin-top: -50px;
+    background: rgb(254,107,27); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(254,107,27,1) 50%, rgba(183,80,20,1) 51%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(254,107,27,1)), color-stop(51%,rgba(183,80,20,1)));
+    background: -webkit-linear-gradient(top,  rgba(254,107,27,1) 50%,rgba(183,80,20,1) 51%);
+    background: -o-linear-gradient(top,  rgba(254,107,27,1) 50%,rgba(183,80,20,1) 51%);
+    background: -ms-linear-gradient(top,  rgba(254,107,27,1) 50%,rgba(183,80,20,1) 51%);
+    background: linear-gradient(to bottom,  rgba(254,107,27,1) 50%,rgba(183,80,20,1) 51%);
 }
 
 .youtube {
-  background-image: -webkit-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
-  background-image: -moz-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
-  background-image: -o-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
-  background-image: -ms-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
-  background-image: linear-gradient(bottom, #6D0202 22%, rgb(201, 0, 0) 61%);
-  color: white;
-  height: 20px;
-  margin-top: -10px;
+    height: 20px;
+    margin-top: -10px;
+    background: rgb(201,0,0); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(201,0,0,1) 50%, rgba(155,0,0,1) 51%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(201,0,0,1)), color-stop(51%,rgba(155,0,0,1)));
+    background: -webkit-linear-gradient(top,  rgba(201,0,0,1) 50%,rgba(155,0,0,1) 51%);
+    background: -o-linear-gradient(top,  rgba(201,0,0,1) 50%,rgba(155,0,0,1) 51%);
+    background: -ms-linear-gradient(top,  rgba(201,0,0,1) 50%,rgba(155,0,0,1) 51%);
+    background: linear-gradient(to bottom,  rgba(201,0,0,1) 50%,rgba(155,0,0,1) 51%);
 }
 
 .dailymotion {
-  background-color: rgb(0, 75, 114);
-  color: rgb( 254, 211, 5);
-  height: 70px;
-  margin-top: -35px;
+    height: 70px;
+    margin-top: -35px;
+    background: rgb(38,122,168); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(38,122,168,1) 50%, rgba(0,74,112,1) 51%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(38,122,168,1)), color-stop(51%,rgba(0,74,112,1)));
+    background: -webkit-linear-gradient(top,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
+    background: -o-linear-gradient(top,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
+    background: -ms-linear-gradient(top,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
+    background: linear-gradient(to bottom,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
 }
 
-.dailymotion:hover {
-  color: rgb( 234, 191, 0);
-}
 
 /********************************************************
 	Zori specific : Header
