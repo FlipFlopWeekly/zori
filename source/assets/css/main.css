@@ -2,27 +2,27 @@
 	Global HTML Elements
 ********************************************************/
 body {
-  background: url("../images/dark_dotted_@2X.png") repeat;
+    background: url("../images/dark_dotted_@2X.png") repeat;
 }
 
 [ng-cloak] {
-  display: none;
+    display: none;
 }
 
 /********************************************************
 	Generic HTML Elements (p, a, li...)
 ********************************************************/
 h1 {
-  font-size: 24px;
-  color: rgb(110, 110, 110);
+    font-size: 24px;
+    color: rgb(110, 110, 110);
 }
 
 p {
-  color: lightgray;
+    color: lightgray;
 }
 
 p.lead {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 /********************************************************
@@ -30,41 +30,50 @@ p.lead {
 ********************************************************/
 
 .front-panel {
-  padding: 0;
+    padding: 0;
 }
 
 .front-panel section {
-  padding: 0 15px;
+    padding: 0 15px;
 }
 
-.header {}
+#front-panel-links {
+    width: 70%;
+    height: 300px;
+    margin: 50px auto;
+    overflow: hidden;
+}
 
-.front-panel-links {}
 
-.front-panel-footer {}
+/********************************************************
+	Zori specific : Front panel links
+********************************************************/
+
+#front-panel-links ul {
+    height: 100%;
+}
+
 
 /********************************************************
 	Zori specific : categories
 ********************************************************/
 
 .category-block {
-  display: block;
-  width: 8px;
-  overflow: hidden;
-  margin-right: 1px;
-  height: 250px;
-  vertical-align: middle;
+    display: block;
+    width: 8px;
+    overflow: hidden;
+    margin-right: 1px;
+    height: 100%;
 }
 
 .category {
-  border-radius: 0;
-  padding: 2px;
-  width: 100%;
-  min-height: 30px;
-  position: relative;
-  top: 50%;
-  display: block;
-  /* Default color */
+    border-radius: 0;
+    padding: 2px;
+    width: 100%;
+    min-height: 30px;
+    position: relative;
+    top: 50%;
+    display: block;
     background: rgb(198,198,198); /* Old browsers */
     background: -moz-linear-gradient(top,  rgba(198,198,198,1) 50%, rgba(165,165,165,1) 51%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(198,198,198,1)), color-stop(51%,rgba(165,165,165,1)));
@@ -116,27 +125,27 @@ p.lead {
 ********************************************************/
 
 .header h1 {
-  width: 3em;
-  height: 1.5em;
-  margin: 0 auto;
-  color: #FFFFFF;
-  font-size: 3em;
-  line-height: 1.5em;
-  text-align: center;
-  background-color: #FE6B1B;
-  border-radius: 0 0 10px 10px;
+    width: 3em;
+    height: 1.5em;
+    margin: 0 auto;
+    color: #FFFFFF;
+    font-size: 3em;
+    line-height: 1.5em;
+    text-align: center;
+    background-color: #FE6B1B;
+    border-radius: 0 0 10px 10px;
 }
 
 .header blockquote {
-  font-size: 1em;
-  color: #666666;
-  border-left: none;
-  text-align: center;
+    font-size: 1em;
+    color: #666666;
+    border-left: none;
+    text-align: center;
 }
 
 .header blockquote:hover {
-  cursor: pointer;
-  color: #FE6B1B;
+    cursor: pointer;
+    color: #FE6B1B;
 }
 
 /********************************************************
@@ -144,12 +153,12 @@ p.lead {
 ********************************************************/
 
 footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  color: #FFFFFF;
-  text-align: center;
-  background-color: #FE6B1B;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #FE6B1B;
 }
 
 /********************************************************
@@ -157,6 +166,6 @@ footer {
 ********************************************************/
 
 .admin-panel .link-list {
-  padding-left: 0;
-  list-style-type: none;
+    padding-left: 0;
+    list-style-type: none;
 }
