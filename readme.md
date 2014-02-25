@@ -68,6 +68,10 @@ The testing environment is currently hosted [on Firebase Hosting (beta)](https:/
 
 The production deployment is on [Gandi Simple Hosting](http://zori.trgdy.com). Deployment is done via sFTP ATM.
 
+## Project roadmap
+
+Our project roadmap is shared on the [Wiki](https://github.com/FlipFlopWeekly/zori/wiki).
+
 ## Credits
 
 Copyright (c) 2014 [FlipFlop Crew](https://github.com/FlipFlopWeekly)
