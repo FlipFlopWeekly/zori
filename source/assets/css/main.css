@@ -130,15 +130,16 @@ p.lead {
 ********************************************************/
 
 #header h1 {
-    width: 90px;
-    height: 90px;
-    margin: 0 auto;
-    background: #FE6B1B url("../images/logo-header.png") top left no-repeat;
-    border-radius: 0 0 0 15px;
-}
-
-#header h1:hover {
-    background-color: #333333;
+    width: 64px;
+    height: 64px;
+    margin: 15px;
+    padding-left: 64px;
+    color: #FFF;
+    line-height: 63px;
+    font-size: 2em;
+    background: transparent url("../images/logo-header.png") top left no-repeat;
+    background-size: 64px 64px;
+    opacity: 0.4;
 }
 
 #header blockquote {
