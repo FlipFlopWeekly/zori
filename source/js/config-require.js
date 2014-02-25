@@ -8,6 +8,8 @@ define({
   paths: {
     'angular'               : '../vendor/angular/angular',
     'angular-ui-router'     : '../vendor/angular-ui-router/release/angular-ui-router',
+    'jquery'                : '../vendor/jquery/dist/jquery',
+    'bootstrap'             : '../vendor/bootstrap/dist/js/bootstrap',
     'firebase'              : '../vendor/firebase/firebase',
     'angularfire'           : '../vendor/angularfire/angularfire',
     'text'                  : '../vendor/requirejs-text/text'
@@ -20,6 +22,14 @@ define({
     'angular-ui-router' : {
       deps: [
         'angular'
+      ]
+    },
+    'jquery': {
+      exports: '$'
+    },
+    'bootstrap' : {
+      deps: [
+        'jquery'
       ]
     },
     'firebase': {

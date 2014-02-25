@@ -5,6 +5,8 @@
 define([
   'angular',
   'angular-ui-router',
+  'jquery',
+  'bootstrap',
   './config',
   './services',
   './modules/home/index',
