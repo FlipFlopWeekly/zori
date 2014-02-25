@@ -167,9 +167,8 @@ p.lead {
 #new-link {
     width: 100%;
     padding: 5px 1em;
-    text-align: center;
-    color: #FFFFFF;
     border: none;
+    color: #eee;
     background-color: #333333;
     background-color: rgba(0, 0, 0, 0.2);
 }
@@ -179,7 +178,23 @@ p.lead {
     outline: 0;
     background-color: #333333;
     background-color: rgba(0, 0, 0, 0.4);
-    
+
+}
+
+.front-panel ::-webkit-input-placeholder {
+    text-align: center;
+}
+g
+.front-panel :-moz-placeholder {
+    text-align: center;
+}
+
+.front-panel ::-moz-placeholder {
+    text-align: center;
+}
+
+.front-panel :-ms-input-placeholder {
+   text-align: center;
 }
 
 
