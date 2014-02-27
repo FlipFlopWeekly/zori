@@ -7,14 +7,14 @@ define(['./module', 'jquery'], function (controllers, $) {
 
   controllers.controller('HomeController', ['$scope', 'linkStorage', '$firebase',
     function HomeController($scope, linkStorage, $firebase) {
-      var fireRef = new Firebase('https://shining-fire-3337.firebaseio.com/');
+      var fireRef = new Firebase('https://shining-fire-3337.firebaseio.com/links');
 
       $scope.newLink = '';
 
       $scope.$watch('links', function () {
-      	var length = Object.keys($scope.links).length;
-      	var totalLength = length * 8.23;
-      	$('ul').css('width', totalLength+"px");
+        var length = Object.keys($scope.links).length;
+        var totalLength = length * 8.23;
+        $('ul').css('width', totalLength+"px");
       }, true);
 
       $scope.addLink = function () {
