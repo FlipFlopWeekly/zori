@@ -2,7 +2,7 @@
  * Home controller definition
  * @scope Controllers
  */
-define(['./module'], function (controllers) {
+define(['./module', 'jquery'], function (controllers, $) {
   'use strict';
 
   controllers.controller('HomeController', ['$scope', 'linkStorage', '$firebase',
@@ -12,6 +12,9 @@ define(['./module'], function (controllers) {
       $scope.newLink = '';
 
       $scope.$watch('links', function () {
+      	var length = Object.keys($scope.links).length;
+      	var totalLength = length * 8.23;
+      	$('ul').css('width', totalLength+"px");
       }, true);
 
       $scope.addLink = function () {

@@ -41,7 +41,8 @@ p.lead {
     width: 70%;
     height: 300px;
     margin: 50px auto;
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: scroll;
 }
 
 #front-panel-footer {
@@ -56,6 +57,8 @@ p.lead {
 
 #front-panel-links ul {
     height: 100%;
+	padding: 0;
+    display: inline-block;
 }
 
 
