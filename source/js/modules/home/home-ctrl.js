@@ -13,7 +13,7 @@ define(['./module', 'jquery'], function (controllers, $) {
 
       $scope.$watch('links', function () {
         var length = Object.keys($scope.links).length;
-        var totalLength = length * 8.23;
+        var totalLength = length * 9;
         $('ul').css('width', totalLength+"px");
       }, true);
 

@@ -42,7 +42,7 @@ p.lead {
     height: 300px;
     margin: 50px auto;
     overflow-y: hidden;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 #front-panel-footer {
