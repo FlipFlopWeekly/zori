@@ -7,7 +7,7 @@ define(['./module'], function (controllers) {
 
   controllers.controller('AdminController', ['$scope', 'linkStorage', '$firebase',
     function AdminController($scope, linkStorage, $firebase) {
-      var fireRef = new Firebase('https://shining-fire-3337.firebaseio.com/');
+      var fireRef = new Firebase('https://shining-fire-3337.firebaseio.com/links');
 
       $scope.newLink = '';
 
