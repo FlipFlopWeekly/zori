@@ -10,11 +10,14 @@ define(['./module', 'jquery'], function (controllers, $) {
       var fireRef = new Firebase('https://shining-fire-3337.firebaseio.com/links');
 
       $scope.newLink = '';
+      var numberOfLinks = 0;
 
       $scope.$watch('links', function () {
-        var length = Object.keys($scope.links).length;
+        var length = numberOfLinks;
         var totalLength = length * 9;
         $('ul').css('width', totalLength+"px");
+        
+        numberOfLinks += 1;
       }, true);
 
       $scope.addLink = function () {

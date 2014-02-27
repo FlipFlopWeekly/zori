@@ -34,19 +34,19 @@ p.lead {
 }
 
 .front-panel section {
-    padding: 0 15px;
+    padding: 0;
 }
 
 #front-panel-links {
     width: 70%;
     height: 300px;
-    margin: 50px auto;
+    margin: auto;
     overflow-y: hidden;
     overflow-x: auto;
 }
 
 #front-panel-footer {
-    width: 50%;
+    width: 70%;
     margin: auto;
 }
 
@@ -188,7 +188,7 @@ p.lead {
 .front-panel ::-webkit-input-placeholder {
     text-align: center;
 }
-g
+
 .front-panel :-moz-placeholder {
     text-align: center;
 }
