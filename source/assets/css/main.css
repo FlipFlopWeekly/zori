@@ -3,6 +3,7 @@
 ********************************************************/
 body {
     background: url("../images/dark_dotted_@2X.png") repeat;
+    background-size: 5px 5px;
 }
 
 [ng-cloak] {
