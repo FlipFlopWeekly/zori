@@ -1,6 +1,6 @@
 {
   "name": "zori",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Real-time link sharer using Firebase as its backend and AngularJS on the frontend",
   "homepage": "https://github.com/FlipFlopWeekly/zori",
   "repository": {
@@ -48,6 +48,7 @@
     "gulp-jshint": "~1.5.0",
     "jshint-stylish": "~0.1.5",
     "requirejs": "~2.1.10",
-    "gulp-recess": "~0.2.0"
+    "gulp-recess": "~0.2.0",
+    "gulp-bump": "~0.1.5"
   }
 }

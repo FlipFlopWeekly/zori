@@ -12,6 +12,7 @@ var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var recess = require('gulp-recess');
+var bump = require ('gulp-bump');
 
 var server = lr();
 var app = express();
@@ -108,6 +109,13 @@ gulp.task('lint', function () {
     gulp.src('source/assets/css/*')
       .pipe(recess())
   );
+});
+
+// Bumps version number.
+gulp.task('bump', function(){
+  gulp.src(['./bower.json', './package.json'])
+  .pipe(bump({type:'minor'}))
+  .pipe(gulp.dest('./'));
 });
 
 // Default developer working task.
