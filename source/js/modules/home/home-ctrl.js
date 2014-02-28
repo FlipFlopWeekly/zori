@@ -12,6 +12,7 @@ define(['./module', 'jquery'], function (controllers, $) {
       var numberOfLinks = 0;
 
       $scope.$watch('links', function () {
+        // Resize the list width, fits to the content size.
         var length = numberOfLinks;
         var totalLength = length * 9;
         $('ul').css('width', totalLength+"px");
@@ -32,7 +33,13 @@ define(['./module', 'jquery'], function (controllers, $) {
       };
 
       $scope.incrementClick = function (id) {
-        $scope.links[id].nbClick++;
+        // Check if the attribute exists. Default value is 0.
+        if ($scope.links[id].nbClick === undefined) {
+            $scope.links[id].nbClick = 0;
+        } else {
+            $scope.links[id].nbClick++;
+        }
+        
         $scope.links.$save();
       };
 
