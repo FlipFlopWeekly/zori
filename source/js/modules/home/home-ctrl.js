@@ -5,9 +5,8 @@
 define(['./module', 'jquery'], function (controllers, $) {
   'use strict';
 
-  controllers.controller('HomeController', ['$scope', 'linkStorage', '$firebase',
-    function HomeController($scope, linkStorage, $firebase) {
-      var fireRef = new Firebase('https://shining-fire-3337.firebaseio.com/links');
+  controllers.controller('HomeController', ['$scope', 'LinkFire',
+    function HomeController($scope, LinkFire) {
 
       $scope.newLink = '';
       var numberOfLinks = 0;
@@ -16,7 +15,7 @@ define(['./module', 'jquery'], function (controllers, $) {
         var length = numberOfLinks;
         var totalLength = length * 9;
         $('ul').css('width', totalLength+"px");
-        
+
         numberOfLinks += 1;
       }, true);
 
@@ -51,7 +50,7 @@ define(['./module', 'jquery'], function (controllers, $) {
         $scope.links.$remove(id);
       };
 
-      $scope.links = $firebase(fireRef);
+      $scope.links = LinkFire.ref();
     }
   ]);
 });

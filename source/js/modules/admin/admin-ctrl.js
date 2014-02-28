@@ -5,9 +5,8 @@
 define(['./module'], function (controllers) {
   'use strict';
 
-  controllers.controller('AdminController', ['$scope', 'linkStorage', '$firebase',
-    function AdminController($scope, linkStorage, $firebase) {
-      var fireRef = new Firebase('https://shining-fire-3337.firebaseio.com/links');
+  controllers.controller('AdminController', ['$scope', 'LinkFire',
+    function AdminController($scope, LinkFire) {
 
       $scope.newLink = '';
 
@@ -45,7 +44,7 @@ define(['./module'], function (controllers) {
         $scope.links.$remove(id);
       };
 
-      $scope.links = $firebase(fireRef);
+      $scope.links = LinkFire.ref();
     }
   ]);
 });
