@@ -5,8 +5,8 @@
 define(['./module'], function (controllers) {
   'use strict';
 
-  controllers.controller('AdminController', ['$scope', 'LinkFire',
-    function AdminController($scope, LinkFire) {
+  controllers.controller('AdminController', ['$scope', 'fireRef',
+    function AdminController($scope, fireRef) {
 
       $scope.newLink = '';
 
@@ -44,7 +44,7 @@ define(['./module'], function (controllers) {
         $scope.links.$remove(id);
       };
 
-      $scope.links = LinkFire.ref();
+      $scope.links = fireRef.links();
     }
   ]);
 });

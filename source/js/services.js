@@ -18,11 +18,10 @@ define(['angular', 'firebase', 'angularfire', './config'], function (ng, Firebas
         }
       };
     })
-    .factory('LinkFire', ['$firebase', function ($firebase) {
+    .factory('fireRef', ['$firebase', 'FB_URL', function ($firebase, FB_URL) {
       return {
-        ref : function() {
-          var fireRef = new Firebase('https://shining-fire-3337.firebaseio.com/links');
-          return $firebase(fireRef);
+        links : function() {
+          return $firebase(new Firebase(FB_URL + 'links'));
         }
       };
     }

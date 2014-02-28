@@ -5,8 +5,8 @@
 define(['./module', 'jquery'], function (controllers, $) {
   'use strict';
 
-  controllers.controller('HomeController', ['$scope', 'LinkFire',
-    function HomeController($scope, LinkFire) {
+  controllers.controller('HomeController', ['$scope', 'fireRef',
+    function HomeController($scope, fireRef) {
 
       $scope.newLink = '';
       var numberOfLinks = 0;
@@ -50,7 +50,7 @@ define(['./module', 'jquery'], function (controllers, $) {
         $scope.links.$remove(id);
       };
 
-      $scope.links = LinkFire.ref();
+      $scope.links = fireRef.links();
     }
   ]);
 });
