@@ -30,26 +30,6 @@ define(['./module', 'jquery'], function (controllers, $) {
         $scope.newLink = '';
       };
 
-      $scope.editLink = function (id) {
-        $scope.editedLink = $scope.links[id];
-      };
-
-
-      $scope.doneEditing = function (id) {
-        var link = $scope.links[id];
-        link.url = link.url.trim();
-        $scope.links.$save();
-
-        if (!link.url) {
-          $scope.removeLink(id);
-        }
-        $scope.editedLink = null;
-      };
-
-      $scope.removeLink = function (id) {
-        $scope.links.$remove(id);
-      };
-
       $scope.links = fireRef.links();
     }
   ]);
