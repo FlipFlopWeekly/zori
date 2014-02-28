@@ -25,9 +25,15 @@ define(['./module', 'jquery'], function (controllers, $) {
           return;
         }
         $scope.links.$add({
-          url: newLink
+          url: newLink,
+          nbClick: 0
         });
         $scope.newLink = '';
+      };
+
+      $scope.incrementClick = function (id) {
+        $scope.links[id].nbClick++;
+        $scope.links.$save();
       };
 
       $scope.links = fireRef.links();
