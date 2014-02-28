@@ -66,6 +66,8 @@ gulp.task('build', ['compile'], function () {
       .pipe(uglify())
       .pipe(gulp.dest('build/js')),
     // Build assets.
+    gulp.src(['source/favicon.ico'])
+      .pipe(gulp.dest('build')),
     gulp.src(['source/assets/css/*'])
       .pipe(csso())
       .pipe(gulp.dest('build/assets/css')),
