@@ -2,7 +2,7 @@
     <section id="front-panel-links" class="text-center">
         <ul id="link-list" class="link-list">
             <li ng-repeat="(id, link) in links" class="form-group pull-left category-block">
-                <a ng-href="{{link.url}}" ng-click="incrementClick(id)" class="category" ng-class="link.category" target="_blank" style="height:{{(link.nbClick + 1) * 30}}px; margin-top:{{-((link.nbClick + 1) * 30) / 2}}px"></a>
+                <a ng-href="{{link.url}}" ng-click="incrementClick(id)" class="category" ng-class="link.category" target="_blank" style="height:{{(link.nbClick + 1) * 30}}px; margin-top:{{-((link.nbClick + 1) * 30) / 2}}px; background:hsl({{ 10 + link.nbClick * 10}}, 99%, 55%);"></a>
             </li>
         </ul>
     </section>
