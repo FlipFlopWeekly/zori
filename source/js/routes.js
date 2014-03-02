@@ -4,33 +4,31 @@
  */
 
 define([
-  './app',
-  './config',
-  'text!./modules/home/home.html',
-  'text!./modules/admin/admin.html'
+    './app',
+    './config',
+    'text!./modules/home/home.html',
+    'text!./modules/admin/admin.html'
 ], function (app, conf, homeTpl, adminTpl) {
-  'use strict';
+    'use strict';
 
-  app.config(['$stateProvider', '$urlRouterProvider',
-    function ($stateProvider, $urlRouterProvider) {
+    app.config(['$stateProvider', '$urlRouterProvider',
+        function ($stateProvider, $urlRouterProvider) {
 
-    $stateProvider
-      .state('home', {
-        url: '/',
-        template: homeTpl,
-        controller : 'HomeController'
-      })
-    ;
+            $stateProvider
+                .state('home', {
+                    url: '/',
+                    template: homeTpl,
+                    controller: 'HomeController'
+                });
 
-    $stateProvider
-      .state('admin', {
-        url: '/admin',
-        template: adminTpl,
-        controller : 'AdminController'
-      })
-    ;
+            $stateProvider
+                .state('admin', {
+                    url: '/admin',
+                    template: adminTpl,
+                    controller: 'AdminController'
+                });
 
-    $urlRouterProvider.otherwise('/');
-    //$locationProvider.html5Mode(true);
-  }]);
+            $urlRouterProvider.otherwise('/');
+            //$locationProvider.html5Mode(true);
+        }]);
 });
