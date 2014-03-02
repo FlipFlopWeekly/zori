@@ -24,6 +24,13 @@ This command will:
 - Launch the app in your favorite browser
 - Watch for file modification and automatically compile / refresh your browser
 
+Another option if you don't want to bother installing node & npm:
+     
+    # Just use a simple static file server like:
+    cd source/
+    python -m SimpleHTTPServer 4000
+    # Then go to http://localhost:4000/
+
 ## Troubleshooting
 
 The main project dependencies are:
@@ -44,7 +51,7 @@ To get up and running behind a corporate proxy, you'll have to:
 
 Zori only contains static files, it can thus be deployed everywhere static files can be served (S3, EC2, Dropbox, GitHub Pages, Heroku, etc).
 
-It is currently hosted [on Firebase Hosting (beta)](https://shining-fire-3337.firebaseapp.com/) and on [Trgdy (homemade)](http://flipflop.trgdy.com/).
+The testing environment is currently hosted [on Firebase Hosting (beta)](https://shining-fire-3337.firebaseapp.com/).
 
     # Install the Firebase Command Line Tools
     npm install -g firebase-tools
@@ -59,15 +66,11 @@ It is currently hosted [on Firebase Hosting (beta)](https://shining-fire-3337.fi
     # https://shining-fire-3337.firebaseapp.com/
     # to access the running app.
 
+The production deployment is on [Gandi Simple Hosting](http://zori.trgdy.com). Deployment is done via sFTP ATM.
 
-## TODO List
+## Project roadmap
 
-- Add Travis-CI
-- Add Coderwall
-- Add Jasmine tests
-- Logos, content, etc
-- Code!
-- Deploy to a custom domain / subdomain
+Our project roadmap is shared on the [Wiki](https://github.com/FlipFlopWeekly/zori/wiki).
 
 ## Credits
 

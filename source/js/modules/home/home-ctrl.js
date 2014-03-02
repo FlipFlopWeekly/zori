@@ -2,50 +2,50 @@
  * Home controller definition
  * @scope Controllers
  */
-define(['./module'], function (controllers) {
-  'use strict';
+define(['./module', 'jquery'], function (controllers, $) {
+    'use strict';
+    
+    controllers.controller('HomeController', ['$scope', 'fireRef',
+        function HomeController($scope, fireRef) {
+            $scope.newLink = '';
 
-  controllers.controller('HomeController', ['$scope', 'linkStorage', '$firebase',
-    function HomeController($scope, linkStorage, $firebase) {
-      var fireRef = new Firebase('https://shining-fire-3337.firebaseio.com/');
+            $scope.$watch('links', function () {
+                // Count the number of links
+                var numberOfLinks = $('.category-block').length;
 
-      $scope.newLink = '';
+                // Resize the list width, fits to the content size.
+                var length = numberOfLinks;
+                var totalLength = length * 9;
+                $('ul').css('width', totalLength+"px");
+            }, true);
 
-      $scope.$watch('links', function () {
-      }, true);
+            $scope.addLink = function () {
+                var newLink = $scope.newLink.trim();
 
-      $scope.addLink = function () {
-        var newLink = $scope.newLink.trim();
-        if (!newLink.length) {
-          return;
+                if (!newLink.length) {
+                    return;
+                }
+
+                $scope.links.$add({
+                    url: newLink,
+                    nbClick: 0
+                });
+                
+                $scope.newLink = '';
+            };
+            
+            $scope.incrementClick = function (id) {
+                // Check if the attribute exists. Default value is 0.
+                if ($scope.links[id].nbClick === undefined) {
+                    $scope.links[id].nbClick = 0;
+                } else {
+                    $scope.links[id].nbClick++;
+                }
+                
+                $scope.links.$save();
+            };
+            
+            $scope.links = fireRef.links();
         }
-        $scope.links.$add({
-          url: newLink
-        });
-        $scope.newLink = '';
-      };
-
-      $scope.editLink = function (id) {
-        $scope.editedLink = $scope.links[id];
-      };
-
-
-      $scope.doneEditing = function (id) {
-        var link = $scope.links[id];
-        link.url = link.url.trim();
-        $scope.links.$save();
-
-        if (!link.url) {
-          $scope.removeLink(id);
-        }
-        $scope.editedLink = null;
-      };
-
-      $scope.removeLink = function (id) {
-        $scope.links.$remove(id);
-      };
-
-      $scope.links = $firebase(fireRef);
-    }
-  ]);
+    ]);
 });

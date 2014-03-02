@@ -1,6 +1,6 @@
 {
   "name": "zori",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "description": "Real-time link sharer using Firebase as its backend and AngularJS on the frontend",
   "homepage": "https://github.com/FlipFlopWeekly/zori",
   "repository": {
@@ -17,16 +17,16 @@
   "author": "FlipFlop Crew",
   "contributors": [
     {
-      "name" : "iGitScor",
-      "url" : "https://github.com/iGitScor"
+      "name": "iGitScor",
+      "url": "https://github.com/iGitScor"
     },
     {
-      "name" : "Monsieur Luge",
-      "url" : "https://github.com/MonsieurLuge"
+      "name": "Monsieur Luge",
+      "url": "https://github.com/MonsieurLuge"
     },
     {
-      "name" : "Thibaud Colas",
-      "url" : "https://github.com/ThibWeb"
+      "name": "Thibaud Colas",
+      "url": "https://github.com/ThibWeb"
     }
   ],
   "license": "MIT",
@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "tiny-lr": "0.0.5",
-    "gulp": "~3.5.0",
+    "gulp": "~3.5.2",
     "connect-livereload": "~0.3.2",
     "express": "~3.4.8",
     "open": "0.0.4",
@@ -45,9 +45,10 @@
     "gulp-uglify": "~0.2.1",
     "amdefine": "~0.1.0",
     "gulp-replace": "~0.2.0",
-    "gulp-jshint": "~1.4.2",
+    "gulp-jshint": "~1.5.0",
     "jshint-stylish": "~0.1.5",
     "requirejs": "~2.1.10",
-    "gulp-recess": "~0.2.0"
+    "gulp-recess": "~0.2.0",
+    "gulp-bump": "~0.1.5"
   }
 }

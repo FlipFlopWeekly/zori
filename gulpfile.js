@@ -12,6 +12,7 @@ var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var recess = require('gulp-recess');
+var bump = require ('gulp-bump');
 
 var server = lr();
 var app = express();
@@ -59,12 +60,14 @@ gulp.task('build', ['compile'], function () {
     gulp.src(['source/index.html'])
       .pipe(replace('vendor/requirejs/', 'js/'))
       .pipe(replace("require(['./js/main.js'])", "require(['./js/main.js'], function () { require(['main']); })"))
-      .pipe(replace('vendor/bootstrap-css-only', 'assets'))
+      .pipe(replace('vendor/bootstrap/dist', 'assets'))
       .pipe(gulp.dest('build')),
     gulp.src(['source/js/config-require.js'])
       .pipe(uglify())
       .pipe(gulp.dest('build/js')),
     // Build assets.
+    gulp.src(['source/favicon.ico'])
+      .pipe(gulp.dest('build')),
     gulp.src(['source/assets/css/*'])
       .pipe(csso())
       .pipe(gulp.dest('build/assets/css')),
@@ -73,9 +76,9 @@ gulp.task('build', ['compile'], function () {
     gulp.src(['source/assets/images/*'])
       .pipe(gulp.dest('build/assets/images')),
     // Build vendor files.
-    gulp.src(['source/vendor/bootstrap-css-only/css/bootstrap.min.css'])
+    gulp.src(['source/vendor/bootstrap/dist/css/bootstrap.min.css'])
       .pipe(gulp.dest('build/assets/css')),
-    gulp.src(['source/vendor/bootstrap-css-only/fonts/*'])
+    gulp.src(['source/vendor/bootstrap/dist/fonts/*'])
       .pipe(gulp.dest('build/assets/fonts')),
     gulp.src(['source/vendor/requirejs/require.js'])
       .pipe(uglify())
@@ -108,6 +111,13 @@ gulp.task('lint', function () {
     gulp.src('source/assets/css/*')
       .pipe(recess())
   );
+});
+
+// Bumps version number.
+gulp.task('bump', function(){
+  gulp.src(['./bower.json', './package.json'])
+  .pipe(bump({type:'minor'}))
+  .pipe(gulp.dest('./'));
 });
 
 // Default developer working task.
