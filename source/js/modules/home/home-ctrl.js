@@ -2,7 +2,7 @@
  * Home controller definition
  * @scope Controllers
  */
-define(['./module', 'jquery'], function (controllers, $) {
+define(['./module', 'jquery', './home-directives'], function (controllers, $) {
     'use strict';
 
     controllers.controller('HomeController', ['$scope', 'fireRef',
