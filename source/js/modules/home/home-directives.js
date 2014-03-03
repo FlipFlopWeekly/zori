@@ -3,7 +3,7 @@ define(['./module', 'text!./link.html',], function (directives, linkTpl) {
 
     directives.directive('zoriLink', ['$interval', function ($interval) {
         return {
-            restrict: 'E',
+            restrict: 'A',
             template: linkTpl
         };
     }]);
