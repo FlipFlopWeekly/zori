@@ -11,9 +11,8 @@ define(['./module', 'jquery', './home-directives'], function (controllers, $) {
 
             $scope.$watch('links', function () {
                 // Count the number of links
-                var numberOfLinks = $('.category-block').length,
-                    length = numberOfLinks,
-                    totalLength = length * 9;
+                var numberOfLinks = $('.category-block').length + 1,
+                    totalLength = numberOfLinks * 9;
 
                 // Resize the list width, fits to the content size.
                 $('ul').css('width', totalLength + "px");
@@ -38,9 +37,9 @@ define(['./module', 'jquery', './home-directives'], function (controllers, $) {
                 // Check if the attribute exists. Default value is 0.
                 if ($scope.links[id].nbClick === undefined) {
                     $scope.links[id].nbClick = 0;
-                } else {
-                    $scope.links[id].nbClick++;
                 }
+                
+                $scope.links[id].nbClick++;
 
                 $scope.links.$save();
             };

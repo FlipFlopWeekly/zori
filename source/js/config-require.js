@@ -12,7 +12,8 @@ define({
     'bootstrap'             : '../vendor/bootstrap/dist/js/bootstrap',
     'firebase'              : '../vendor/firebase/firebase',
     'angularfire'           : '../vendor/angularfire/angularfire',
-    'text'                  : '../vendor/requirejs-text/text'
+    'text'                  : '../vendor/requirejs-text/text',
+    'firebase-simple-login' : '../vendor/firebase-simple-login/firebase-simple-login'
   },
 
   shim: {
@@ -38,6 +39,13 @@ define({
     'angularfire' : {
       deps: [
         'angular',
+        'firebase'
+      ]
+    },
+    'firebase-simple-login' : {
+      exports:
+        'FirebaseSimpleLogin',
+      deps: [
         'firebase'
       ]
     },
