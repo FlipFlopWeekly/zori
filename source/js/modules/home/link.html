@@ -1,9 +1,5 @@
 <a ng-href="{{link.url}}"
   ng-click="incrementClick(id)"
   class="category"
-  ng-class="link.category"
-  target="_blank"
-  style="height:{{(link.nbClick + 1) * 30}}px;
-    margin-top:{{-((link.nbClick + 1) * 30) / 2}}px;
-    background:linear-gradient(to bottom, hsl({{ 10 + link.nbClick * 10 }}, 99%, 65%) 50%, hsl({{ 10 + link.nbClick * 10 }}, 99%, 30%) 51%);">
+  target="_blank">
 </a>
