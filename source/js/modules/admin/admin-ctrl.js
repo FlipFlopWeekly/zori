@@ -21,7 +21,8 @@ define(['./module'], function(controllers) {
                     return;
                 }
                 $scope.links.$add({
-                    url: newLink
+                    url: newLink,
+                    nbClick: 0
                 });
                 $scope.newLink = '';
             };

@@ -224,3 +224,12 @@ footer {
     padding-left: 0;
     list-style-type: none;
 }
+
+.link-list .input-group-addon {
+    padding: 5px;
+}
+
+.link-list .input-group-addon input {
+    width: 30px;
+    border-radius: 3px;
+}

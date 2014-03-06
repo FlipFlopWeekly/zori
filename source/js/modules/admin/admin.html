@@ -24,9 +24,13 @@
   <section id="main">
     <ul id="link-list" class="link-list">
       <li ng-repeat="(id, link) in links">
-        <form ng-submit="doneEditing(id)">
+        <form class="form-inline" ng-submit="doneEditing(id)">
           <div class="form-group">
             <div class="input-group">
+
+              <span class="input-group-addon">
+                <input ng-model="link.nbClick" ng-focus="editLink(id)" ng-blur="doneEditing(id)">
+              </span>
 
               <input class="edit form-control" ng-trim="false" ng-model="link.url" ng-focus="editLink(id)" ng-blur="doneEditing(id)">
 
