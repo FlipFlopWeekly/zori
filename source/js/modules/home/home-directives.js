@@ -14,13 +14,16 @@ define([
                 function update() {
                     var nbClick = scope.link.nbClick;
                     var height = nbClick * 30 + 30;
-                    var hue = nbClick * 10 + 10;
+                    var hue = Math.min(nbClick * 10, 100);
 
                     var style = {
                         height      : height + 'px',
-                        'margin-top': -(height / 2) + 'px',
-                        background  : 'linear-gradient(to bottom, hsl(' + hue + ', 99%, 65%) 50%, hsl(' + hue + ', 99%, 30%) 51%)'
+                        'margin-top': -(height / 2) + 'px'
                     };
+
+                    if (nbClick > 0) {
+                        style.background = 'linear-gradient(to bottom, hsl(' + hue + ', 99%, 65%) 50%, hsl(' + hue + ', 99%, 30%) 51%)';
+                    }
 
                     $link.css(style);
                 }
