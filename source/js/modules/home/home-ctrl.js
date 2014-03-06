@@ -8,14 +8,13 @@ define(['./module', 'jquery', './home-directives'], function(controllers, $) {
     controllers.controller('HomeController', ['$scope', 'fireRef',
         function HomeController($scope, fireRef) {
             $scope.newLink = '';
+            $scope.nbLinks = 0;
 
             $scope.$watch('links', function() {
-                // Count the number of links
-                var numberOfLinks = $('.category-block').length + 1,
-                    totalLength = numberOfLinks * 9;
+                $scope.nbLinks = $scope.links.$getIndex().length;
 
                 // Resize the list width, fits to the content size.
-                $('ul').css('width', totalLength + "px");
+                $('.link-list').css('width', $scope.nbLinks * 9 + 'px');
             }, true);
 
             $scope.addLink = function() {
