@@ -9,8 +9,11 @@ define(['./module'], function(controllers) {
         function AdminController($scope, fireRef) {
 
             $scope.newLink = '';
+            $scope.nbLinks = 0;
 
-            $scope.$watch('links', function() {}, true);
+            $scope.$watch('links', function() {
+                $scope.nbLinks = $scope.links.$getIndex().length;
+            }, true);
 
             $scope.addLink = function() {
                 var newLink = $scope.newLink.trim();
