@@ -15,6 +15,3 @@ indent_size = 4
 # Rules for markdown documents.
 [*.md]
 trim_trailing_whitespace = false
-
-[*.js]
-indent_size = 2
