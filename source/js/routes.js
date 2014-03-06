@@ -8,27 +8,25 @@ define([
     './config',
     'text!./modules/home/home.html',
     'text!./modules/admin/admin.html'
-], function (app, conf, homeTpl, adminTpl) {
+], function(app, conf, homeTpl, adminTpl) {
     'use strict';
 
     app.config(['$stateProvider', '$urlRouterProvider',
-        function ($stateProvider, $urlRouterProvider) {
+        function($stateProvider, $urlRouterProvider) {
 
-            $stateProvider
-                .state('home', {
-                    url: '/',
-                    template: homeTpl,
-                    controller: 'HomeController'
-                });
+            $stateProvider.state('home', {
+                url: '/',
+                template: homeTpl,
+                controller: 'HomeController'
+            });
 
-            $stateProvider
-                .state('admin', {
-                    url: '/admin',
-                    template: adminTpl,
-                    controller: 'AdminController'
-                });
+            $stateProvider.state('admin', {
+                url: '/admin',
+                template: adminTpl,
+                controller: 'AdminController'
+            });
 
             $urlRouterProvider.otherwise('/');
-            //$locationProvider.html5Mode(true);
-        }]);
+        }
+    ]);
 });

@@ -2,14 +2,14 @@
  * Home controller definition
  * @scope Controllers
  */
-define(['./module', 'jquery', './home-directives'], function (controllers, $) {
+define(['./module', 'jquery', './home-directives'], function(controllers, $) {
     'use strict';
 
     controllers.controller('HomeController', ['$scope', 'fireRef',
         function HomeController($scope, fireRef) {
             $scope.newLink = '';
 
-            $scope.$watch('links', function () {
+            $scope.$watch('links', function() {
                 // Count the number of links
                 var numberOfLinks = $('.category-block').length + 1,
                     totalLength = numberOfLinks * 9;
@@ -18,7 +18,7 @@ define(['./module', 'jquery', './home-directives'], function (controllers, $) {
                 $('ul').css('width', totalLength + "px");
             }, true);
 
-            $scope.addLink = function () {
+            $scope.addLink = function() {
                 var newLink = $scope.newLink.trim();
 
                 if (!newLink.length) {
@@ -33,12 +33,12 @@ define(['./module', 'jquery', './home-directives'], function (controllers, $) {
                 $scope.newLink = '';
             };
 
-            $scope.incrementClick = function (id) {
+            $scope.incrementClick = function(id) {
                 // Check if the attribute exists. Default value is 0.
                 if ($scope.links[id].nbClick === undefined) {
                     $scope.links[id].nbClick = 0;
                 }
-                
+
                 $scope.links[id].nbClick++;
 
                 $scope.links.$save();
