@@ -23,8 +23,11 @@ define(['./module', 'jquery', './home-directives'], function(controllers, $) {
                 if (!newLink.length) {
                     return;
                 }
+                
+                var unix = Math.round(+new Date()/1000);
 
                 $scope.links.$add({
+                    submitTime: unix,
                     url: newLink,
                     nbClick: 0
                 });
