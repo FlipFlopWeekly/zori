@@ -35,12 +35,23 @@ define([
                 element.on('$destroy', function() {
                     $interval.cancel(timeoutId);
                 });
+                
+                // Hide link
+                element.on('click', function(e) {
+                    e.preventDefault();
+
+                    if ($link.attr('data-link').length > 0) {
+		                window.open($link.attr('data-link'), '_blank');
+                    }
+                    
+                    return false;
+	            });
 
                 timeoutId = $interval(function() {
                     update();
                 }, 1000);
             }
-
+            
             return {
                 restrict: 'A',
                 template: linkTpl,

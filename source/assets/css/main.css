@@ -83,6 +83,7 @@ p.lead {
     position: relative;
     top: 50%;
     display: block;
+    cursor: pointer;
     background: rgb(198,198,198); /* Old browsers */
     background: -moz-linear-gradient(top,  rgba(198,198,198,1) 50%, rgba(165,165,165,1) 51%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(198,198,198,1)), color-stop(51%,rgba(165,165,165,1)));
