@@ -13,6 +13,7 @@ var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var recess = require('gulp-recess');
 var bump = require('gulp-bump');
+var buildBranch = require ('buildbranch');
 
 var server = lr();
 var app = express();
@@ -121,6 +122,21 @@ gulp.task('bump', function() {
     gulp.src(['./bower.json', './package.json'])
         .pipe(bump({type: 'minor'}))
         .pipe(gulp.dest('./'));
+});
+
+gulp.task('deploy', function() {
+    console.log('deploy');
+    buildBranch({
+        branch: 'gh-pages',
+        ignore: ['.git', 'source', 'node_modules'],
+        folder: 'build',
+        domain: 'TODO'
+    }, function(err) {
+        if (err) {
+            throw err;
+        }
+        console.log('Published to gh-pages!');
+    });
 });
 
 // Default developer working task.
