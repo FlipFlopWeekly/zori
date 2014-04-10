@@ -7,9 +7,9 @@ define([
 
     directives.directive('zoriLink', ['$interval',
         function($interval) {
-            function link(scope, element, attrs) {
+            function link(scope, $elt, attrs) {
                 var timeoutId;
-                var $link = $(element).find('a');
+                var $link = $elt.find('a');
 
                 function update() {
                     var nbClick = scope.link.nbClick;
@@ -32,26 +32,26 @@ define([
                     update();
                 });
 
-                element.on('$destroy', function() {
+                $elt.on('$destroy', function() {
                     $interval.cancel(timeoutId);
                 });
-                
+
                 // Hide link
-                element.on('click', function(e) {
+                $elt.on('click', function(e) {
                     e.preventDefault();
 
                     if ($link.attr('data-link').length > 0) {
-		                window.open($link.attr('data-link'), '_blank');
+                        window.open($link.attr('data-link'), '_blank');
                     }
-                    
+
                     return false;
-	            });
+                });
 
                 timeoutId = $interval(function() {
                     update();
                 }, 1000);
             }
-            
+
             return {
                 restrict: 'A',
                 template: linkTpl,

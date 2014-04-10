@@ -13,12 +13,18 @@ define({
         'firebase'                  : '../vendor/firebase/firebase',
         'angularfire'               : '../vendor/angularfire/angularfire',
         'text'                      : '../vendor/requirejs-text/text',
-        'firebase-simple-login'     : '../vendor/firebase-simple-login/firebase-simple-login'
+        'firebase-simple-login'     : '../vendor/firebase-simple-login/firebase-simple-login',
+        'jquery-mousewheel'         : '../vendor/angular-perfect-scrollbar/dependencies/jquery.mousewheel',
+        'perfect-scrollbar'         : '../vendor/angular-perfect-scrollbar/dependencies/perfect-scrollbar',
+        'angular-perfect-scrollbar' : '../vendor/angular-perfect-scrollbar/src/angular-perfect-scrollbar'
     },
 
     shim: {
         'angular': {
-            exports: 'angular'
+            exports: 'angular',
+            deps: [
+                'jquery'
+            ]
         },
         'angular-ui-router': {
             deps: [
@@ -48,5 +54,22 @@ define({
                 'firebase'
             ]
         },
+        'jquery-mousewheel' : {
+            deps: [
+                'jquery'
+            ]
+        },
+        'perfect-scrollbar': {
+            deps: [
+                'jquery',
+                'jquery-mousewheel'
+            ]
+        },
+        'angular-perfect-scrollbar': {
+            deps: [
+                'angular',
+                'perfect-scrollbar'
+            ]
+        }
     }
 });

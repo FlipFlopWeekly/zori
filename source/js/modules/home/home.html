@@ -1,9 +1,10 @@
 <div class="container-fluid front-panel">
     <section id="front-panel-links" class="text-center">
-        <ul id="link-list" class="link-list">
-            <li zori-link ng-repeat="(id, link) in links" class="form-group pull-left category-block">
-            </li>
-        </ul>
+        <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="1" refresh-on-change="links">
+            <ul id="link-list" class="link-list">
+                <li zori-link ng-repeat="(id, link) in links" class="form-group pull-left category-block"></li>
+            </ul>
+        </perfect-scrollbar>
     </section>
 
     <section id="front-panel-footer">

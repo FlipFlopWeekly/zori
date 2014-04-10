@@ -80,6 +80,9 @@ gulp.task('build', ['compile'], function() {
             .pipe(gulp.dest('build/assets/css')),
         gulp.src(['source/vendor/bootstrap/dist/fonts/*'])
             .pipe(gulp.dest('build/assets/fonts')),
+        gulp.src(['source/vendor/angular-perfect-scrollbar/dependencies/perfect-scrollbar.css'])
+            .pipe(csso())
+            .pipe(gulp.dest('build/assets/css')),
         gulp.src(['source/vendor/requirejs/require.js'])
             .pipe(uglify())
             .pipe(gulp.dest('build/js'))
