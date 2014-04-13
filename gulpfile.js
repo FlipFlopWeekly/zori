@@ -126,6 +126,7 @@ gulp.task('bump', function() {
         .pipe(gulp.dest('./'));
 });
 
+// Deploys to GitHub Pages.
 gulp.task('deploy', function () {
     gulp.src('build/**/*')
         .pipe(deploy('git@github.com:FlipFlopWeekly/zori.git', 'origin'));

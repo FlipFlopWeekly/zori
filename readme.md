@@ -51,6 +51,8 @@ To get up and running behind a corporate proxy, you'll have to:
 
 Zori only contains static files, it can thus be deployed everywhere static files can be served (S3, EC2, Dropbox, GitHub Pages, Heroku, etc).
 
+### Testing
+
 The testing environment is currently hosted [on Firebase Hosting (beta)](https://shining-fire-3337.firebaseapp.com/).
 
     # Install the Firebase Command Line Tools
@@ -59,14 +61,26 @@ The testing environment is currently hosted [on Firebase Hosting (beta)](https:/
     # Build the project
     gulp build
 
-    # Run the deploy command
+    # Run the firebase deploy command
     firebase deploy
 
     # Voilà, you can go to
     # https://shining-fire-3337.firebaseapp.com/
     # to access the running app.
 
-The production deployment is on [Gandi Simple Hosting](http://zori.trgdy.com). Deployment is done via sFTP ATM.
+### Production
+
+The production environment is hosted [on GitHub Pages](http://zori.trgdy.com/).
+
+    # Build the project
+    gulp build
+
+    # Run the deploy command
+    gulp deploy
+
+    # Voilà, you can go to
+    # http://zori.trgdy.com/
+    # to access the running app.
 
 ## Project roadmap
 
