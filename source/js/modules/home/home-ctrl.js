@@ -17,13 +17,19 @@ define(['./module', 'jquery', './home-directives'], function(controllers, $) {
                 $('.link-list').css('width', $scope.nbLinks * 9 + 'px');
             }, true);
 
+            $scope.showLinkForm = false;
+            $scope.clickAdd = function() {
+                $scope.showLinkForm = !$scope.showLinkForm;
+                console.log($scope.showLinkForm);
+            };
+
             $scope.addLink = function() {
                 var newLink = $scope.newLink.trim();
 
                 if (!newLink.length) {
                     return;
                 }
-                
+
                 var unix = Math.round(+new Date()/1000);
 
                 $scope.links.$add({
