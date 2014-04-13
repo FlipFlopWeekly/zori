@@ -50,7 +50,6 @@
     "requirejs": "~2.1.10",
     "gulp-bump": "~0.1.5",
     "gulp-recess": "~0.3.0",
-    "buildbranch": "0.0.1",
     "gulp-gh-pages": "~0.1.4"
   }
 }
