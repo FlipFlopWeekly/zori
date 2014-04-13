@@ -36,9 +36,9 @@
   "devDependencies": {
     "tiny-lr": "0.0.5",
     "gulp": "~3.6.0",
-    "connect-livereload": "~0.3.2",
-    "express": "~3.5.1",
-    "open": "0.0.4",
+    "connect-livereload": "~0.4.0",
+    "express": "~4.0.0",
+    "open": "0.0.5",
     "event-stream": "~3.1.0",
     "gulp-csso": "~0.2.3",
     "extend": "~1.2.1",
