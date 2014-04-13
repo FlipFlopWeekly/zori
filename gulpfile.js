@@ -13,7 +13,7 @@ var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var recess = require('gulp-recess');
 var bump = require('gulp-bump');
-var buildBranch = require ('buildbranch');
+var buildBranch = require('buildbranch');
 
 var server = lr();
 var app = express();
@@ -124,19 +124,26 @@ gulp.task('bump', function() {
         .pipe(gulp.dest('./'));
 });
 
-gulp.task('deploy', function() {
-    console.log('deploy');
-    buildBranch({
-        branch: 'gh-pages',
-        ignore: ['.git', 'source', 'node_modules'],
-        folder: 'build',
-        domain: 'TODO'
-    }, function(err) {
-        if (err) {
-            throw err;
-        }
-        console.log('Published to gh-pages!');
-    });
+// gulp.task('deploy', function() {
+//     console.log('deploy');
+//     buildBranch({
+//         branch: 'gh-pages',
+//         ignore: ['.git', 'source', 'node_modules'],
+//         folder: 'build',
+//         domain: 'zori.trgdy.com'
+//     }, function(err) {
+//         if (err) {
+//             throw err;
+//         }
+//         console.log('Published to gh-pages!');
+//     });
+// });
+
+var deploy = require('gulp-gh-pages');
+
+gulp.task('deploy', function () {
+    gulp.src('build/**/*')
+        .pipe(deploy('https://github.com/FlipFlopWeekly/zori', 'origin'));
 });
 
 // Default developer working task.
