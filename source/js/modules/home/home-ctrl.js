@@ -29,6 +29,12 @@ define(['./module', 'jquery', './home-directives'], function(controllers, $) {
                 if (!newLink.length) {
                     return;
                 }
+                
+                var regexp = new RegExp("^((http|https):\/\/){1}(www[.])?([a-zA-Z0-9]|-)+([.][a-zA-Z0-9(-|\/|=|?)?]+)+$");
+                
+                if ( !regexp.test(newLink)) {
+                    return;
+                }
 
                 var unix = Math.round(+new Date()/1000);
 
