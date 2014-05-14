@@ -7,8 +7,9 @@ define(['./module', 'jquery', './home-directives'], function(controllers, $) {
 
     controllers.controller('HomeController', ['$scope', 'fireRef',
         function HomeController($scope, fireRef) {
-            $scope.newLink = '';
-            $scope.nbLinks = 0;
+            $scope.newLink          = '';
+            $scope.newLinkComment   = '';
+            $scope.nbLinks          = 0;
 
             $scope.$watch('links', function() {
                 $scope.nbLinks = $scope.links.$getIndex().length;
@@ -25,12 +26,13 @@ define(['./module', 'jquery', './home-directives'], function(controllers, $) {
 
             $scope.addLink = function() {
                 var newLink = $scope.newLink.trim();
-
+                var newLinkComment = $scope.newLinkComment.trim();
+                
                 if (!newLink.length) {
                     return;
                 }
                 
-                var regexp = new RegExp("^((http|https):\/\/){1}(www[.])?([a-zA-Z0-9]|-)+([.][a-zA-Z0-9(-|\/|=|?)?]+)+$");
+                var regexp = new RegExp("^((http|https):\/\/){1}(www[.])?([a-zA-Z0-9]|-)+([.][a-zA-Z0-9(-|\/|=|?)?]+)");
                 
                 if ( !regexp.test(newLink)) {
                     return;
@@ -41,10 +43,12 @@ define(['./module', 'jquery', './home-directives'], function(controllers, $) {
                 $scope.links.$add({
                     submitTime: unix,
                     url: newLink,
-                    nbClick: 0
+                    nbClick: 0,
+                    comment: newLinkComment
                 });
 
-                $scope.newLink = '';
+                $scope.newLink          = '';
+                $scope.newLinkComment   = '';
             };
 
             $scope.incrementClick = function(id) {

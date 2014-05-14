@@ -2,7 +2,7 @@
     <section id="front-panel-links" class="text-center">
         <perfect-scrollbar class="scroller" ng-show="nbLinks !== 0" wheel-propagation="true" wheel-speed="1" refresh-on-change="links">
             <ul id="link-list" class="link-list">
-                <li zori-link ng-repeat="(id, link) in links" class="form-group pull-left category-block"></li>
+                <li zori-link ng-repeat="(id, link) in links" class="form-group pull-left category-block wrapper"></li>
             </ul>
             <button type="submit" ng-click="clickAdd()" class="btn btn-default btn-add-link"><span class="glyphicon glyphicon-plus"></span></button>
         </perfect-scrollbar>
@@ -11,7 +11,12 @@
     <section id="front-panel-footer">
         <form id="link-form" ng-show="showLinkForm" ng-submit="addLink()">
             <div class="form-group">
-                <input id="new-link" class="form-control" placeholder="♪ The pen explodes and busts, ink spills my guts! ♪" ng-model="newLink" autofocus>
+                <label>Partagez votre musique...</label>
+                <input id="new-link" class="form-control zori-form-input" placeholder="♪ The pen explodes and busts, ink spills my guts! ♪" ng-model="newLink" autofocus>
+                <label>et dites pourquoi !</label>
+                <input id="new-link-comment" class="form-control zori-form-input" placeholder="Like a monkey ready to be shot into space. Space monkey ! Ready to sacrifice himself for the greater good." ng-model="newLinkComment">
+            
+                <input id="submit" value="Envoyer" type="submit" class="pull-left form-control play-button"/>
             </div>
         </form>
     </section>

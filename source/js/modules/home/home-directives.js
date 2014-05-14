@@ -15,6 +15,15 @@ define([
                     var nbClick = scope.link.nbClick;
                     var height = nbClick * 30 + 30;
                     var hue = Math.min(nbClick * 10, 100);
+                    
+                    // get div width
+                    var width = $elt.find('span').width();
+                    
+                    // calculate margin size
+                    var marginLeft = width - 2;
+                    
+                    // set css
+                    $elt.find('span').css('margin-left', -marginLeft);
 
                     var style = {
                         height      : height + 'px',

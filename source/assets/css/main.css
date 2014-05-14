@@ -22,6 +22,10 @@ p.lead {
     font-size: 14px;
 }
 
+label {
+    color: #FE6B1B;
+}
+
 .hidden {
     display: none;
 }
@@ -178,7 +182,7 @@ p.lead {
   Zori specific : Front panel
 ********************************************************/
 
-#new-link {
+.zori-form-input {
     width: 100%;
     padding: 5px 1em;
     border: none;
@@ -187,7 +191,7 @@ p.lead {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-#new-link:focus {
+.zori-form-input:focus {
     border: none;
     outline: 0;
     background-color: #333333;
@@ -270,4 +274,17 @@ footer {
 .link-list .input-group-addon input {
     width: 30px;
     border-radius: 3px;
+}
+
+/********************************************************
+  Zori specific : Elements
+********************************************************/
+.play-button {
+    background: transparent url("../images/logo-header.png") top left no-repeat;
+    background-size: 32px 32px;
+    padding-left: 35px;
+    height: 32px;
+    border: none;
+    width: auto;
+    text-align: left;
 }

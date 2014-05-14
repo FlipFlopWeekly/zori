@@ -1,5 +1,8 @@
-<a data-link="{{link.url}}"
-  ng-click="incrementClick(id)"
-  class="category"
-  target="_blank">
+<a  data-link="{{link.url}}"
+    ng-click="incrementClick(id)"
+    class="category"
+    target="_blank">
 </a>
+
+<span class="tooltip" ng-if="link.comment.length > 0">{{link.comment}}</span>
+
