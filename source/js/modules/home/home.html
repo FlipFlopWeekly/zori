@@ -1,11 +1,13 @@
 <div class="container-fluid front-panel">
-    <section id="front-panel-links" class="text-center">
+    <section id="front-panel-links" class="text-center wrapper">
         <perfect-scrollbar class="scroller" ng-show="nbLinks !== 0" wheel-propagation="true" wheel-speed="1" refresh-on-change="links">
             <ul id="link-list" class="link-list">
                 <li zori-link ng-repeat="(id, link) in links" class="form-group pull-left category-block wrapper"></li>
             </ul>
             <button type="submit" ng-click="clickAdd()" class="btn btn-default btn-add-link"><span class="glyphicon glyphicon-plus"></span></button>
         </perfect-scrollbar>
+        
+        <div id="link-tooltip"></div>
     </section>
 
     <section id="front-panel-footer">

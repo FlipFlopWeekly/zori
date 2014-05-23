@@ -16,9 +16,10 @@ define({
         'firebase-simple-login'     : '../vendor/firebase-simple-login/firebase-simple-login',
         'jquery-mousewheel'         : '../vendor/angular-perfect-scrollbar/dependencies/jquery.mousewheel',
         'perfect-scrollbar'         : '../vendor/angular-perfect-scrollbar/dependencies/perfect-scrollbar',
-        'angular-perfect-scrollbar' : '../vendor/angular-perfect-scrollbar/src/angular-perfect-scrollbar'
+        'angular-perfect-scrollbar' : '../vendor/angular-perfect-scrollbar/src/angular-perfect-scrollbar',
+        'zori-toolbox'              : '../assets/javascript/zori-toolbox'
     },
-
+    
     shim: {
         'angular': {
             exports: 'angular',
@@ -69,6 +70,12 @@ define({
             deps: [
                 'angular',
                 'perfect-scrollbar'
+            ]
+        },
+        'zori-toolbox': {
+            exports: 'tooltips',
+            deps: [
+                'jquery'
             ]
         }
     }

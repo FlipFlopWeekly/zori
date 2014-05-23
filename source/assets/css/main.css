@@ -47,7 +47,11 @@ label {
 }
 
 #front-panel-links {
+    position: absolute;
+    top: 30%;
+    left: 15%;
     width: 70%;
+    height: 40%;
     min-height: 200px;
     margin: 20px auto;
 }
@@ -70,7 +74,7 @@ label {
 
 .scroller {
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
 }
 
@@ -88,6 +92,7 @@ label {
 }
 
 .category {
+    box-sizing: border-box;
     border-radius: 0;
     padding: 2px;
     width: 100%;

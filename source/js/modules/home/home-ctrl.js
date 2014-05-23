@@ -2,7 +2,7 @@
  * Home controller definition
  * @scope Controllers
  */
-define(['./module', 'jquery', './home-directives'], function(controllers, $) {
+define(['./module', 'jquery', './home-directives', 'zori-toolbox'], function(controllers, $, tooltips) {
     'use strict';
 
     controllers.controller('HomeController', ['$scope', 'fireRef',
@@ -60,6 +60,31 @@ define(['./module', 'jquery', './home-directives'], function(controllers, $) {
                 $scope.links[id].nbClick++;
 
                 $scope.links.$save();
+            };
+            
+            // Shows a tooltip on top of a link
+            $scope.showTooltip = function(elementId, content) {
+                var tooltip = $('#link-tooltip');
+                var link = $('#link-' + elementId);
+                
+                if (content === undefined || content === '') {
+                    tooltip.hide();
+                    
+                    return;
+                }
+                
+                // Set the tooltip content
+                tooltip.html(content);
+                
+                // Set the tooltip position
+                tooltip
+                    .css("top", link.position().top - tooltip.outerHeight() - (link.outerHeight() / 2) - 15)
+                    .css("left", link.position().left - (tooltip.outerWidth() / 2) + 6)
+                    .show();
+            };
+            
+            $scope.hideTooltip = function() {
+                $('#link-tooltip').hide();
             };
 
             $scope.links = fireRef.links();
