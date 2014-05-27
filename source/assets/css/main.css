@@ -176,9 +176,8 @@ label {
     border-radius: 0;
     padding: 2px;
     width: 100%;
-    min-height: 30px;
+    min-height: 10%;
     position: relative;
-    top: 50%;
     display: block;
     cursor: pointer;
     background: rgb(198,198,198); /* Old browsers */
