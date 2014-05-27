@@ -1,6 +1,33 @@
+<div id="toolbar-panel">
+	<div class="inner-wrapper">
+		<section id="header-toolbar">
+			<img src="/assets/images/logo.png" width="150px" height="150px">
+		</section>
+		<section id="user-toolbar">
+			<h2>Utilisateur</h2>
+			<ul>
+				<li>
+					TODO
+				</li>
+			</ul>
+		</section>
+		<section id="links-toolbar">
+			<h2>Outils</h2>
+			<ul>
+				<li>TODO</li>
+			</ul>
+		</section>
+		<section id="misc-toolbar">
+			<h2>Divers</h2>
+			<ul>
+				<li>TODO</li>
+			</ul>
+		</section>
+	</div>
+</div>
 <div class="container-fluid front-panel">
     <section id="front-panel-links" class="text-center wrapper">
-        <perfect-scrollbar class="scroller" ng-show="nbLinks !== 0" wheel-propagation="true" wheel-speed="1" refresh-on-change="links">
+        <perfect-scrollbar id="scroller" class="scroller" ng-show="nbLinks !== 0" wheel-propagation="true" wheel-speed="1" refresh-on-change="links">
             <ul id="link-list" class="link-list">
                 <li zori-link ng-repeat="(id, link) in links" class="form-group pull-left category-block wrapper"></li>
             </ul>

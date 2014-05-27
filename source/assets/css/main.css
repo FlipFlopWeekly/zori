@@ -14,6 +14,14 @@ body {
 	Generic HTML Elements (p, a, li...)
 ********************************************************/
 
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+}
+
 p {
     color: lightgray;
 }
@@ -38,6 +46,22 @@ label {
 	Zori specific : layout
 ********************************************************/
 
+#header {
+	position: absolute;
+	left: 50px;
+}
+
+#main-wrapper {
+	height: 100%;
+}
+
+#toolbar-panel {
+	position: absolute;
+	left: 50px;
+	width: 200px;
+	height: 100%;
+}
+
 .front-panel {
     padding: 0;
 }
@@ -52,8 +76,6 @@ label {
     left: 15%;
     width: 70%;
     height: 40%;
-    min-height: 200px;
-    margin: 20px auto;
 }
 
 #front-panel-footer {
@@ -63,18 +85,76 @@ label {
 
 
 /********************************************************
+	Zori specific : toolbar-panel
+********************************************************/
+
+#toolbar-panel {
+	filter: alpha(opacity=0);
+	opacity: 0;
+	padding: 0 2px;
+	background-color: #5da9c4;
+	box-shadow: 0 0 20px #000000;
+	-webkit-transition: opacity 0.2s ease-in-out;
+	-moz-transition: opacity 0.2s ease-in-out;
+	-ms-transition: opacity 0.2s ease-in-out;
+	-o-transition: opacity 0.2s ease-in-out;
+	transition: opacity 0.2s ease-in-out;
+}
+
+#toolbar-panel:hover {
+	zoom: 1;
+	filter: alpha(opacity=1);
+	opacity: 1;
+}
+
+#toolbar-panel .inner-wrapper {
+	height: 100%;
+	padding: 18px;
+	border-right: 1px dashed #444;
+	border-left: 1px dashed #444;
+}
+
+#toolbar-panel section {
+	margin-bottom: 20px;
+}
+
+#toolbar-panel section h2 {
+	margin-bottom: 10px;
+	color: #FFFFFF;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	text-shadow: 0 1px 2px #555;
+}
+
+#toolbar-panel ul {}
+
+#toolbar-panel li {
+	margin-bottom: 5px;
+	color: #E4E4E4;
+	text-transform: lowercase;
+}
+
+#user-toolbar {}
+
+#links-toolbar {}
+
+#misc-toolbar {}
+
+
+/********************************************************
 	Zori specific : Front panel links
 ********************************************************/
 
 #front-panel-links ul {
 	padding: 0;
-    height: 250px;
+    height: 100%;
     display: inline-block;
 }
 
-.scroller {
+#scroller {
     width: 100%;
-    overflow-x: hidden;
+	height: 100%;
+    overflow: hidden;
     position: relative;
 }
 
@@ -222,8 +302,8 @@ label {
 
 .front-panel .btn-add-link {
     position: absolute;
-    top: 50%;
-    margin-top: -23px;
+    top: calc(50% - 15px);
+    width: 20px;
     height: 30px;
     border: 0;
     border-top-left-radius: 0;
@@ -231,7 +311,6 @@ label {
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
     padding: 6px 0 4px;
-    width: 20px;
     background: rgb(198,198,198); /* Old browsers */
     background: -moz-linear-gradient(top,  rgba(198,198,198,1) 50%, rgba(165,165,165,1) 51%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(198,198,198,1)), color-stop(51%,rgba(165,165,165,1)));
