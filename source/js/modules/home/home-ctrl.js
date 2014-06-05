@@ -135,9 +135,10 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
    
                     } else if (user.provider == 'password') {
 
+                        // Save the logged in user in the scope to display the left toolbar
+                        $scope.user = user;
                         $("#member-create-account").dialog( "close" );
-                        $("#id-card").html(user.email);
-
+                        
                     }
 
                     // TODO: Save the user in the scope.

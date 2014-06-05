@@ -81,6 +81,7 @@ label {
 #front-panel-footer {
     width: 70%;
     margin: auto;
+    margin-top: 25px;
 }
 
 
@@ -409,6 +410,6 @@ footer {
     background-color: #78FA89;
   }
   
-  form .required:before {
+  form .required:after {
       content: "*";
   }

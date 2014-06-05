@@ -1,30 +1,30 @@
-<div id="toolbar-panel">
+<div id="toolbar-panel" ng-if="user">
 	<div class="inner-wrapper">
 		<section id="header-toolbar">
 			<img src="/assets/images/logo.png" width="150px" height="150px">
 		</section>
 		<section id="user-toolbar">
-			<h2>Utilisateur</h2>
+			<h2>Profil</h2>
 			<ul>
 				<li>
-					TODO
+					<p ng-if="user.email">{{user.email}}</p>
+				</li>
+				<li>
+					<a href="#">Changer mot de passe</a>
 				</li>
 			</ul>
 		</section>
 		<section id="links-toolbar">
 			<h2>Outils</h2>
 			<ul>
-				<li>TODO</li>
-			</ul>
-		</section>
-		<section id="misc-toolbar">
-			<h2>Divers</h2>
-			<ul>
-				<li>TODO</li>
+				<li>
+				    <a href="#">Voir favoris</a>
+				</li>
 			</ul>
 		</section>
 	</div>
 </div>
+
 <div class="container-fluid front-panel">
     <section id="front-panel-links" class="text-center wrapper">
         <perfect-scrollbar id="scroller" class="scroller" ng-show="nbLinks !== 0" wheel-propagation="true" wheel-speed="1" refresh-on-change="links">
