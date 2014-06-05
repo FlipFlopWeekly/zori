@@ -13,7 +13,7 @@ define([
 
                 function update() {
                     var nbClick = scope.link.nbClick;
-                    var height = nbClick * 30 + 30;
+                    var height = Math.max(Math.min(nbClick * 5, 100), 10);
                     var hue = Math.min(nbClick * 10, 100);
                     
                     // get div width
@@ -26,8 +26,8 @@ define([
                     $elt.find('span').css('margin-left', -marginLeft);
 
                     var style = {
-                        height      : height + 'px',
-                        'margin-top': -(height / 2) + 'px'
+                        'height': height + '%',
+                        'top': (100 - height) / 2 + '%'
                     };
 
                     if (nbClick > 0) {
