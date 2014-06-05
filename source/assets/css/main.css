@@ -283,6 +283,14 @@ label {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+form.light-form input {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+form.light-form input:focus {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
 .zori-form-input:focus {
     border: none;
     outline: 0;
@@ -393,6 +401,25 @@ footer {
 .ui-dialog-titlebar-close {
     float: right;
     margin-top: 7px;
+    background: url('../images/cross-button.png') center no-repeat;
+    border: none;
+    content: '';
+    height: 16px;
+    width: 16px;
+}
+
+.ui-dialog h2 {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #FE6B1B;
+    margin-bottom: 12px;
+}
+
+.ui-dialog form label {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 0.8em;
+    color: #FE6B1B;
 }
 
 .ui-dialog input[type=submit] {

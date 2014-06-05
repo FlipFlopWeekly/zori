@@ -129,8 +129,8 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                         // Check if the anonymous user is not a registered one (possible ?)
                     
                         $("#member-create-account").dialog({ 
-                            /*width: 700,*/
-                            draggable: false 
+                            draggable: false,
+                            closeText: ""
                         });
    
                     } else if (user.provider == 'password') {
