@@ -13,7 +13,7 @@ define([
 
                 function update() {
                     var nbClick = scope.link.nbClick;
-                    var height = Math.max(Math.min(nbClick * 5, 100), 10);
+                    var height = Math.max(Math.min(nbClick * 3 + 7, 100), 10);
                     var hue = Math.min(nbClick * 10, 100);
                     
                     // get div width

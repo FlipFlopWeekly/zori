@@ -378,6 +378,7 @@ footer {
     border: none;
     width: auto;
     text-align: left;
+
 }
 
 /********************************************************
@@ -401,15 +402,19 @@ footer {
     margin-top: 10px;
 }
 
-
 .css-form input.ng-invalid.ng-dirty {
     background-color: #FA787E;
-  }
+}
 
-  .css-form input.ng-valid.ng-dirty {
-    background-color: #78FA89;
-  }
-  
-  form .required:after {
-      content: "*";
-  }
+.css-form input.ng-valid.ng-dirty {
+	background-color: #78FA89;
+}
+
+form .required:after {
+    content: "*";
+}
+
+
+
+
+

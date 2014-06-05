@@ -77,7 +77,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                 
                 // Set the tooltip position
                 tooltip
-                    .css("top", link.position().top - tooltip.outerHeight() - (link.outerHeight() / 2) - 15)
+                    .css("top", link.position().top - tooltip.outerHeight() - 15)
                     .css("left", link.position().left - (tooltip.outerWidth() / 2) + 6)
                     .show();
             };
