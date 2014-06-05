@@ -2,11 +2,11 @@
  * Home controller definition
  * @scope Controllers
  */
-define(['./module', 'jquery', './home-directives', 'zori-toolbox'], function(controllers, $, tooltips) {
+define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 'firebase-simple-login', '../../config'], function(controllers, $, tooltips) {
     'use strict';
 
-    controllers.controller('HomeController', ['$scope', 'fireRef',
-        function HomeController($scope, fireRef) {
+    controllers.controller('HomeController', ['$scope', 'fireRef', 'FB_URL',
+        function HomeController($scope, fireRef, FB_URL) {
             $scope.newLink          = '';
             $scope.newLinkComment   = '';
             $scope.nbLinks          = 0;
@@ -21,7 +21,6 @@ define(['./module', 'jquery', './home-directives', 'zori-toolbox'], function(con
             $scope.showLinkForm = false;
             $scope.clickAdd = function() {
                 $scope.showLinkForm = !$scope.showLinkForm;
-                console.log($scope.showLinkForm);
             };
 
             $scope.addLink = function() {
@@ -86,8 +85,72 @@ define(['./module', 'jquery', './home-directives', 'zori-toolbox'], function(con
             $scope.hideTooltip = function() {
                 $('#link-tooltip').hide();
             };
+            
+            $scope.createAccount = function() {
+                var user     = $scope.newUser.trim();
+                var email    = $scope.newUserEmail.trim();
+                var password = $scope.newUserPassword.trim();
+                
+                auth.createUser(email, password, function(error, user) {
+                    if (!error) {
+                    
+                        $("#member-create-account").dialog( "close" );
+                        
+                        auth.login('password', {
+                            email: email,
+                            password: password,
+                            rememberMe: true
+                        });
+                        
+                    } else {
 
+                        auth.login('password', {
+                            email: email,
+                            password: password,
+                            rememberMe: true
+                        });
+
+                    }
+                });
+            };
+            
             $scope.links = fireRef.links();
+            
+            var appref = new Firebase(FB_URL);
+            var auth = new FirebaseSimpleLogin(appref, function(error, user) {
+                if (error) {
+                    // an error occurred while attempting login
+                    // TODO: error handler
+                    console.log(error);
+                } else if (user) {
+                    // user authenticated with Firebase
+                    if (user.provider == 'anonymous') {
+
+                        // Check if the anonymous user is not a registered one (possible ?)
+                    
+                        $("#member-create-account").dialog({ 
+                            /*width: 700,*/
+                            draggable: false 
+                        });
+   
+                    } else if (user.provider == 'password') {
+
+                        $("#member-create-account").dialog( "close" );
+                        $("#id-card").html(user.email);
+
+                    }
+
+                    // TODO: Save the user in the scope.
+                    //       Display the possibility to create an account
+                    // WIP:  HTML + CTRL
+                } else {
+
+                    auth.login('anonymous', {
+                        rememberMe: true
+                    });
+
+                }
+            });
         }
     ]);
 });

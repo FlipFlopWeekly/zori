@@ -9,6 +9,7 @@ define({
         'angular'                   : '../vendor/angular/angular',
         'angular-ui-router'         : '../vendor/angular-ui-router/release/angular-ui-router',
         'jquery'                    : '../vendor/jquery/dist/jquery',
+        'jquery-ui'                 : '../vendor/jquery-ui/ui/jquery-ui',
         'bootstrap'                 : '../vendor/bootstrap/dist/js/bootstrap',
         'firebase'                  : '../vendor/firebase/firebase',
         'angularfire'               : '../vendor/angularfire/angularfire',
