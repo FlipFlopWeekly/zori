@@ -30,7 +30,8 @@ define([
                         'top': (100 - height) / 2 + '%'
                     };
 
-                    if (nbClick > 0) {
+                    // Color for authenticated users
+                    if (nbClick > 0 && typeof scope.user !== "undefined") {
                         style.background = 'linear-gradient(to bottom, hsl(' + hue + ', 99%, 65%) 50%, hsl(' + hue + ', 99%, 30%) 51%)';
                     }
 

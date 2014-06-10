@@ -141,8 +141,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                         
                     }
 
-                    // TODO: Save the user in the scope.
-                    //       Display the possibility to create an account
+                    // TODO: Display the possibility to create an account
                     // WIP:  HTML + CTRL
                 } else {
 
