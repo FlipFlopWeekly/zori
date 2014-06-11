@@ -1,43 +1,33 @@
-<div id="toolbar-panel" ng-if="user">
-	<div class="inner-wrapper">
-		<section id="header-toolbar">
-			<img src="/assets/images/logo.png" width="150px" height="150px">
-		</section>
-		<section id="user-toolbar">
-			<h2>Profil</h2>
-			<ul>
-				<li>
-					<p ng-if="user.email">{{user.email}}</p>
-				</li>
-				<li>
-					<a href="#">Changer mot de passe</a>
-				</li>
-			</ul>
-		</section>
-		<section id="links-toolbar">
-			<h2>Outils</h2>
-			<ul>
-				<li>
-				    <a href="#">Voir favoris</a>
-				</li>
-			</ul>
-		</section>
-	</div>
-</div>
-
 <div class="container-fluid front-panel">
+	<section id="toolbar-panel">
+		<div class="inner-wrapper">
+			<ul id="main-menu">
+				<li ng-if="!user"><a href="#" class="icon icon-switch" data-message="Connexion" ng-mouseover="showTooltip()" ng-mouseout="hideTooltip()"><span>Connexion</span></a></li>
+				<li ng-if="user"><a href="#" class="icon icon-switch" data-message="Déconnexion" ng-mouseover="showTooltip()" ng-mouseout="hideTooltip()"><span>Déconnexion</span></a></li>
+				<li><a href="#" class="icon icon-home" data-message="Accueil" ng-mouseover="showTooltip()" ng-mouseout="hideTooltip()"><span>Accueil</span></a></li>
+				<li><a href="#" class="icon icon-plus" data-message="Ajouter un lien" ng-click="clickAdd()" ng-mouseover="showTooltip()" ng-mouseout="hideTooltip()"><span>Ajouter un lien</span></a></li>
+				<li><a href="#" class="icon icon-question" data-message="Aide" ng-mouseover="showTooltip()" ng-mouseout="hideTooltip()"><span>Aide</span></a></li>
+			</ul>
+		</div>
+	</section>
+
     <section id="front-panel-links" class="text-center wrapper">
         <perfect-scrollbar id="scroller" class="scroller" ng-show="nbLinks !== 0" wheel-propagation="true" wheel-speed="1" refresh-on-change="links">
             <ul id="link-list" class="link-list">
                 <li zori-link ng-repeat="(id, link) in links" class="form-group pull-left category-block wrapper"></li>
             </ul>
-            <button type="submit" ng-click="clickAdd()" class="btn btn-default btn-add-link"><span class="glyphicon glyphicon-plus"></span></button>
         </perfect-scrollbar>
+        
+        <div id="link-loader" class="loader icon-spinner" ng-if="nbLinks === 0"></div>
         
         <div id="link-tooltip"></div>
     </section>
 
     <section id="front-panel-footer">
+    	<blockquote class="lead">"Chausse tes sandales, et foule le sable qu'aucun esclave n'a pi&eacute;tin&eacute; !"</blockquote>
+    </section>
+    
+    <section id="front-panel-temp">
         <form id="link-form" ng-show="showLinkForm" ng-submit="addLink()">
             <div class="form-group">
                 <label>Partagez votre musique...</label>

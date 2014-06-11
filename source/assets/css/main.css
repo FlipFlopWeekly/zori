@@ -30,6 +30,10 @@ p.lead {
     font-size: 14px;
 }
 
+a {
+	text-decoration: none;
+}
+
 label {
     color: #FE6B1B;
 }
@@ -38,17 +42,12 @@ label {
     display: none;
 }
 
-.header {
-    float: left;
-}
-
 /********************************************************
 	Zori specific : layout
 ********************************************************/
 
 #header {
 	position: absolute;
-	left: 50px;
 }
 
 #main-wrapper {
@@ -57,12 +56,18 @@ label {
 
 #toolbar-panel {
 	position: absolute;
-	left: 50px;
-	width: 200px;
-	height: 100%;
+	top: calc(30% - 30px);
+	left: 15%;
+	width: 70%;
+	height: 30px;
+}
+
+#member-create-account {
+	z-index: 3;
 }
 
 .front-panel {
+    z-index: 1;
     padding: 0;
 }
 
@@ -79,114 +84,11 @@ label {
 }
 
 #front-panel-footer {
+	position: absolute;
+	bottom: calc(30% - 30px);
+	left: 15%;
     width: 70%;
-    margin: auto;
-    margin-top: 25px;
-}
-
-
-/********************************************************
-	Zori specific : toolbar-panel
-********************************************************/
-
-#toolbar-panel {
-	filter: alpha(opacity=0);
-	opacity: 0;
-	padding: 0 2px;
-	background-color: #5da9c4;
-	box-shadow: 0 0 20px #000000;
-	-webkit-transition: opacity 0.2s ease-in-out;
-	-moz-transition: opacity 0.2s ease-in-out;
-	-ms-transition: opacity 0.2s ease-in-out;
-	-o-transition: opacity 0.2s ease-in-out;
-	transition: opacity 0.2s ease-in-out;
-}
-
-#toolbar-panel:hover {
-	zoom: 1;
-	filter: alpha(opacity=1);
-	opacity: 1;
-}
-
-#toolbar-panel .inner-wrapper {
-	height: 100%;
-	padding: 18px;
-	border-right: 1px dashed #444;
-	border-left: 1px dashed #444;
-}
-
-#toolbar-panel section {
-	margin-bottom: 20px;
-}
-
-#toolbar-panel section h2 {
-	margin-bottom: 10px;
-	color: #FFFFFF;
-	font-size: 1.5em;
-	text-transform: uppercase;
-	text-shadow: 0 1px 2px #555;
-}
-
-#toolbar-panel ul {}
-
-#toolbar-panel li {
-	margin-bottom: 5px;
-	color: #E4E4E4;
-	text-transform: lowercase;
-}
-
-#user-toolbar {}
-
-#links-toolbar {}
-
-#misc-toolbar {}
-
-
-/********************************************************
-	Zori specific : Front panel links
-********************************************************/
-
-#front-panel-links ul {
-	padding: 0;
-    height: 100%;
-    display: inline-block;
-}
-
-#scroller {
-    width: 100%;
-	height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-
-/********************************************************
-	Zori specific : categories
-********************************************************/
-
-.category-block {
-    display: block;
-    width: 8px;
-    overflow: hidden;
-    margin-right: 1px;
-    height: 100%;
-}
-
-.category {
-    box-sizing: border-box;
-    border-radius: 0;
-    padding: 2px;
-    width: 100%;
-    min-height: 10%;
-    position: relative;
-    display: block;
-    cursor: pointer;
-    background: rgb(198,198,198); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
-    background: -webkit-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
-    background: -o-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
-    background: -ms-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
-    background: linear-gradient(to bottom, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
+    height: 30px;
 }
 
 /********************************************************
@@ -231,7 +133,6 @@ label {
     margin: 5px 0 0 5px;
 }
 
-
 /********************************************************
   Zori specific : Front panel
 ********************************************************/
@@ -243,14 +144,6 @@ label {
     color: #eee;
     background-color: #333333;
     background-color: rgba(0, 0, 0, 0.2);
-}
-
-form.light-form input {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-form.light-form input:focus {
-    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .zori-form-input:focus {
@@ -305,12 +198,180 @@ form.light-form input:focus {
     background: rgb(133,133,133);
 }
 
+#link-loader {
+	position: absolute;
+	top: calc(50% - 20px);
+	left: calc(50% - 20px);
+width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #1496BB;
+}
 
 /********************************************************
-  Zori specific : Footer
+	Zori specific : toolbar-panel
 ********************************************************/
 
-footer {
+#toolbar-panel {
+    opacity: 0.3;
+    transition: opacity .2s ease-out;
+    -moz-transition: opacity .2s ease-out;
+    -webkit-transition: opacity .2s ease-out;
+    -o-transition: opacity .2s ease-out;
+}
+
+#toolbar-panel:hover {
+	background-color: #1496BB;
+	opacity: 1;
+}
+
+#toolbar-panel .inner-wrapper {
+	padding: 3px;
+}
+
+#toolbar-panel h2 {}
+
+#toolbar-panel h3 {}
+
+#main-menu {
+	height: 24px;
+	text-align: center;
+}
+
+#main-menu li {
+	display: inline-block;
+	height: 24px;
+	line-height: 24px;
+	font-size: 18px;
+}
+
+#main-menu .icon {
+	line-height: 24px;
+	padding: 0 1em;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+#main-menu .icon:hover {
+	color: #333333;
+}
+
+#main-menu span {
+	display: none;
+}
+
+/********************************************************
+	Zori specific : Registration modal
+********************************************************/
+
+#registration-modal {}
+
+/********************************************************
+	Zori specific : Front panel links
+********************************************************/
+
+#front-panel-links ul {
+	padding: 0;
+    height: 100%;
+    display: inline-block;
+}
+
+#scroller {
+    width: 100%;
+	height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/********************************************************
+	Zori specific : Front panel footer
+********************************************************/
+
+#front-panel-footer blockquote {
+	margin: 0;
+	font-size: 0.8em;
+	line-height: 30px;
+	text-align: center;
+	color: #FFFFFF;
+	opacity: 0.3;
+    transition: opacity .2s ease-out;
+    -moz-transition: opacity .2s ease-out;
+    -webkit-transition: opacity .2s ease-out;
+    -o-transition: opacity .2s ease-out;
+}
+
+#front-panel-footer blockquote:hover {
+	background-color: #1496BB;
+	opacity: 1;
+}
+
+/********************************************************
+	Zori specific : categories
+********************************************************/
+
+.category-block {
+    display: block;
+    width: 8px;
+    overflow: hidden;
+    margin-right: 1px;
+    height: 100%;
+}
+
+.category {
+    box-sizing: border-box;
+    border-radius: 0;
+    padding: 2px;
+    width: 100%;
+    min-height: 10%;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    background: rgb(198,198,198); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
+    background: -webkit-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to bottom, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
+}
+
+.soundcloud {
+    height: 100px;
+    margin-top: -50px;
+    background: rgb(254,107,27); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(254,107,27,1) 50%, rgba(183,80,20,1) 51%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(254,107,27,1)), color-stop(51%,rgba(183,80,20,1)));
+    background: -webkit-linear-gradient(top,  rgba(254,107,27,1) 50%,rgba(183,80,20,1) 51%);
+    background: -o-linear-gradient(top,  rgba(254,107,27,1) 50%,rgba(183,80,20,1) 51%);
+    background: -ms-linear-gradient(top,  rgba(254,107,27,1) 50%,rgba(183,80,20,1) 51%);
+    background: linear-gradient(to bottom,  rgba(254,107,27,1) 50%,rgba(183,80,20,1) 51%);
+}
+
+.youtube {
+    height: 20px;
+    margin-top: -10px;
+    background: rgb(201,0,0); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(201,0,0,1) 50%, rgba(155,0,0,1) 51%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(201,0,0,1)), color-stop(51%,rgba(155,0,0,1)));
+    background: -webkit-linear-gradient(top,  rgba(201,0,0,1) 50%,rgba(155,0,0,1) 51%);
+    background: -o-linear-gradient(top,  rgba(201,0,0,1) 50%,rgba(155,0,0,1) 51%);
+    background: -ms-linear-gradient(top,  rgba(201,0,0,1) 50%,rgba(155,0,0,1) 51%);
+    background: linear-gradient(to bottom,  rgba(201,0,0,1) 50%,rgba(155,0,0,1) 51%);
+}
+
+.dailymotion {
+    height: 70px;
+    margin-top: -35px;
+    background: rgb(38,122,168); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(38,122,168,1) 50%, rgba(0,74,112,1) 51%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(38,122,168,1)), color-stop(51%,rgba(0,74,112,1)));
+    background: -webkit-linear-gradient(top,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
+    background: -o-linear-gradient(top,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
+    background: -ms-linear-gradient(top,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
+    background: linear-gradient(to bottom,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
+}
+
+
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -349,6 +410,27 @@ footer {
     width: auto;
     text-align: left;
 
+}
+
+.loader {
+	-webkit-animation: cssAnimation 1s infinite linear;
+	-moz-animation: cssAnimation 1s infinite linear;
+	-o-animation: cssAnimation 1s infinite linear;
+}
+
+@-webkit-keyframes cssAnimation {
+	from { -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
+	to { -webkit-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
+}
+
+@-moz-keyframes cssAnimation {
+	from { -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
+	to { -moz-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
+}
+
+@-o-keyframes cssAnimation {
+	from { -o-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
+	to { -o-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
 }
 
 /********************************************************
@@ -402,8 +484,3 @@ footer {
 form .required:after {
     content: "*";
 }
-
-
-
-
-
