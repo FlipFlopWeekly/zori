@@ -133,10 +133,11 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                     if (user.provider == 'anonymous') {
 
                         // Check if the anonymous user is not a registered one (possible ?)
-
+                        // Open the create account popin.
                         $("#member-create-account").dialog({ 
                             /*width: 700,*/
                             draggable: false,
+                            closeText: ""
                             create: function( event, ui ) {
 								$(this).parent().attr('id', 'registration-modal');
                             }

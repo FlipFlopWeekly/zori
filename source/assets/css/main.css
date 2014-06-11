@@ -183,6 +183,11 @@ label {
     padding: 6px 0 4px;
     background: rgb(198,198,198); /* Old browsers */
     background: -moz-linear-gradient(top,  rgba(198,198,198,1) 50%, rgba(165,165,165,1) 51%);
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    padding: 6px 0 4px;
+    background: rgb(198,198,198); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(198,198,198,1) 50%, rgba(165,165,165,1) 51%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(198,198,198,1)), color-stop(51%,rgba(165,165,165,1)));
     background: -webkit-linear-gradient(top,  rgba(198,198,198,1) 50%,rgba(165,165,165,1) 51%);
     background: -o-linear-gradient(top,  rgba(198,198,198,1) 50%,rgba(165,165,165,1) 51%);
@@ -202,7 +207,7 @@ label {
 	position: absolute;
 	top: calc(50% - 20px);
 	left: calc(50% - 20px);
-	width: 40px;
+width: 40px;
 	height: 40px;
 	line-height: 40px;
 	text-align: center;
@@ -214,7 +219,7 @@ label {
 ********************************************************/
 
 #toolbar-panel {
-	opacity: 0.3;
+    opacity: 0.3;
     transition: opacity .2s ease-out;
     -moz-transition: opacity .2s ease-out;
     -webkit-transition: opacity .2s ease-out;
@@ -328,12 +333,11 @@ label {
     display: block;
     cursor: pointer;
     background: rgb(198,198,198); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgba(198,198,198,1) 50%, rgba(165,165,165,1) 51%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(198,198,198,1)), color-stop(51%,rgba(165,165,165,1)));
-    background: -webkit-linear-gradient(top,  rgba(198,198,198,1) 50%,rgba(165,165,165,1) 51%);
-    background: -o-linear-gradient(top,  rgba(198,198,198,1) 50%,rgba(165,165,165,1) 51%);
-    background: -ms-linear-gradient(top,  rgba(198,198,198,1) 50%,rgba(165,165,165,1) 51%);
-    background: linear-gradient(to bottom,  rgba(198,198,198,1) 50%,rgba(165,165,165,1) 51%);
+    background: -moz-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
+    background: -webkit-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to bottom, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
 }
 
 .soundcloud {
@@ -372,11 +376,7 @@ label {
     background: linear-gradient(to bottom,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
 }
 
-/********************************************************
-  Zori specific : Footer
-********************************************************/
 
-footer {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -403,6 +403,95 @@ footer {
     border-radius: 3px;
 }
 
+/********************************************************
+  Zori specific : Elements
+********************************************************/
+.play-button {
+    background: transparent url("../images/logo-header.png") top left no-repeat;
+    background-size: 32px 32px;
+    padding-left: 35px;
+    height: 32px;
+    border: none;
+    width: auto;
+    text-align: left;
+
+}
+
+.loader {
+	-webkit-animation: cssAnimation 1s infinite linear;
+	-moz-animation: cssAnimation 1s infinite linear;
+	-o-animation: cssAnimation 1s infinite linear;
+}
+
+@-webkit-keyframes cssAnimation {
+	from { -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
+	to { -webkit-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
+}
+
+@-moz-keyframes cssAnimation {
+	from { -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
+	to { -moz-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
+}
+
+@-o-keyframes cssAnimation {
+	from { -o-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
+	to { -o-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
+}
+
+/********************************************************
+  Zori specific : Dialog
+********************************************************/
+.ui-dialog-content {
+    padding: 15px;
+    background-color: rgb(240, 240, 240);
+    background-color: rgba(240, 240, 240, 0.95);
+}
+
+.ui-dialog-titlebar-close {
+    float: right;
+    margin-top: 7px;
+    background: url('../images/cross-button.png') center no-repeat;
+    border: none;
+    content: '';
+    height: 16px;
+    width: 16px;
+}
+
+.ui-dialog h2 {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #FE6B1B;
+    margin-bottom: 12px;
+}
+
+.ui-dialog form label {
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 0.8em;
+    color: #FE6B1B;
+}
+
+.ui-dialog input[type=submit] {
+    background: white;
+    color: #FE6B1B;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.css-form input.ng-invalid.ng-dirty {
+    background-color: #FA787E;
+}
+
+.css-form input.ng-valid.ng-dirty {
+	background-color: #78FA89;
+}
+
+form .required:after {
+    content: "*";
+}
+/********************************************************
+	Global HTML Elements
+********************************************************/
 /********************************************************
   Zori specific : Elements
 ********************************************************/
