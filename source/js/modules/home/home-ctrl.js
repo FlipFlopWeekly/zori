@@ -18,11 +18,17 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                 $('.link-list').css('width', $scope.nbLinks * 9 + 'px');
             }, true);
 
+			/**
+			 * Manages the 'add a link' form
+			 */
             $scope.showLinkForm = false;
             $scope.clickAdd = function() {
                 $scope.showLinkForm = !$scope.showLinkForm;
             };
 
+			/**
+			 * Adds the link
+			 */
             $scope.addLink = function() {
                 var newLink = $scope.newLink.trim();
                 var newLinkComment = $scope.newLinkComment.trim();
@@ -61,8 +67,10 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                 $scope.links.$save();
             };
             
-            // Shows a tooltip on top of a link
-            $scope.showTooltip = function(elementId, content) {
+            /**
+             * Shows a tooltip on top of a link
+             */
+            $scope.showLinkTooltip = function(elementId, content) {
                 var tooltip = $('#link-tooltip');
                 var link = $('#link-' + elementId);
                 
@@ -81,8 +89,11 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                     .css("left", link.position().left - (tooltip.outerWidth() / 2) + 6)
                     .show();
             };
-            
-            $scope.hideTooltip = function() {
+
+			/**
+			 * Hides the tooltip
+			 */
+            $scope.hideLinkTooltip = function() {
                 $('#link-tooltip').hide();
             };
             
@@ -115,7 +126,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
             };
             
             $scope.links = fireRef.links();
-            
+
             var appref = new Firebase(FB_URL);
             var auth = new FirebaseSimpleLogin(appref, function(error, user) {
                 if (error) {
@@ -127,12 +138,15 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                     if (user.provider == 'anonymous') {
 
                         // Check if the anonymous user is not a registered one (possible ?)
-                    
+
                         $("#member-create-account").dialog({ 
                             /*width: 700,*/
-                            draggable: false 
+                            draggable: false,
+                            create: function( event, ui ) {
+								$(this).parent().attr('id', 'registration-modal');
+                            }
                         });
-   
+
                     } else if (user.provider == 'password') {
 
                         // Save the logged in user in the scope to display the left toolbar
