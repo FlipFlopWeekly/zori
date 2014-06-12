@@ -32,7 +32,8 @@ define([
                     
                     // Color for authenticated users and visited links.
                     if (nbClick > 0 && typeof scope.user !== "undefined" 
-                        && typeof scope.visitedLinks !== "undefined" && $.inArray($link.attr('id'), scope.visitedLinks) != -1) {
+                        && typeof scope.visitedLinks !== "undefined"
+                        && $.inArray($link.attr('id'), scope.visitedLinks) != -1) {
                         style.background = 'linear-gradient(to bottom, hsl(' + hue + ', 99%, 65%) 50%, hsl(' + hue + ', 99%, 30%) 51%)';
                     }
 

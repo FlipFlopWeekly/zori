@@ -182,50 +182,12 @@ label {
     display: block;
     cursor: pointer;
     background: rgb(198,198,198); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgba(198,198,198,1) 50%, rgba(165,165,165,1) 51%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(198,198,198,1)), color-stop(51%,rgba(165,165,165,1)));
-    background: -webkit-linear-gradient(top,  rgba(198,198,198,1) 50%,rgba(165,165,165,1) 51%);
-    background: -o-linear-gradient(top,  rgba(198,198,198,1) 50%,rgba(165,165,165,1) 51%);
-    background: -ms-linear-gradient(top,  rgba(198,198,198,1) 50%,rgba(165,165,165,1) 51%);
-    background: linear-gradient(to bottom,  rgba(198,198,198,1) 50%,rgba(165,165,165,1) 51%);
+    background: -moz-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
+    background: -webkit-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to bottom, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
 }
-
-.soundcloud {
-    height: 100px;
-    margin-top: -50px;
-    background: rgb(254,107,27); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgba(254,107,27,1) 50%, rgba(183,80,20,1) 51%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(254,107,27,1)), color-stop(51%,rgba(183,80,20,1)));
-    background: -webkit-linear-gradient(top,  rgba(254,107,27,1) 50%,rgba(183,80,20,1) 51%);
-    background: -o-linear-gradient(top,  rgba(254,107,27,1) 50%,rgba(183,80,20,1) 51%);
-    background: -ms-linear-gradient(top,  rgba(254,107,27,1) 50%,rgba(183,80,20,1) 51%);
-    background: linear-gradient(to bottom,  rgba(254,107,27,1) 50%,rgba(183,80,20,1) 51%);
-}
-
-.youtube {
-    height: 20px;
-    margin-top: -10px;
-    background: rgb(201,0,0); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgba(201,0,0,1) 50%, rgba(155,0,0,1) 51%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(201,0,0,1)), color-stop(51%,rgba(155,0,0,1)));
-    background: -webkit-linear-gradient(top,  rgba(201,0,0,1) 50%,rgba(155,0,0,1) 51%);
-    background: -o-linear-gradient(top,  rgba(201,0,0,1) 50%,rgba(155,0,0,1) 51%);
-    background: -ms-linear-gradient(top,  rgba(201,0,0,1) 50%,rgba(155,0,0,1) 51%);
-    background: linear-gradient(to bottom,  rgba(201,0,0,1) 50%,rgba(155,0,0,1) 51%);
-}
-
-.dailymotion {
-    height: 70px;
-    margin-top: -35px;
-    background: rgb(38,122,168); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgba(38,122,168,1) 50%, rgba(0,74,112,1) 51%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(38,122,168,1)), color-stop(51%,rgba(0,74,112,1)));
-    background: -webkit-linear-gradient(top,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
-    background: -o-linear-gradient(top,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
-    background: -ms-linear-gradient(top,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
-    background: linear-gradient(to bottom,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
-}
-
 
 /********************************************************
 	Zori specific : Header
