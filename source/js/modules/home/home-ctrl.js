@@ -23,6 +23,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
 			 * Manages the 'add a link' form
 			 */
             $scope.showLinkForm = false;
+
             $scope.clickAdd = function() {
                 $scope.showLinkForm = !$scope.showLinkForm;
             };
@@ -64,10 +65,9 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                 }
 
                 $scope.links[id].nbClick++;
-
                 $scope.links.$save();
             };
-            
+
             /**
              * Shows a tooltip on top of a link
              */
@@ -92,7 +92,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
             };
 
 			/**
-			 * Hides the tooltip
+			 * Hides the link tooltip
 			 */
             $scope.hideLinkTooltip = function() {
                 $('#link-tooltip').hide();

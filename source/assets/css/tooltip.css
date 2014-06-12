@@ -1,3 +1,7 @@
+/********************************************************
+	Link tooltip
+********************************************************/
+
 .wrapper .tooltip,
 #link-tooltip {
   background: #1496bb;
@@ -41,4 +45,34 @@
   margin-left: -13px;
   position: absolute;
   width: 0;
+}
+
+/********************************************************
+	Generic tooltip
+********************************************************/
+
+.ui-tooltip {
+    width: auto;
+    height: auto;
+    padding: 20px;
+    color: #FFFFFF;
+    background-color: #1496BB;
+}
+
+.arrow {
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    bottom: -8px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8.7px 5px 0 5px;
+    border-color: #1496BB transparent transparent transparent;
+    -webkit-transform:rotate(360deg)
+}
+
+div.ui-tooltip {
+    max-width: 150px;
 }
