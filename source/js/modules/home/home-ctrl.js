@@ -7,6 +7,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
 
     controllers.controller('HomeController', ['$scope', 'fireRef', 'FB_URL',
         function HomeController($scope, fireRef, FB_URL) {
+            $scope.fb_url           = FB_URL;
             $scope.newLink          = '';
             $scope.newLinkComment   = '';
             $scope.nbLinks          = 0;
@@ -96,21 +97,15 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                     
                         $("#member-create-account").dialog( "close" );
                         
-                        auth.login('password', {
-                            email: email,
-                            password: password,
-                            rememberMe: true
-                        });
-                        
-                    } else {
-
-                        auth.login('password', {
-                            email: email,
-                            password: password,
-                            rememberMe: true
-                        });
-
                     }
+                    
+                    // If the create account failed, due to an existing user, try to log in it.
+                    auth.login('password', {
+                        email: email,
+                        password: password,
+                        rememberMe: true
+                    });
+
                 });
             };
             
@@ -119,15 +114,17 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
             var appref = new Firebase(FB_URL);
             var auth = new FirebaseSimpleLogin(appref, function(error, user) {
                 if (error) {
-                    // an error occurred while attempting login
+                    // An error occurred while attempting login
                     // TODO: error handler
                     console.log(error);
                 } else if (user) {
-                    // user authenticated with Firebase
+                    // User authenticated with Firebase
                     if (user.provider == 'anonymous') {
 
                         // Check if the anonymous user is not a registered one (possible ?)
-                    
+                        
+                        
+                        // Open the create account popin.
                         $("#member-create-account").dialog({ 
                             draggable: false,
                             closeText: ""
@@ -135,16 +132,43 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
    
                     } else if (user.provider == 'password') {
 
-                        // Save the logged in user in the scope to display the left toolbar
+                        // Save the logged in user in the scope to display the left toolbar.
                         $scope.user = user;
+                        
+                        // Check if the member/{user.id} firebase data structure exists.
+                        var memberRef = new Firebase(FB_URL + "member/" + user.id);
+                        memberRef.once('value', function(data) {
+                            // If it does not exist
+                            if (data.val() == null) {
+                                // Get the parent node.
+                                memberRef = new Firebase(FB_URL + "member/");
+                                // Create a temporary data in the member/{user.id} new child.
+                                memberRef.child(user.id).set({ref : user.id});
+                            }
+                        });
+                        
+                        // Retrieve informations about links relative to the user (once)
+                        memberRef = new Firebase(FB_URL + "member/" + user.id + "/visitedLinks");
+                        memberRef.once('value', function(data) {
+                            // If there is no visited links information
+                            if (data.val() == null) {
+                                // Create the node with temporary data.
+                                memberRef.child(user.id).child("visitedLinks").set({0 : 0});
+                                // Save the temporary data into the visited links array stored in the scope.
+                                $scope.visitedLinks = [0];
+                            } else {
+                                // Store in the scope the informations about links relative to the user.
+                                $scope.visitedLinks = data.val();
+                            }
+                        });
+                        
+                        // Close the create account popin
                         $("#member-create-account").dialog( "close" );
                         
                     }
-
-                    // TODO: Display the possibility to create an account
-                    // WIP:  HTML + CTRL
                 } else {
 
+                    // Create an anomymous session.
                     auth.login('anonymous', {
                         rememberMe: true
                     });

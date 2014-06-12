@@ -29,9 +29,10 @@ define([
                         'height': height + '%',
                         'top': (100 - height) / 2 + '%'
                     };
-
-                    // Color for authenticated users
-                    if (nbClick > 0 && typeof scope.user !== "undefined") {
+                    
+                    // Color for authenticated users and visited links.
+                    if (nbClick > 0 && typeof scope.user !== "undefined" 
+                        && typeof scope.visitedLinks !== "undefined" && $.inArray($link.attr('id'), scope.visitedLinks) != -1) {
                         style.background = 'linear-gradient(to bottom, hsl(' + hue + ', 99%, 65%) 50%, hsl(' + hue + ', 99%, 30%) 51%)';
                     }
 
@@ -51,6 +52,15 @@ define([
                     e.preventDefault();
 
                     if ($link.attr('data-link').length > 0) {
+                        // If the user did not visit the link yet.
+                        if ($.inArray($link.attr('id'), scope.visitedLinks) == -1) {
+                            // Save the id as a visited link (relative to the user) in the scope...
+                            scope.visitedLinks.push($link.attr('id'));
+                            var memberRef = new Firebase(scope.fb_url + "member/" + scope.user.id);
+                            // ... and in Firebase database, in the good tree.
+                            memberRef.set({visitedLinks : scope.visitedLinks});
+                        }
+                        // Open the link in a new tab.
                         window.open($link.attr('data-link'), '_blank');
                     }
 
