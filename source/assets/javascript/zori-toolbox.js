@@ -13,6 +13,7 @@ var toolbox = {
 };
 
 //toolbox.initMouseScrollEvent();
+
 $(document).ready(function() {
     $(document).tooltip({
         show: null,
