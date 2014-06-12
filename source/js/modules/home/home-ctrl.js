@@ -136,7 +136,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                         // Open the create account popin.
                         $("#member-create-account").dialog({ 
                             draggable: false,
-                            closeText: ""
+                            closeText: "",
                             create: function( event, ui ) {
 								$(this).parent().attr('id', 'registration-modal');
                             }
@@ -151,7 +151,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                         var memberRef = new Firebase(FB_URL + "member/" + user.id);
                         memberRef.once('value', function(data) {
                             // If it does not exist
-                            if (data.val() == null) {
+                            if (data.val() === null) {
                                 // Get the parent node.
                                 memberRef = new Firebase(FB_URL + "member/");
                                 // Create a temporary data in the member/{user.id} new child.
@@ -163,7 +163,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                         memberRef = new Firebase(FB_URL + "member/" + user.id + "/visitedLinks");
                         memberRef.once('value', function(data) {
                             // If there is no visited links information
-                            if (data.val() == null) {
+                            if (data.val() === null) {
                                 // Create the node with temporary data.
                                 memberRef.child(user.id).child("visitedLinks").set({0 : 0});
                                 // Save the temporary data into the visited links array stored in the scope.
