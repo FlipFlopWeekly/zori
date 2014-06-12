@@ -2,11 +2,11 @@
 	<section id="toolbar-panel">
 		<div class="inner-wrapper">
 			<ul id="main-menu">
-				<li ng-if="!user"><a href="#" class="icon icon-switch" data-message="Connexion" ng-mouseover="showTooltip()" ng-mouseout="hideTooltip()"><span>Connexion</span></a></li>
-				<li ng-if="user"><a href="#" class="icon icon-switch" data-message="Déconnexion" ng-mouseover="showTooltip()" ng-mouseout="hideTooltip()"><span>Déconnexion</span></a></li>
-				<li><a href="#" class="icon icon-home" data-message="Accueil" ng-mouseover="showTooltip()" ng-mouseout="hideTooltip()"><span>Accueil</span></a></li>
-				<li><a href="#" class="icon icon-plus" data-message="Ajouter un lien" ng-click="clickAdd()" ng-mouseover="showTooltip()" ng-mouseout="hideTooltip()"><span>Ajouter un lien</span></a></li>
-				<li><a href="#" class="icon icon-question" data-message="Aide" ng-mouseover="showTooltip()" ng-mouseout="hideTooltip()"><span>Aide</span></a></li>
+				<li ng-if="!user"><a href="#" class="icon icon-switch" title="Connexion"><span>Connexion</span></a></li>
+				<li ng-if="user"><a href="#" class="icon icon-switch" title="Déconnexion"><span>Déconnexion</span></a></li>
+				<li><a href="#" class="icon icon-home" title="Accueil"><span>Accueil</span></a></li>
+				<li><a href="#" class="icon icon-plus" title="Ajouter un lien" ng-click="clickAdd()"><span>Ajouter un lien</span></a></li>
+				<li><a href="#" class="icon icon-question" title="Aide"><span>Aide</span></a></li>
 			</ul>
 		</div>
 	</section>
