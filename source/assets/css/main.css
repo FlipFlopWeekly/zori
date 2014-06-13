@@ -2,6 +2,7 @@
 	Global HTML Elements
 ********************************************************/
 body {
+    position: relative;
     background: url("../images/dark_dotted_@2X.png") repeat;
     background-size: 5px 5px;
 }
@@ -86,51 +87,8 @@ label {
 #front-panel-footer {
 	position: absolute;
 	bottom: calc(30% - 30px);
-	left: 15%;
-    width: 70%;
-    height: 30px;
-}
-
-/********************************************************
-	Zori specific : Header
-********************************************************/
-
-#header {
     width: 100%;
-}
-
-#header h1 {
-    width: 64px;
-    height: 64px;
-    margin: 15px;
-    padding-left: 64px;
-    color: #FFF;
-    line-height: 63px;
-    font-size: 2em;
-    background: transparent url("../images/logo-header.png") top left no-repeat;
-    background-size: 64px 64px;
-    opacity: 0.4;
-    cursor: default;
-    float: left;
-}
-
-#header blockquote {
-    font-size: 1em;
-    color: #666666;
-    border-left: none;
-    text-align: center;
-    float: left;
-}
-
-#header blockquote:hover {
-    cursor: pointer;
-    color: #FE6B1B;
-}
-
-#logo {
-    width: 80px;
-    height: 80px;
-    margin: 5px 0 0 5px;
+    height: 30px;
 }
 
 /********************************************************
@@ -293,11 +251,15 @@ width: 40px;
 	Zori specific : Front panel footer
 ********************************************************/
 
+#front-panel-footer {
+    text-align: center;
+}
+
 #front-panel-footer blockquote {
+    display: inline-block;
 	margin: 0;
 	font-size: 0.8em;
 	line-height: 30px;
-	text-align: center;
 	color: #FFFFFF;
 	opacity: 0.3;
     transition: opacity .2s ease-out;
@@ -481,92 +443,36 @@ width: 40px;
 form .required:after {
     content: "*";
 }
-/********************************************************
-	Global HTML Elements
-********************************************************/
-/********************************************************
-  Zori specific : Elements
-********************************************************/
-.play-button {
-    background: transparent url("../images/logo-header.png") top left no-repeat;
-    background-size: 32px 32px;
-    padding-left: 35px;
-    height: 32px;
-    border: none;
-    width: auto;
-    text-align: left;
-
-}
-
-.loader {
-	-webkit-animation: cssAnimation 1s infinite linear;
-	-moz-animation: cssAnimation 1s infinite linear;
-	-o-animation: cssAnimation 1s infinite linear;
-}
-
-@-webkit-keyframes cssAnimation {
-	from { -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
-	to { -webkit-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
-}
-
-@-moz-keyframes cssAnimation {
-	from { -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
-	to { -moz-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
-}
-
-@-o-keyframes cssAnimation {
-	from { -o-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
-	to { -o-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
-}
 
 /********************************************************
-  Zori specific : Dialog
+	Generic tooltip
 ********************************************************/
-.ui-dialog-content {
-    padding: 15px;
-    background-color: rgb(240, 240, 240);
-    background-color: rgba(240, 240, 240, 0.95);
+
+.ui-tooltip {
+    position: absolute;
+    display: inline-block;
+    padding: 20px;
+    color: #FFFFFF;
+    background-color: #1496BB;
 }
 
-.ui-dialog-titlebar-close {
-    float: right;
-    margin-top: 7px;
-    background: url('../images/cross-button.png') center no-repeat;
-    border: none;
-    content: '';
-    height: 16px;
-    width: 16px;
+.ui-tooltip-content {
+    display: inline-block;
+    width: 100%;
+    color: #FFFFFF;
+    text-align: center;
 }
 
-.ui-dialog h2 {
-    font-weight: bold;
-    font-size: 1.2em;
-    color: #FE6B1B;
-    margin-bottom: 12px;
-}
-
-.ui-dialog form label {
-    text-transform: uppercase;
-    font-weight: bolder;
-    font-size: 0.8em;
-    color: #FE6B1B;
-}
-
-.ui-dialog input[type=submit] {
-    background: white;
-    color: #FE6B1B;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.css-form input.ng-invalid.ng-dirty {
-    background-color: #FA787E;
-}
-
-.css-form input.ng-valid.ng-dirty {
-	background-color: #78FA89;
-}
-
-form .required:after {
-    content: "*";
+.ui-tooltip .arrow {
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    bottom: -8px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8.7px 5px 0 5px;
+    border-color: #1496BB transparent transparent transparent;
+    -webkit-transform:rotate(360deg)
 }
