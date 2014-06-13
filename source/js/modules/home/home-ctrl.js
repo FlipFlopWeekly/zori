@@ -67,36 +67,6 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                 $scope.links[id].nbClick++;
                 $scope.links.$save();
             };
-
-            /**
-             * Shows a tooltip on top of a link
-             */
-            $scope.showLinkTooltip = function(elementId, content) {
-                var tooltip = $('#link-tooltip');
-                var link = $('#link-' + elementId);
-                
-                if (content === undefined || content === '') {
-                    tooltip.hide();
-                    
-                    return;
-                }
-                
-                // Set the tooltip content
-                tooltip.html(content);
-                
-                // Set the tooltip position
-                tooltip
-                    .css("top", link.position().top - tooltip.outerHeight() - 15)
-                    .css("left", link.position().left - (tooltip.outerWidth() / 2) + 6)
-                    .show();
-            };
-
-			/**
-			 * Hides the link tooltip
-			 */
-            $scope.hideLinkTooltip = function() {
-                $('#link-tooltip').hide();
-            };
             
             $scope.createAccount = function() {
                 var user     = $scope.newUser.trim();
