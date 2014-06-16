@@ -1,32 +1,33 @@
 <div class="container-fluid front-panel">
 	<section id="toolbar-panel">
 		<ul id="main-menu" class="opacity-transition">
-			<li ng-if="!user"><a href="#tab-login" class="icon icon-switch" title="Connexion"><span>Connexion</span></a></li>
-			<li ng-if="user"><a href="#tab-logout" class="icon icon-switch" title="Déconnexion"><span>Déconnexion</span></a></li>
+			<li><a href="#tab-login" class="icon icon-switch" title="Connexion"><span ng-if="!user">Connexion</span><span ng-if="user">Déconnexion</span></a></li>
 			<li><a href="#tab-home" class="icon icon-home" title="Accueil"><span>Accueil</span></a></li>
 			<li><a href="#tab-link-add" class="icon icon-plus" title="Ajouter un lien" ng-click="clickAdd()"><span>Ajouter un lien</span></a></li>
 			<li><a href="#tab-help" class="icon icon-question" title="Aide"><span>Aide</span></a></li>
 		</ul>
 
-        <div id="tab-login" class="main-menu-tab" ng-if="!user">
-            <h2>Create your account</h2>
+        <div id="tab-login" class="main-menu-tab">
+            <div ng-if="!user">
+                <h2>Create your account</h2>
+                
+                <form id="user-form" name="form" ng-submit="createAccount()" novalidate class="css-form light-form">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input id="new-user-username" class="form-control zori-form-input" placeholder="Your crew name" ng-model="newUser" >
+                        <label class="required">Email address</label>
+                        <input id="new-user-email" class="form-control zori-form-input" placeholder="No spam please .... OK !" ng-model="newUserEmail" type="email" required >
+                        <label class="required">Mot de passe</label>
+                        <input id="new-user-password" class="form-control zori-form-input" placeholder="Sécurité, j'passe en premier." ng-model="newUserPassword" type="password" required >
             
-            <form id="user-form" name="form" ng-submit="createAccount()" novalidate class="css-form light-form">
-                <div class="form-group">
-                    <label>Username</label>
-                    <input id="new-user-username" class="form-control zori-form-input" placeholder="Your crew name" ng-model="newUser" >
-                    <label class="required">Email address</label>
-                    <input id="new-user-email" class="form-control zori-form-input" placeholder="No spam please .... OK !" ng-model="newUserEmail" type="email" required >
-                    <label class="required">Mot de passe</label>
-                    <input id="new-user-password" class="form-control zori-form-input" placeholder="Sécurité, j'passe en premier." ng-model="newUserPassword" type="password" required >
-        
-                    <input id="submit" value="OK" type="submit" class="form-control zori-form-input" ng-disabled="form.$invalid">
-                </div>
-            </form>
-        </div>
-        
-        <div id="tab-logout" class="main-menu-tab" ng-if="user">
-            <p>TODO : Logout form</p>
+                        <input id="submit" value="OK" type="submit" class="form-control zori-form-input" ng-disabled="form.$invalid">
+                    </div>
+                </form>
+            </div>
+            
+            <div ng-if="user">
+                <p>TODO : Logout form</p>
+            </div>
         </div>
         
         <div id="tab-home" class="main-menu-tab">
