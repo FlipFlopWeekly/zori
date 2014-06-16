@@ -35,7 +35,12 @@ define([
                         && typeof scope.visitedLinks !== "undefined"
                         && $.inArray($link.attr('id'), scope.visitedLinks) != -1) {
                         
-                        style.background = 'linear-gradient(to bottom, hsla(' + hue + ', 99%, 65%, 1) 50%, hsla(' + hue + ', 99%, 30%, 0.2) 51%, hsla(' + hue + ', 99%, 30%, 0.0) 75%, hsla(' + hue + ', 99%, 30%, 0) 100%)';
+                        // Create the gradient background
+                        style.background = 'linear-gradient(to bottom, ';
+                        style.background += 'hsla(' + hue + ', 99%, 65%, 1) 50%, '
+                        style.background += 'hsla(' + hue + ', 99%, 30%, 0.2) 51%, '
+                        style.background += 'hsla(' + hue + ', 99%, 30%, 0.0) 75%, '
+                        style.background += 'hsla(' + hue + ', 99%, 30%, 0) 100%)';
                     }
 
                     $link.css(style);

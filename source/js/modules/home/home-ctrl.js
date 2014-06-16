@@ -88,7 +88,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
             };
             
             $scope.createAccount = function() {
-                var user     = $scope.newUser.trim();
+                /*var user     = $scope.newUser.trim();*/
                 var email    = $scope.newUserEmail.trim();
                 var password = $scope.newUserPassword.trim();
                 
@@ -163,7 +163,9 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                         });
                         
                         // Close the create account popin
-                        $("#member-create-account").dialog( "close" );
+                        if ($("#member-create-account").dialog( "isOpen" ) === true) {
+                            $("#member-create-account").dialog( "close" );
+                        }
                         
                     }
                 } else {
