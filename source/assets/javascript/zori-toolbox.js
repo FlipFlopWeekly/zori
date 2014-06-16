@@ -21,7 +21,7 @@ var toolbox = {
         $(document).tooltip({
             position: {
                 my: "center bottom-16",
-                at: "center+8 top",
+                at: "center top",
                 using: function(position, feedback) {
                     $(this).css(position);
                     $("<div>")
@@ -32,10 +32,21 @@ var toolbox = {
                 }
             }
         });
+    },
+    
+    /**
+     * Tabs
+     */
+    initTabs : function() {
+        $('#toolbar-panel').tabs({
+            collapsible: true,
+            active: false
+        });
     }
 };
 
 $(document).ready(function() {
     //toolbox.initMouseScrollEvent();
     toolbox.initTooltips();
+    toolbox.initTabs();
 });
