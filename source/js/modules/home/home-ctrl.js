@@ -2,7 +2,7 @@
  * Home controller definition
  * @scope Controllers
  */
-define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 'firebase-simple-login', '../../config'], function(controllers, $, tooltips) {
+define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple-login', '../../config'], function(controllers, $, tooltips) {
     'use strict';
 
     controllers.controller('HomeController', ['$scope', 'fireRef', 'FB_URL',
@@ -148,6 +148,42 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
 
                 }
             });
+            
+            /**
+             * Generic tooltips
+             */
+            $scope.tooltips = function() {
+                $(document).tooltip({
+                    position: {
+                        my: "center bottom-16",
+                        at: "center top",
+                        using: function(position, feedback) {
+                            $(this).css(position);
+                            $("<div>")
+                                .addClass("arrow")
+                                .addClass(feedback.vertical)
+                                .addClass(feedback.horizontal)
+                                .appendTo(this);
+                        }
+                    }
+                });
+            };
+            
+            /**
+             * Main menu tabs
+             */
+            $scope.mainMenuTabs = function() {
+                $('#toolbar-panel').tabs({
+                    collapsible: true,
+                    active: false
+                });
+            };
+            
+            /**
+             * Init some stuff
+             */
+            $scope.tooltips();
+            $scope.mainMenuTabs();
         }
     ]);
 });
