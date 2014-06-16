@@ -20,15 +20,6 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
             }, true);
 
 			/**
-			 * Manages the 'add a link' form
-			 */
-            $scope.showLinkForm = false;
-
-            $scope.clickAdd = function() {
-                $scope.showLinkForm = !$scope.showLinkForm;
-            };
-
-			/**
 			 * Adds the link
 			 */
             $scope.addLink = function() {
@@ -75,9 +66,9 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                 
                 auth.createUser(email, password, function(error, user) {
                     if (!error) {
-                    
-                        $("#member-create-account").dialog( "close" );
-                        
+                        $('#main-menu').tabs({
+                            hide: true
+                        });
                     }
                     
                     // If the create account failed, due to an existing user, try to log in it.

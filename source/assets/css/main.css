@@ -60,7 +60,7 @@ label {
 	top: calc(30% - 30px);
 	left: 15%;
 	width: 70%;
-	height: 30px;
+	height: calc(40% + 30px);
 }
 
 #member-create-account {
@@ -160,30 +160,17 @@ label {
 	Zori specific : toolbar-panel
 ********************************************************/
 
-#toolbar-panel {
-    opacity: 0.3;
-    transition: opacity .2s ease-out;
-    -moz-transition: opacity .2s ease-out;
-    -webkit-transition: opacity .2s ease-out;
-    -o-transition: opacity .2s ease-out;
-}
-
-#toolbar-panel:hover {
-	background-color: #1496BB;
-	opacity: 1;
-}
-
-#toolbar-panel .inner-wrapper {
-	padding: 3px;
-}
-
-#toolbar-panel h2 {}
-
-#toolbar-panel h3 {}
+#toolbar-panel {}
 
 #main-menu {
-	height: 24px;
+    height: 30px;
+	padding: 3px;
 	text-align: center;
+}
+
+#main-menu:hover {
+	background-color: #1496BB;
+	opacity: 1;
 }
 
 #main-menu li {
@@ -206,6 +193,11 @@ label {
 
 #main-menu span {
 	display: none;
+}
+
+.main-menu-tab {
+    height: calc(100% - 30px);
+    background-color: #1496BB;
 }
 
 /********************************************************
@@ -256,11 +248,6 @@ label {
 	font-size: 0.8em;
 	line-height: 30px;
 	color: #FFFFFF;
-	opacity: 0.3;
-    transition: opacity .2s ease-out;
-    -moz-transition: opacity .2s ease-out;
-    -webkit-transition: opacity .2s ease-out;
-    -o-transition: opacity .2s ease-out;
 }
 
 #front-panel-footer blockquote:hover {
@@ -349,6 +336,14 @@ label {
 	to { -o-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
 }
 
+.opacity-transition {
+    opacity: 0.3;
+    transition: opacity .2s ease-out;
+    -moz-transition: opacity .2s ease-out;
+    -webkit-transition: opacity .2s ease-out;
+    -o-transition: opacity .2s ease-out;
+}
+
 /********************************************************
   Zori specific : Dialog
 ********************************************************/
@@ -434,3 +429,46 @@ form .required:after {
     border-color: #1496BB transparent transparent transparent;
     -webkit-transform:rotate(360deg)
 }
+
+/********************************************************
+	Generic tabs
+********************************************************/
+
+.ui-tabs {
+    position: relative; /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+    zoom: 1;
+}
+
+.ui-tabs .ui-tabs-nav {}
+    
+.ui-tabs .ui-tabs-nav li {
+    white-space: nowrap;
+}
+    
+.ui-tabs .ui-tabs-nav li a {}
+    
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+    border-bottom: 2px solid orangered;
+}
+    
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled a,
+.ui-tabs .ui-tabs-nav li.ui-state-processing a {
+    cursor: text;
+}
+    
+.ui-tabs .ui-tabs-nav li a,
+.ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
+    cursor: pointer; /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+}
+
+.ui-tabs .ui-tabs-panel {
+    display: block;
+    border-width: 0;
+    padding: 1em 1.4em;
+}
+    
+.ui-tabs .ui-tabs-hide {
+    display: none !important;
+}
+    
