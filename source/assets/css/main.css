@@ -55,45 +55,38 @@ label {
 	height: 100%;
 }
 
+#front-panel {
+    height: 100%;
+}
+
 #toolbar-panel {
-	position: absolute;
-	top: calc(30% - 30px);
-	left: 15%;
+    z-index: 2;
 	width: 70%;
-	height: calc(40% + 30px);
-}
-
-#member-create-account {
-	z-index: 3;
-}
-
-.front-panel {
-    z-index: 1;
-    padding: 0;
-}
-
-.front-panel section {
-    padding: 0;
+	height: 30%;
+	margin-left: 15%;
 }
 
 #front-panel-links {
-    position: absolute;
-    top: 30%;
-    left: 15%;
+    z-index: 1;
     width: 70%;
     height: 40%;
+    margin-left: 15%;
 }
 
 #front-panel-footer {
-	position: absolute;
-	bottom: calc(30% - 30px);
-    width: 100%;
-    height: 30px;
+    width: 70%;
+    height: 30%;
+    margin-left: 15%;
 }
 
 /********************************************************
   Zori specific : Front panel
 ********************************************************/
+
+#front-panel {
+    padding: 0;
+    margin: 0;
+}
 
 .zori-form-input {
     width: 100%;
@@ -160,35 +153,42 @@ label {
 	Zori specific : toolbar-panel
 ********************************************************/
 
-#toolbar-panel {}
+#toolbar-panel {
+    position: relative;
+}
 
 #main-menu {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     height: 30px;
-	padding: 3px;
 	text-align: center;
 }
 
 #main-menu:hover {
-	background-color: #1496BB;
 	opacity: 1;
 }
 
 #main-menu li {
 	display: inline-block;
-	height: 24px;
-	line-height: 24px;
+	height: 30px;
 	font-size: 18px;
 }
 
+#main-menu .ui-state-active {
+    opacity: 1;
+}
+
 #main-menu .icon {
-	line-height: 24px;
+	line-height: 30px;
 	padding: 0 1em;
 	text-decoration: none;
 	color: #FFFFFF;
 }
 
-#main-menu .icon:hover {
-	color: #333333;
+#main-menu .icon:active,
+#main-menu .ui-state-active .icon {
+	color: #1496BB;
 }
 
 #main-menu span {
@@ -196,7 +196,10 @@ label {
 }
 
 .main-menu-tab {
-    height: calc(100% - 30px);
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 133%;
     background-color: #1496BB;
 }
 
@@ -344,6 +347,10 @@ label {
     -o-transition: opacity .2s ease-out;
 }
 
+.opacity-transition:hover {
+    opacity: 1;
+}
+
 /********************************************************
   Zori specific : Dialog
 ********************************************************/
@@ -440,23 +447,19 @@ form .required:after {
 }
 
 .ui-tabs .ui-tabs-nav {}
-    
+
 .ui-tabs .ui-tabs-nav li {
     white-space: nowrap;
 }
-    
+
 .ui-tabs .ui-tabs-nav li a {}
-    
-.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
-    border-bottom: 2px solid orangered;
-}
-    
+
 .ui-tabs .ui-tabs-nav li.ui-tabs-selected a,
 .ui-tabs .ui-tabs-nav li.ui-state-disabled a,
 .ui-tabs .ui-tabs-nav li.ui-state-processing a {
     cursor: text;
 }
-    
+
 .ui-tabs .ui-tabs-nav li a,
 .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
     cursor: pointer; /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
@@ -467,8 +470,7 @@ form .required:after {
     border-width: 0;
     padding: 1em 1.4em;
 }
-    
+
 .ui-tabs .ui-tabs-hide {
     display: none !important;
 }
-    
