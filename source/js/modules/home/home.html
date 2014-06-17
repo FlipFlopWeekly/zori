@@ -60,7 +60,7 @@
             <label class="required">Email address</label>
             <input id="new-user-email" class="form-control zori-form-input" placeholder="No spam please .... OK !" ng-model="newUserEmail" type="email" required >
             <label class="required">Mot de passe</label>
-            <input id="new-user-password" class="form-control zori-form-input" placeholder="Sécurité, j'passe en premier." ng-model="newUserPassword" type="password" required >
+            <input id="new-user-password" class="form-control zori-form-input" placeholder="Sécurité, j'passe en premier." ng-model="newUserPassword" ng-minlength="8" type="password" required >
 
             <input id="submit" value="OK" type="submit" class="form-control zori-form-input" ng-disabled="form.$invalid">
         </div>

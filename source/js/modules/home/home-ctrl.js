@@ -135,7 +135,8 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                         // Save the logged in user in the scope to display the left toolbar.
                         $scope.user = user;
                         
-                        // Check if the member/{user.id} firebase data structure exists.
+// -- If we need to initialize a member data structure !! --
+                        /*// Check if the member/{user.id} firebase data structure exists.
                         var memberRef = new Firebase(FB_URL + "member/" + user.id);
                         memberRef.once('value', function(data) {
                             // If it does not exist
@@ -145,17 +146,15 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'zori-toolbox', 
                                 // Create a temporary data in the member/{user.id} new child.
                                 memberRef.child(user.id).set({ref : user.id});
                             }
-                        });
+                        });*/
                         
                         // Retrieve informations about links relative to the user (once)
-                        memberRef = new Firebase(FB_URL + "member/" + user.id + "/visitedLinks");
+                        var memberRef = new Firebase(FB_URL + "member/" + user.id + "/visitedLinks");
                         memberRef.once('value', function(data) {
                             // If there is no visited links information
                             if (data.val() == null) {
-                                // Create the node with temporary data.
-                                memberRef.child(user.id).child("visitedLinks").set({0 : 0});
                                 // Save the temporary data into the visited links array stored in the scope.
-                                $scope.visitedLinks = [0];
+                                $scope.visitedLinks = [];
                             } else {
                                 // Store in the scope the informations about links relative to the user.
                                 $scope.visitedLinks = data.val();
