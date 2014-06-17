@@ -154,17 +154,6 @@ label {
     background: rgb(133,133,133);
 }
 
-#link-loader {
-	position: absolute;
-	top: calc(50% - 20px);
-	left: calc(50% - 20px);
-width: 40px;
-	height: 40px;
-	line-height: 40px;
-	text-align: center;
-	color: #1496BB;
-}
-
 /********************************************************
 	Zori specific : toolbar-panel
 ********************************************************/
@@ -242,6 +231,17 @@ width: 40px;
     position: relative;
 }
 
+#link-loader {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 10px);
+    width: 20px;
+    height: 20px;
+    color: #1496BB;
+    line-height: 20px;
+    font-size: 18px;
+}
+
 /********************************************************
 	Zori specific : Front panel footer
 ********************************************************/
@@ -289,44 +289,6 @@ width: 40px;
     background: -o-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
     background: -ms-linear-gradient(top, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
     background: linear-gradient(to bottom, rgba(198,198,198,1) 50%, rgba(255,255,255,0.2) 51%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0) 76%, rgba(255,255,255,0) 100%);
-}
-
-.soundcloud {
-    height: 100px;
-    margin-top: -50px;
-    background: rgb(254,107,27); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgba(254,107,27,1) 50%, rgba(183,80,20,1) 51%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(254,107,27,1)), color-stop(51%,rgba(183,80,20,1)));
-    background: -webkit-linear-gradient(top,  rgba(254,107,27,1) 50%,rgba(183,80,20,1) 51%);
-    background: -o-linear-gradient(top,  rgba(254,107,27,1) 50%,rgba(183,80,20,1) 51%);
-    background: -ms-linear-gradient(top,  rgba(254,107,27,1) 50%,rgba(183,80,20,1) 51%);
-    background: linear-gradient(to bottom,  rgba(254,107,27,1) 50%,rgba(183,80,20,1) 51%);
-}
-
-.youtube {
-    height: 20px;
-    margin-top: -10px;
-    background: rgb(201,0,0); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgba(201,0,0,1) 50%, rgba(155,0,0,1) 51%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(201,0,0,1)), color-stop(51%,rgba(155,0,0,1)));
-    background: -webkit-linear-gradient(top,  rgba(201,0,0,1) 50%,rgba(155,0,0,1) 51%);
-    background: -o-linear-gradient(top,  rgba(201,0,0,1) 50%,rgba(155,0,0,1) 51%);
-    background: -ms-linear-gradient(top,  rgba(201,0,0,1) 50%,rgba(155,0,0,1) 51%);
-    background: linear-gradient(to bottom,  rgba(201,0,0,1) 50%,rgba(155,0,0,1) 51%);
-}
-
-.dailymotion {
-    height: 70px;
-    margin-top: -35px;
-    background: rgb(38,122,168); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgba(38,122,168,1) 50%, rgba(0,74,112,1) 51%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(38,122,168,1)), color-stop(51%,rgba(0,74,112,1)));
-    background: -webkit-linear-gradient(top,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
-    background: -o-linear-gradient(top,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
-    background: -ms-linear-gradient(top,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
-    background: linear-gradient(to bottom,  rgba(38,122,168,1) 50%,rgba(0,74,112,1) 51%);
-}
-
 /********************************************************
   Zori specific : Admin
 ********************************************************/
@@ -357,7 +319,39 @@ width: 40px;
     border: none;
     width: auto;
     text-align: left;
+}
 
+.loader {
+	-webkit-animation: cssAnimation 1s infinite linear;
+	-moz-animation: cssAnimation 1s infinite linear;
+	-o-animation: cssAnimation 1s infinite linear;
+}
+
+@-webkit-keyframes cssAnimation {
+	from { -webkit-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
+	to { -webkit-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
+}
+
+@-moz-keyframes cssAnimation {
+	from { -moz-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
+	to { -moz-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
+}
+
+@-o-keyframes cssAnimation {
+	from { -o-transform: rotate(0deg) scale(1) skew(1deg) translate(0px); }
+	to { -o-transform: rotate(360deg) scale(1) skew(1deg) translate(0px); }
+}
+
+.opacity-transition {
+    opacity: 0.3;
+    transition: opacity .2s ease-out;
+    -moz-transition: opacity .2s ease-out;
+    -webkit-transition: opacity .2s ease-out;
+    -o-transition: opacity .2s ease-out;
+}
+
+.opacity-transition:hover {
+    opacity: 1;
 }
 
 .loader {
