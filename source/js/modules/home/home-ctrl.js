@@ -160,7 +160,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                 $(document).tooltip({
                     position: {
                         my: "center bottom-16",
-                        at: "center top",
+                        at: "center+8 top",
                         using: function(position, feedback) {
                             $(this).css(position);
                             $("<div>")
@@ -180,6 +180,15 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                 $('#toolbar-panel').tabs({
                     collapsible: true,
                     active: false
+                });
+                
+                // If the user click outside the tab, hide it
+                $('body').on('click', function(event){
+                    var target = $(event.target);
+
+                    if(target.parents('#toolbar-panel').length === 0){
+                        $("#toolbar-panel").tabs('option', 'active', false);
+                    }
                 });
             };
             
