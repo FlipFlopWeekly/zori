@@ -30,6 +30,8 @@ define([
                         'top': (100 - height) / 2 + '%'
                     };
                     
+                    console.log(scope.visitedLinks);
+                    
                     // Color for authenticated users and visited links.
                     if (nbClick > 0 && typeof scope.user !== "undefined" 
                         && typeof scope.visitedLinks !== "undefined"
@@ -37,10 +39,18 @@ define([
                         
                         // Create the gradient background
                         style.background = 'linear-gradient(to bottom, ';
-                        style.background += 'hsla(' + hue + ', 99%, 65%, 1) 50%, '
-                        style.background += 'hsla(' + hue + ', 99%, 30%, 0.2) 51%, '
-                        style.background += 'hsla(' + hue + ', 99%, 30%, 0.0) 75%, '
+                        style.background += 'hsla(' + hue + ', 99%, 65%, 1) 50%, ';
+                        style.background += 'hsla(' + hue + ', 99%, 30%, 0.2) 51%, ';
+                        style.background += 'hsla(' + hue + ', 99%, 30%, 0.0) 75%, ';
                         style.background += 'hsla(' + hue + ', 99%, 30%, 0) 100%)';
+                    } else {
+                        // If the user is logged out
+                        style.background = 'linear-gradient(to bottom, ';
+                        style.background += 'rgba(198,198,198,1) 50%, ';
+                        style.background += 'rgba(255,255,255,0.2) 51%, ';
+                        style.background += 'rgba(255,255,255,0.2) 75%, ';
+                        style.background += 'rgba(255,255,255,0) 76%, ';
+                        style.background += 'rgba(255,255,255,0) 100%)';
                     }
 
                     $link.css(style);
@@ -76,7 +86,7 @@ define([
 
                 timeoutId = $interval(function() {
                     update();
-                }, 1000);
+                }, 500);
             }
 
             return {

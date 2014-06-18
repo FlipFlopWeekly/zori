@@ -95,6 +95,7 @@ label {
     color: #eee;
     background-color: #333333;
     background-color: rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
 }
 
 .zori-form-input:focus {
@@ -184,11 +185,18 @@ label {
     opacity: 1;
 }
 
+#main-menu .glitz,
+#main-menu .glitz a{
+    opacity: 1;
+    color: red;
+}
+
 #main-menu .icon {
 	line-height: 30px;
 	padding: 0 1em;
 	text-decoration: none;
 	color: #FFFFFF;
+	outline: none;
 }
 
 #main-menu .icon:active,
@@ -313,7 +321,7 @@ label {
   Zori specific : Elements
 ********************************************************/
 
-.play-button {
+/*.play-button {
     background: transparent url("../images/logo-header.png") top left no-repeat;
     background-size: 32px 32px;
     padding-left: 35px;
@@ -321,7 +329,7 @@ label {
     border: none;
     width: auto;
     text-align: left;
-}
+}*/
 
 .loader {
 	-webkit-animation: cssAnimation 1s infinite linear;
@@ -390,40 +398,24 @@ label {
 }
 
 /********************************************************
-  Zori specific : Dialog
+  Zori specific : Tab control
 ********************************************************/
 
-.ui-dialog-content {
-    padding: 15px;
-    background-color: rgb(240, 240, 240);
-    background-color: rgba(240, 240, 240, 0.95);
-}
-
-.ui-dialog-titlebar-close {
-    float: right;
-    margin-top: 7px;
-    background: url('../images/cross-button.png') center no-repeat;
-    border: none;
-    content: '';
-    height: 16px;
-    width: 16px;
-}
-
-.ui-dialog h2 {
+.main-menu-tab h2 {
     font-weight: bold;
     font-size: 1.2em;
     color: #FE6B1B;
     margin-bottom: 12px;
 }
 
-.ui-dialog form label {
+.main-menu-tab form label {
     text-transform: uppercase;
     font-weight: bolder;
     font-size: 0.8em;
     color: #FE6B1B;
 }
 
-.ui-dialog input[type=submit] {
+.main-menu-tab input[type=submit] {
     background: white;
     color: #FE6B1B;
     font-weight: bold;

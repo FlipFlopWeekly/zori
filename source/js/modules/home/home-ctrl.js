@@ -10,6 +10,8 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
             $scope.fb_url           = FB_URL;
             $scope.newLink          = '';
             $scope.newLinkComment   = '';
+            $scope.newUserEmail     = '';
+            $scope.newUserPassword  = '';
             $scope.nbLinks          = 0;
 
             $scope.$watch('links', function() {
@@ -23,8 +25,8 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
 			 * Adds the link
 			 */
             $scope.addLink = function() {
-                var newLink = $scope.newLink.trim();
-                var newLinkComment = $scope.newLinkComment.trim();
+                var newLink         = $scope.newLink.trim();
+                var newLinkComment  = $scope.newLinkComment.trim();
                 
                 if (!newLink.length) {
                     return;
@@ -60,7 +62,6 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
             };
             
             $scope.createAccount = function() {
-                /*var user     = $scope.newUser.trim();*/
                 var email    = $scope.newUserEmail.trim();
                 var password = $scope.newUserPassword.trim();
                 
@@ -81,6 +82,18 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                 });
             };
             
+            $scope.disconnect = function() {
+                if (typeof $scope.user !== "undefined" ) {
+                    // Logout the firebase user
+                    auth.logout();
+                    // Remove scope varaible relative to the user
+                    delete $scope.user;
+                    delete $scope.visitedLinks;
+                    // Do not display the login tab automatically
+                    $('#tab-login').hide();
+                }
+            }
+            
             $scope.links = fireRef.links();
 
             var appref = new Firebase(FB_URL);
@@ -95,19 +108,21 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
 
                         // Check if the anonymous user is not a registered one (possible ?)
                         // Open the create account popin.
-                        $("#member-create-account").dialog({ 
-                            /*width: 700,*/
+// -- If we need to display a tab if the user is anonymous !! --
+/*                        $("#member-create-account").dialog({ 
                             draggable: false,
                             closeText: "",
                             create: function( event, ui ) {
 								$(this).parent().attr('id', 'registration-modal');
                             }
-                        });
+                        });*/
 
                     } else if (user.provider == 'password') {
 
                         // Save the logged in user in the scope to display the left toolbar.
-                        $scope.user = user;
+                        $scope.user             = user;
+                        $scope.newUserEmail     = '';
+                        $scope.newUserPassword  = '';
                         
 // -- If we need to initialize a member data structure !! --
                         /*// Check if the member/{user.id} firebase data structure exists.
@@ -138,10 +153,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                         });
                         
                         // Close the create account popin
-                        if ($("#member-create-account").dialog( "isOpen" ) === true) {
-                            $("#member-create-account").dialog( "close" );
-                        }
-                        
+                        $('#tab-login').hide();
                     }
                 } else {
 
