@@ -30,8 +30,6 @@ define([
                         'top': (100 - height) / 2 + '%'
                     };
                     
-                    console.log(scope.visitedLinks);
-                    
                     // Color for authenticated users and visited links.
                     if (nbClick > 0 && typeof scope.user !== "undefined" 
                         && typeof scope.visitedLinks !== "undefined"

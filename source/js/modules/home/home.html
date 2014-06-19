@@ -1,7 +1,11 @@
 <div id="front-panel" class="container-fluid front-panel">
 	<section id="toolbar-panel">
 		<ul id="main-menu">
-			<li class="opacity-transition" ng-class="{glitz: user==null}"><a ng-click="disconnect()" href="#tab-login" class="icon icon-switch" ng-attr-title="{{ (user == null) ? 'Connexion' : 'Déconnexion' }}"><span ng-if="user == null">Connexion</span><span ng-if="user != null">Déconnexion</span></a></li>
+			<li class="opacity-transition" ng-class="{glitz: user==null}">
+			    <a id="log-link" ng-click="disconnect()" href="#tab-login" class="icon icon-switch">
+			        <span>Connexion</span>
+			    </a>
+		    </li>
 			<li class="opacity-transition"><a href="#tab-home" class="icon icon-home" title="Accueil"><span>Accueil</span></a></li>
 			<li class="opacity-transition"><a href="#tab-link-add" class="icon icon-plus" title="Ajouter un lien" ng-click="clickAdd()"><span>Ajouter un lien</span></a></li>
 			<li class="opacity-transition"><a href="#tab-help" class="icon icon-question" title="Aide"><span>Aide</span></a></li>

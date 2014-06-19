@@ -7,12 +7,16 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
 
     controllers.controller('HomeController', ['$scope', 'fireRef', 'FB_URL',
         function HomeController($scope, fireRef, FB_URL) {
+            // Global variables initialisation
             $scope.fb_url           = FB_URL;
             $scope.newLink          = '';
             $scope.newLinkComment   = '';
             $scope.newUserEmail     = '';
             $scope.newUserPassword  = '';
             $scope.nbLinks          = 0;
+            
+            // Functional labels initialisation
+            $scope.label_Login      = 'Connexion';
 
             $scope.$watch('links', function() {
                 $scope.nbLinks = $scope.links.$getIndex().length;
@@ -81,6 +85,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
 
                 });
             };
+
             
             $scope.disconnect = function() {
                 if (typeof $scope.user !== "undefined" ) {
@@ -91,6 +96,12 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                     delete $scope.visitedLinks;
                     // Do not display the login tab automatically
                     $('#tab-login').hide();
+                    
+                    alert('ici');
+                    $('.ui-tooltip-content').html('Connexion');
+                    alert('ici2');
+                    $('#log-link').attr('title', 'Connexion');
+                    alert('ici3');
                 }
             }
             
@@ -151,6 +162,11 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                                 $scope.visitedLinks = data.val();
                             }
                         });
+                        
+                        // Remove validation classes
+                        //$('#tab-login input[type=email]').removeClass('');
+                        console.log("change to decon");
+                        $('#log-link').attr('title', 'Déconnexion');
                         
                         // Close the create account popin
                         $('#tab-login').hide();
