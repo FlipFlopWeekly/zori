@@ -90,6 +90,13 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                             $('#main-menu').tabs({
                                 hide: true
                             });
+                            
+                            // Automatic login after account creation
+                            auth.login('password', {
+                                email: email,
+                                password: password,
+                                rememberMe: true
+                            });
                         }
                     });
                 }
