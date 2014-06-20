@@ -15,9 +15,6 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
             $scope.newUserPassword  = '';
             $scope.nbLinks          = 0;
           	$scope.activeTab		= null;
-            
-            // Functional labels initialisation
-            $scope.log_link_title      = 'Connexion';
 
             $scope.$watch('links', function() {
                 $scope.nbLinks = $scope.links.$getIndex().length;
@@ -71,7 +68,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                 var email    = $scope.newUserEmail.trim();
                 var password = $scope.newUserPassword.trim();
                 
-                auth.createUser(email, password, function(error, user) {
+                /*auth.createUser(email, password, function(error, user) {
                     if (!error) {
                         $('#main-menu').tabs({
                             hide: true
@@ -85,6 +82,13 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                         rememberMe: true
                     });
 
+                });*/
+                
+                // If the create account failed, due to an existing user, try to log in it.
+                auth.login('password', {
+                    email: email,
+                    password: password,
+                    rememberMe: true
                 });
             };
 
@@ -99,11 +103,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                     
                     // Do not display the login tab automatically
                     $('#tab-login').hide();
-                    
-                    // Change the tooltip text
-                    $('.ui-tooltip-content').html('Connexion');
-                    $('#log-link').attr('title', 'Connexion');
-                    $scope.log_link_title = 'Connexion';
+
                     
                     // Switch on the list
                     $scope.activeTab = $(this).attr('href');
@@ -179,12 +179,6 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                         // Remove validation classes
                         $('.ng-dirty').addClass('ng-pristine').removeClass('ng-dirty');
                         $('form').removeClass('ng-valid-email');
-                        
-                        if (typeof $scope.user !== "undefined" ) {
-                            console.log("change to decon");
-                            $('#log-link').attr('title', 'Déconnexion');
-                            $scope.log_link_title = 'Déconnexion';
-                        }
                         
                         // Re-initialize the active tab
                         $scope.activeTab = null;

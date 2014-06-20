@@ -3,11 +3,17 @@
       	<div class="inner-wrapper">
             <ul id="main-menu">
                 <li class="opacity-transition" ng-class="{glitz: user==null}">
-                    <a id="log-link" ng-click="disconnect()" href="#tab-login" class="icon icon-switch" ng-attr-title="{{log_link_title}" title="{{log_link_title}}"></a>
+                    <a id="log-link" ng-click="disconnect()" href="#tab-login" class="icon icon-switch" title="Mon compte"><span>Mon compte</span></a>
                 </li>
-                <li class="opacity-transition"><a href="#tab-home" class="icon icon-home" title="Accueil"><span>Accueil</span></a></li>
-                <li class="opacity-transition"><a href="#tab-link-add" class="icon icon-plus" title="Ajouter un lien" ng-click="clickAdd()"><span>Ajouter un lien</span></a></li>
-                <li class="opacity-transition"><a href="#tab-help" class="icon icon-question" title="Aide"><span>Aide</span></a></li>
+                <li class="opacity-transition">
+                    <a href="#tab-home" class="icon icon-home" title="Accueil"><span>Accueil</span></a>
+                </li>
+                <li class="opacity-transition">
+                    <a href="#tab-link-add" class="icon icon-plus" title="Ajouter un lien" ng-click="clickAdd()"><span>Ajouter un lien</span></a>
+                </li>
+                <li class="opacity-transition">
+                    <a href="#tab-help" class="icon icon-question" title="Aide"><span>Aide</span></a>
+                </li>
             </ul>
     
             <div id="tab-login" class="main-menu-tab">
