@@ -108,10 +108,11 @@ input[type=submit] {
 .zori-form-input {
     width: 100%;
     padding: 5px 1em;
-    border: none;
+    border: 1px solid rgb(250,250,250);
+    border: 1px solid rgba(250,250,250,0.5);
     color: #eee;
     background-color: #333333;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(150, 150, 150, 0.2);
     margin-bottom: 10px;
 }
 
