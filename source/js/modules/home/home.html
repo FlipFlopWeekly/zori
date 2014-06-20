@@ -11,11 +11,11 @@
             </ul>
     
             <div id="tab-login" class="main-menu-tab">
-                <h2>Create your account</h2>
+                <h2>Cr&eacute;ez votre compte</h2>
                 
                 <form id="user-form" name="form" ng-submit="createAccount()" novalidate>
                     <div class="form-group">
-                        <label class="required">Email address</label>
+                        <label class="required">Adresse mail</label>
                         <input id="new-user-email" class="form-control zori-form-input" placeholder="No spam please .... OK !" ng-model="newUserEmail" type="email" required >
                         <label class="required">Mot de passe</label>
                         <input id="new-user-password" class="form-control zori-form-input" placeholder="Sécurité, j'passe en premier." ng-model="newUserPassword" type="password" required >
@@ -27,12 +27,17 @@
             
             <div id="tab-home" class="main-menu-tab">
                 <h2>Bienvenue !</h2>
-                <p>Zori est une application qui met gratuitement à disposition un lieu de partage de liens musicaux, permettant de présenter différents styles musicaux, allant des artistes indépendants aux plus grands succès mondiaux.</p>
+                <p>
+                    Zori est une application qui met gratuitement &agrave; disposition un lieu de partage de liens musicaux, 
+                    permettant de pr&eacute;senter diff&eacute;rents styles musicaux, allant des artistes ind&eacute;pendants aux plus grands succ&egrave;s mondiaux.
+                </p>
             
                 <img ng-src="assets/images/flipflop.png" class="pull-right"/>
             </div>
             
             <div id="tab-link-add" class="main-menu-tab">
+                <h2>Partagez vos go&ucirc;ts musicaux</h2>
+            
                 <form id="link-form" name="linkForm" ng-submit="addLink()">
                     <div class="form-group">
                         <label>Partagez votre musique...</label>
@@ -48,10 +53,10 @@
             <div id="tab-help" class="main-menu-tab">
                 <h2>Comment utiliser Zori ?</h2>
                 <h3>Ajouter un lien</h3>
-                <p>Cliquez sur le lien symbolisé par +</p>
-                <p>Renseignez le lien ainsi qu'un commentaire pouvant donner l'envie aux autres de découvrir cette musique.</p>
+                <p>Cliquez sur le lien symbolis&eacute; par +</p>
+                <p>Renseignez le lien ainsi qu'un commentaire pouvant donner l'envie aux autres de d&eacute;couvrir cette musique.</p>
                 <h3>Noter un lien</h3>
-                <p>Cette fonctionnalité n'est pas encore implémentée</p>
+                <p>Cette fonctionnalit&eacute; n'est pas encore implément&eacute;e</p>
             </div>
         </div>
 	</section>
