@@ -15,6 +15,10 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
             $scope.newUserPassword  = '';
             $scope.nbLinks          = 0;
           	$scope.activeTab		= null;
+          	
+          	// Init style
+          	$('.createAccountElement').show();
+            $('.loginElement').hide();
 
             $scope.$watch('links', function() {
                 $scope.nbLinks = $scope.links.$getIndex().length;
@@ -64,34 +68,41 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                 $scope.links.$save();
             };
             
-            $scope.createAccount = function() {
-                var email    = $scope.newUserEmail.trim();
-                var password = $scope.newUserPassword.trim();
+            $scope.login = function() {
+                var email    = $scope.userEmail.trim();
+                var password = $scope.userPassword.trim();
                 
-                /*auth.createUser(email, password, function(error, user) {
-                    if (!error) {
-                        $('#main-menu').tabs({
-                            hide: true
-                        });
-                    }
-                    
-                    // If the create account failed, due to an existing user, try to log in it.
-                    auth.login('password', {
-                        email: email,
-                        password: password,
-                        rememberMe: true
-                    });
-
-                });*/
-                
-                // If the create account failed, due to an existing user, try to log in it.
                 auth.login('password', {
                     email: email,
                     password: password,
                     rememberMe: true
                 });
             };
-
+            
+            $scope.createAccount = function() {
+                var email    = $scope.newUserEmail.trim();
+                var password = $scope.newUserPassword.trim();
+                
+                // Password must be 8 char min length to create an account
+                if (password.length > 8) {
+                    auth.createUser(email, password, function(error, user) {
+                        if (!error) {
+                            $('#main-menu').tabs({
+                                hide: true
+                            });
+                        }
+                    });
+                }
+            };
+            
+            $scope.toConnect = function() {
+                // Display the login form and hide the create account form
+                $('.createAccountElement').hide();
+                $('.loginElement').show();
+                
+                return false;
+            };
+            
             $scope.disconnect = function() {
                 if (typeof $scope.user !== "undefined" ) {
                     // Logout the firebase user
@@ -103,7 +114,6 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                     
                     // Do not display the login tab automatically
                     $('#tab-login').hide();
-
                     
                     // Switch on the list
                     $scope.activeTab = $(this).attr('href');
@@ -111,8 +121,13 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
             }
             
             $("#main-menu a").click(function() {
+                // In order to hide the tab when we click on the same icon
             	if ($scope.activeTab == $(this).attr('href')) {
-              		$scope.activeTab = null; 
+              		$scope.activeTab = null;
+              		
+              		// If no tab is active "display" the create account form in the account tab
+              		$('.createAccountElement').show();
+                    $('.loginElement').hide();
               	} else {
                 	$scope.activeTab = $(this).attr('href');
               	}

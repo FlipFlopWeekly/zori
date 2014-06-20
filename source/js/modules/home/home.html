@@ -17,16 +17,31 @@
             </ul>
     
             <div id="tab-login" class="main-menu-tab">
-                <h2>Cr&eacute;ez votre compte</h2>
+                <h2 class="createAccountElement">Cr&eacute;ez votre compte</h2>
+                <p class="createAccountElement">Vous n'&ecirc;tes pas encore sur Zori ? Inscrivez-vous, et profitez pleinement de toutes ses fonctionnalit&eacute;s.</p>
                 
-                <form id="user-form" name="form" ng-submit="createAccount()" novalidate>
+                <form id="user-form" name="form" class="createAccountElement" ng-submit="createAccount()" novalidate>
                     <div class="form-group">
                         <label class="required">Adresse mail</label>
                         <input id="new-user-email" class="form-control zori-form-input" placeholder="No spam please .... OK !" ng-model="newUserEmail" type="email" required >
                         <label class="required">Mot de passe</label>
                         <input id="new-user-password" class="form-control zori-form-input" placeholder="Sécurité, j'passe en premier." ng-model="newUserPassword" type="password" required >
             
-                        <input id="submit" value="OK" type="submit" class="form-control zori-form-input" ng-disabled="form.$invalid">
+                        <input id="submit-createAccount" value="OK" type="submit" class="form-control zori-form-input" ng-disabled="form.$invalid">
+                    </div>
+                </form>
+                <a class="createAccountElement" ng-click="toConnect()">Vous avez d&eacute;j&agrave; un compte ? Connectez-vous &#8594;</a>
+                
+                
+                <h2 class="loginElement">Connectez-vous</h2>
+                <form id="user-connect" name="userConnect" class="loginElement" ng-submit="login()" novalidate>
+                    <div class="form-group">
+                        <label class="required">Adresse mail</label>
+                        <input id="user-email" class="form-control zori-form-input" placeholder="No spam please .... OK !" ng-model="userEmail" type="email" required >
+                        <label class="required">Mot de passe</label>
+                        <input id="user-password" class="form-control zori-form-input" placeholder="Sécurité, j'passe en premier." ng-model="userPassword" type="password" required >
+            
+                        <input id="submit-login" value="OK" type="submit" class="form-control zori-form-input" ng-disabled="userConnect.$invalid">
                     </div>
                 </form>
             </div>
@@ -61,8 +76,8 @@
                 <h3>Ajouter un lien</h3>
                 <p>Cliquez sur le lien symbolis&eacute; par +</p>
                 <p>Renseignez le lien ainsi qu'un commentaire pouvant donner l'envie aux autres de d&eacute;couvrir cette musique.</p>
-                <h3>Noter un lien</h3>
-                <p>Cette fonctionnalit&eacute; n'est pas encore implément&eacute;e</p>
+                <!--<h3>Noter un lien</h3>
+                <p>Cette fonctionnalit&eacute; n'est pas encore implément&eacute;e</p>-->
             </div>
         </div>
 	</section>

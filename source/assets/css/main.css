@@ -34,6 +34,11 @@ h3 {
     margin-bottom: 5px;
 }
 
+a, a:visited, a:hover {
+    color: #1496BB;
+    cursor: pointer;
+}
+
 p {
     color: lightgray;
 }

@@ -13,17 +13,8 @@ define([
 
                 function update() {
                     var nbClick = scope.link.nbClick;
-                    var height = Math.max(Math.min(nbClick * 3 + 7, 100), 10);
-                    var hue = Math.min(nbClick * 10, 100);
-                    
-                    // get div width
-                    var width = $elt.find('span').width();
-                    
-                    // calculate margin size
-                    var marginLeft = width - 2;
-                    
-                    // set css
-                    $elt.find('span').css('margin-left', -marginLeft);
+                    var height  = Math.max(Math.min(nbClick * 3 + 7, 100), 10);
+                    var hue     = Math.min(nbClick * 10, 100);
 
                     var style = {
                         'height': height + '%',
@@ -68,7 +59,7 @@ define([
 
                     if ($link.attr('data-link').length > 0) {
                         // If the user did not visit the link yet.
-                        if ($.inArray($link.attr('id'), scope.visitedLinks) == -1) {
+                        if (typeof scope.user !== "undefined" && $.inArray($link.attr('id'), scope.visitedLinks) == -1) {
                             // Save the id as a visited link (relative to the user) in the scope...
                             scope.visitedLinks.push($link.attr('id'));
                             var memberRef = new Firebase(scope.fb_url + "member/" + scope.user.id);
