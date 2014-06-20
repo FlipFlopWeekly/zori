@@ -3,8 +3,9 @@
 ********************************************************/
 body {
     position: relative;
-    background: url("../images/dark_dotted_@2X.png") repeat;
-    background-size: 5px 5px;
+    /*background: url("../images/dark_dotted_@2X.png") repeat;
+  	background-size: 5px 5px;*/
+  	background: #333 url('http://tof.canardpc.com/view/fe7c7991-6406-40d3-9d07-2248af9133b8.jpg') repeat;
 }
 
 [ng-cloak] {
@@ -61,16 +62,14 @@ label {
 
 #toolbar-panel {
     z-index: 2;
-	width: 70%;
+	width: 100%;
 	height: 30%;
-	margin-left: 15%;
 }
 
 #front-panel-links {
     z-index: 1;
-    width: 70%;
+    width: 100%;
     height: 40%;
-    margin-left: 15%;
 }
 
 #front-panel-footer {
@@ -160,7 +159,14 @@ label {
 ********************************************************/
 
 #toolbar-panel {
-    position: relative;
+    box-shadow: 0 4px 14px #000;
+}
+
+#toolbar-panel .inner-wrapper {
+  	position: relative;
+    width: 70%;
+  	height: 100%;
+    margin-left: 15%;
 }
 
 #main-menu {
@@ -213,7 +219,7 @@ label {
     top: 100%;
     width: 100%;
     height: 133%;
-    background-color: #1496BB;
+    /*background-color: #1496BB;*/
 }
 
 /********************************************************
@@ -225,6 +231,18 @@ label {
 /********************************************************
 	Zori specific : Front panel links
 ********************************************************/
+
+#front-panel-links {
+  	background: #111 url('http://tof.canardpc.com/view/de0ea765-089a-488c-8a7a-3f67e458acc8.jpg') repeat;
+    box-shadow: inset 0 -4px 14px #000;
+}
+
+#front-panel-links .inner-wrapper {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    margin-left: 15%;
+}
 
 #front-panel-links ul {
 	padding: 0;

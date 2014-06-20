@@ -14,6 +14,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
             $scope.newUserEmail     = '';
             $scope.newUserPassword  = '';
             $scope.nbLinks          = 0;
+          	$scope.activeTab		= null;
             
             // Functional labels initialisation
             $scope.label_Login      = 'Connexion';
@@ -97,13 +98,18 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                     // Do not display the login tab automatically
                     $('#tab-login').hide();
                     
-                    alert('ici');
                     $('.ui-tooltip-content').html('Connexion');
-                    alert('ici2');
                     $('#log-link').attr('title', 'Connexion');
-                    alert('ici3');
                 }
             }
+            
+            $("#main-menu a").click(function() {
+            	if ($scope.activeTab == $(this).attr('href')) {
+              		$scope.activeTab = null; 
+              	} else {
+                	$scope.activeTab = $(this).attr('href');
+              	}
+            });
             
             $scope.links = fireRef.links();
 
@@ -216,6 +222,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
 
                     if(target.parents('#toolbar-panel').length === 0){
                         $("#toolbar-panel").tabs('option', 'active', false);
+                      	$scope.activeTab = null;
                     }
                 });
             };

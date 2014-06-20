@@ -1,61 +1,63 @@
 <div id="front-panel" class="container-fluid front-panel">
 	<section id="toolbar-panel">
-		<ul id="main-menu">
-			<li class="opacity-transition" ng-class="{glitz: user==null}">
-			    <a id="log-link" ng-click="disconnect()" href="#tab-login" class="icon icon-switch">
-			        <span>Connexion</span>
-			    </a>
-		    </li>
-			<li class="opacity-transition"><a href="#tab-home" class="icon icon-home" title="Accueil"><span>Accueil</span></a></li>
-			<li class="opacity-transition"><a href="#tab-link-add" class="icon icon-plus" title="Ajouter un lien" ng-click="clickAdd()"><span>Ajouter un lien</span></a></li>
-			<li class="opacity-transition"><a href="#tab-help" class="icon icon-question" title="Aide"><span>Aide</span></a></li>
-		</ul>
-
-        <div id="tab-login" class="main-menu-tab">
-            <h2>Create your account</h2>
+      	<div class="inner-wrapper">
+            <ul id="main-menu">
+                <li class="opacity-transition" ng-class="{glitz: user==null}">
+                    <a id="log-link" ng-click="disconnect()" href="#tab-login" class="icon icon-switch" title="Connexion"></a>
+                </li>
+                <li class="opacity-transition"><a href="#tab-home" class="icon icon-home" title="Accueil"><span>Accueil</span></a></li>
+                <li class="opacity-transition"><a href="#tab-link-add" class="icon icon-plus" title="Ajouter un lien" ng-click="clickAdd()"><span>Ajouter un lien</span></a></li>
+                <li class="opacity-transition"><a href="#tab-help" class="icon icon-question" title="Aide"><span>Aide</span></a></li>
+            </ul>
+    
+            <div id="tab-login" class="main-menu-tab">
+                <h2>Create your account</h2>
+                
+                <form id="user-form" name="form" ng-submit="createAccount()" novalidate class="css-form light-form">
+                    <div class="form-group">
+                        <label class="required">Email address</label>
+                        <input id="new-user-email" class="form-control zori-form-input" placeholder="No spam please .... OK !" ng-model="newUserEmail" type="email" required >
+                        <label class="required">Mot de passe</label>
+                        <input id="new-user-password" class="form-control zori-form-input" placeholder="Sécurité, j'passe en premier." ng-model="newUserPassword" type="password" required >
             
-            <form id="user-form" name="form" ng-submit="createAccount()" novalidate class="css-form light-form">
-                <div class="form-group">
-                    <label class="required">Email address</label>
-                    <input id="new-user-email" class="form-control zori-form-input" placeholder="No spam please .... OK !" ng-model="newUserEmail" type="email" required >
-                    <label class="required">Mot de passe</label>
-                    <input id="new-user-password" class="form-control zori-form-input" placeholder="Sécurité, j'passe en premier." ng-model="newUserPassword" type="password" required >
-        
-                    <input id="submit" value="OK" type="submit" class="form-control zori-form-input" ng-disabled="form.$invalid">
-                </div>
-            </form>
-        </div>
-        
-        <div id="tab-home" class="main-menu-tab">
-            <p>TODO : Home tab</p>
-        </div>
-        
-        <div id="tab-link-add" class="main-menu-tab">
-            <form id="link-form" ng-submit="addLink()">
-                <div class="form-group">
-                    <label>Partagez votre musique...</label>
-                    <input id="new-link" class="form-control zori-form-input" placeholder="♪ The pen explodes and busts, ink spills my guts! ♪" ng-model="newLink">
-                    <label>et dites pourquoi !</label>
-                    <input id="new-link-comment" class="form-control zori-form-input" placeholder="Like a monkey ready to be shot into space. Space monkey ! Ready to sacrifice himself for the greater good." ng-model="newLinkComment">
-                    
-                    <input id="submit" value="Envoyer" type="submit" class="pull-left form-control play-button"/>
-                </div>
-            </form>
-        </div>
-        
-        <div id="tab-help" class="main-menu-tab">
-            <p>TODO : Help tab</p>
+                        <input id="submit" value="OK" type="submit" class="form-control zori-form-input" ng-disabled="form.$invalid">
+                    </div>
+                </form>
+            </div>
+            
+            <div id="tab-home" class="main-menu-tab">
+                <p>TODO : Home tab</p>
+            </div>
+            
+            <div id="tab-link-add" class="main-menu-tab">
+                <form id="link-form" ng-submit="addLink()">
+                    <div class="form-group">
+                        <label>Partagez votre musique...</label>
+                        <input id="new-link" class="form-control zori-form-input" placeholder="♪ The pen explodes and busts, ink spills my guts! ♪" ng-model="newLink">
+                        <label>et dites pourquoi !</label>
+                        <input id="new-link-comment" class="form-control zori-form-input" placeholder="Like a monkey ready to be shot into space. Space monkey ! Ready to sacrifice himself for the greater good." ng-model="newLinkComment">
+                        
+                        <input id="submit" value="Envoyer" type="submit" class="pull-left form-control play-button"/>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="tab-help" class="main-menu-tab">
+                <p>TODO : Help tab</p>
+            </div>
         </div>
 	</section>
 
     <section id="front-panel-links" class="text-center wrapper">
-        <perfect-scrollbar id="scroller" class="scroller" ng-show="nbLinks !== 0" wheel-propagation="true" wheel-speed="1" refresh-on-change="links">
-            <ul id="link-list" class="link-list">
-                <li zori-link ng-repeat="(id, link) in links" class="form-group pull-left category-block wrapper"></li>
-            </ul>
-        </perfect-scrollbar>
-        
-        <div id="link-loader" class="loader icon-spinner" ng-if="nbLinks === 0"></div>
+        <div class="inner-wrapper">
+            <perfect-scrollbar id="scroller" class="scroller" ng-show="nbLinks !== 0" ng-hide="activeTab != null" wheel-propagation="true" wheel-speed="1" refresh-on-change="links">
+                <ul id="link-list" class="link-list">
+                    <li zori-link ng-repeat="(id, link) in links" class="form-group pull-left category-block wrapper"></li>
+                </ul>
+            </perfect-scrollbar>
+            
+            <div id="link-loader" class="loader icon-spinner" ng-if="nbLinks === 0"></div>
+      	</div>
     </section>
 
     <section id="front-panel-footer">
