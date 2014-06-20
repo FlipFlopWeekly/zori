@@ -3,7 +3,7 @@
       	<div class="inner-wrapper">
             <ul id="main-menu">
                 <li class="opacity-transition" ng-class="{glitz: user==null}">
-                    <a id="log-link" ng-click="disconnect()" href="#tab-login" class="icon icon-switch" title="Connexion"></a>
+                    <a id="log-link" ng-click="disconnect()" href="#tab-login" class="icon icon-switch" ng-attr-title="{{log_link_title}" title="{{log_link_title}}"></a>
                 </li>
                 <li class="opacity-transition"><a href="#tab-home" class="icon icon-home" title="Accueil"><span>Accueil</span></a></li>
                 <li class="opacity-transition"><a href="#tab-link-add" class="icon icon-plus" title="Ajouter un lien" ng-click="clickAdd()"><span>Ajouter un lien</span></a></li>
@@ -13,7 +13,7 @@
             <div id="tab-login" class="main-menu-tab">
                 <h2>Create your account</h2>
                 
-                <form id="user-form" name="form" ng-submit="createAccount()" novalidate class="css-form light-form">
+                <form id="user-form" name="form" ng-submit="createAccount()" novalidate>
                     <div class="form-group">
                         <label class="required">Email address</label>
                         <input id="new-user-email" class="form-control zori-form-input" placeholder="No spam please .... OK !" ng-model="newUserEmail" type="email" required >
@@ -26,11 +26,14 @@
             </div>
             
             <div id="tab-home" class="main-menu-tab">
-                <p>TODO : Home tab</p>
+                <h2>Bienvenue !</h2>
+                <p>Zori est une application qui met gratuitement à disposition un lieu de partage de liens musicaux, permettant de présenter différents styles musicaux, allant des artistes indépendants aux plus grands succès mondiaux.</p>
+            
+                <img ng-src="assets/images/flipflop.png" class="pull-right"/>
             </div>
             
             <div id="tab-link-add" class="main-menu-tab">
-                <form id="link-form" ng-submit="addLink()">
+                <form id="link-form" name="linkForm" ng-submit="addLink()">
                     <div class="form-group">
                         <label>Partagez votre musique...</label>
                         <input id="new-link" class="form-control zori-form-input" placeholder="♪ The pen explodes and busts, ink spills my guts! ♪" ng-model="newLink">
@@ -43,7 +46,12 @@
             </div>
             
             <div id="tab-help" class="main-menu-tab">
-                <p>TODO : Help tab</p>
+                <h2>Comment utiliser Zori ?</h2>
+                <h3>Ajouter un lien</h3>
+                <p>Cliquez sur le lien symbolisé par +</p>
+                <p>Renseignez le lien ainsi qu'un commentaire pouvant donner l'envie aux autres de découvrir cette musique.</p>
+                <h3>Noter un lien</h3>
+                <p>Cette fonctionnalité n'est pas encore implémentée</p>
             </div>
         </div>
 	</section>

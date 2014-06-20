@@ -17,7 +17,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
           	$scope.activeTab		= null;
             
             // Functional labels initialisation
-            $scope.label_Login      = 'Connexion';
+            $scope.log_link_title      = 'Connexion';
 
             $scope.$watch('links', function() {
                 $scope.nbLinks = $scope.links.$getIndex().length;
@@ -26,9 +26,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                 $('.link-list').css('width', $scope.nbLinks * 9 + 'px');
             }, true);
 
-			/**
-			 * Adds the link
-			 */
+			// Add link form action
             $scope.addLink = function() {
                 var newLink         = $scope.newLink.trim();
                 var newLinkComment  = $scope.newLinkComment.trim();
@@ -39,12 +37,14 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                 
                 var regexp = new RegExp("^((http|https):\/\/){1}(www[.])?([a-zA-Z0-9]|-)+([.][a-zA-Z0-9(-|\/|=|?)?]+)");
                 
+                // Check if the URL is a valid one
                 if ( !regexp.test(newLink)) {
                     return;
                 }
 
                 var unix = Math.round(+new Date()/1000);
 
+                // Insert the new link in the firebase database
                 $scope.links.$add({
                     submitTime: unix,
                     url: newLink,
@@ -52,6 +52,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                     comment: newLinkComment
                 });
 
+                // Clean the form
                 $scope.newLink          = '';
                 $scope.newLinkComment   = '';
             };
@@ -87,19 +88,25 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                 });
             };
 
-            
             $scope.disconnect = function() {
                 if (typeof $scope.user !== "undefined" ) {
                     // Logout the firebase user
                     auth.logout();
+                    
                     // Remove scope varaible relative to the user
                     delete $scope.user;
                     delete $scope.visitedLinks;
+                    
                     // Do not display the login tab automatically
                     $('#tab-login').hide();
                     
+                    // Change the tooltip text
                     $('.ui-tooltip-content').html('Connexion');
                     $('#log-link').attr('title', 'Connexion');
+                    $scope.log_link_title = 'Connexion';
+                    
+                    // Switch on the list
+                    $scope.activeTab = $(this).attr('href');
                 }
             }
             
@@ -170,9 +177,17 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
                         });
                         
                         // Remove validation classes
-                        //$('#tab-login input[type=email]').removeClass('');
-                        console.log("change to decon");
-                        $('#log-link').attr('title', 'Déconnexion');
+                        $('.ng-dirty').addClass('ng-pristine').removeClass('ng-dirty');
+                        $('form').removeClass('ng-valid-email');
+                        
+                        if (typeof $scope.user !== "undefined" ) {
+                            console.log("change to decon");
+                            $('#log-link').attr('title', 'Déconnexion');
+                            $scope.log_link_title = 'Déconnexion';
+                        }
+                        
+                        // Re-initialize the active tab
+                        $scope.activeTab = null;
                         
                         // Close the create account popin
                         $('#tab-login').hide();

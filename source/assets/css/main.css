@@ -5,7 +5,7 @@ body {
     position: relative;
     /*background: url("../images/dark_dotted_@2X.png") repeat;
   	background-size: 5px 5px;*/
-  	background: #333 url('http://tof.canardpc.com/view/fe7c7991-6406-40d3-9d07-2248af9133b8.jpg') repeat;
+  	background: #333 url('../images/mainarea_back.jpg') repeat;
 }
 
 [ng-cloak] {
@@ -24,6 +24,16 @@ body {
 	height: 100%;
 }
 
+h3 {
+    background: rgb(250, 250, 250);
+    background: rgba(250, 250, 250, 0.1);
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
 p {
     color: lightgray;
 }
@@ -38,6 +48,14 @@ a {
 
 label {
     color: #FE6B1B;
+}
+
+img {
+    margin: 10px;
+}
+
+input[type=submit] {
+    text-transform: uppercase;
 }
 
 .hidden {
@@ -146,7 +164,8 @@ label {
     background: linear-gradient(to bottom,  rgba(198,198,198,1) 50%,rgba(165,165,165,1) 51%);
 }
 
-.front-panel .btn-add-link:focus {
+.front-panel .btn-add-link:focus,
+.front-panel li:focus {
     outline: none;
 }
 
@@ -282,6 +301,7 @@ label {
 	font-size: 0.8em;
 	line-height: 30px;
 	color: #FFFFFF;
+	cursor: default;
 }
 
 #front-panel-footer blockquote:hover {
@@ -482,7 +502,11 @@ form .required:after {
     border-style: solid;
     border-width: 8.7px 5px 0 5px;
     border-color: #1496BB transparent transparent transparent;
-    -webkit-transform:rotate(360deg)
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    transform:rotate(360deg);
 }
 
 /********************************************************
