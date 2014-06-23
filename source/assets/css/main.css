@@ -85,12 +85,12 @@ input[type=submit] {
 
 #front-panel-tabs {
 	width: 100%;
-	height: 30%;
+	height: 40%;
+	/*margin-top: 30%;*/
+	margin-top: 150px;
 }
 
 #front-panel-footer {
-    position: absolute;
-    top: 70%;
     width: 100%;
 }
 
@@ -177,7 +177,8 @@ input[type=submit] {
 ********************************************************/
 
 #front-panel-tabs {
-    box-shadow: 0 4px 14px #000;
+    box-shadow: inset 0 0 14px #000;
+    background: #111 url('../images/irongrip.png') repeat;
 }
 
 #front-panel-tabs .inner-wrapper {
@@ -188,7 +189,7 @@ input[type=submit] {
 
 #main-menu {
     position: absolute;
-    bottom: 0;
+    top: -30px;
     width: 100%;
     height: 30px;
 	text-align: center;
@@ -232,13 +233,9 @@ input[type=submit] {
 }
 
 .main-menu-tab {
-    position: absolute;
-    top: 100%;
     width: 100%;
-    height: 133%;
+    height: 100%;
     padding: 14px 15%;
-    background: #111 url('../images/irongrip.png') repeat;
-    box-shadow: inset 0 0 14px #000;
 }
 
 /********************************************************
@@ -433,10 +430,10 @@ input[type=submit] {
 ********************************************************/
 
 .main-menu-tab h2 {
-    font-weight: bold;
-    font-size: 1.2em;
-    color: #FE6B1B;
-    margin-bottom: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+    color: #1496BB;
+    margin-bottom: 0.5em;
 }
 
 .main-menu-tab form label {

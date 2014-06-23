@@ -243,7 +243,9 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
              */
             $scope.frontPanelTabs = function() {
                 $('#front-panel-tabs').tabs({
-                    active: 1
+                    active: 1,
+                    show: {effect: 'slide', direction: 'left'},
+                    hide: {effect: 'slide', direction: 'right'}
                 });
             };
             
