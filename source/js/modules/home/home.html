@@ -1,12 +1,12 @@
 <div id="front-panel" class="container-fluid front-panel">
-	<section id="toolbar-panel">
+	<section id="front-panel-tabs">
       	<div class="inner-wrapper">
             <ul id="main-menu">
                 <li class="opacity-transition" ng-class="{glitz: user==null}">
                     <a id="log-link" ng-click="disconnect()" href="#tab-login" class="icon icon-switch" title="Mon compte"><span>Mon compte</span></a>
                 </li>
                 <li class="opacity-transition">
-                    <a href="#tab-home" class="icon icon-home" title="Accueil"><span>Accueil</span></a>
+                    <a href="#tab-links" class="icon icon-home" title="Zori"><span>Zori</span></a>
                 </li>
                 <li class="opacity-transition">
                     <a href="#tab-link-add" class="icon icon-plus" title="Ajouter un lien" ng-click="clickAdd()"><span>Ajouter un lien</span></a>
@@ -32,7 +32,6 @@
                 </form>
                 <a class="createAccountElement" ng-click="toConnect()">Vous avez d&eacute;j&agrave; un compte ? Connectez-vous &#8594;</a>
                 
-                
                 <h2 class="loginElement">Connectez-vous</h2>
                 <form id="user-connect" name="userConnect" class="loginElement" ng-submit="login()" novalidate>
                     <div class="form-group">
@@ -46,14 +45,16 @@
                 </form>
             </div>
             
-            <div id="tab-home" class="main-menu-tab">
-                <h2>Bienvenue !</h2>
-                <p>
-                    Zori est une application qui met gratuitement &agrave; disposition un lieu de partage de liens musicaux, 
-                    permettant de pr&eacute;senter diff&eacute;rents styles musicaux, allant des artistes ind&eacute;pendants aux plus grands succ&egrave;s mondiaux.
-                </p>
-            
-                <img ng-src="assets/images/flipflop.png" class="pull-right"/>
+            <div id="tab-links" class="main-menu-tab">
+                <div class="inner-wrapper">
+                    <perfect-scrollbar id="scroller" class="scroller" ng-show="nbLinks !== 0" wheel-propagation="true" wheel-speed="1" refresh-on-change="links">
+                        <ul id="link-list" class="link-list">
+                            <li zori-link ng-repeat="(id, link) in links" class="form-group pull-left category-block wrapper"></li>
+                        </ul>
+                    </perfect-scrollbar>
+                    
+                    <div id="link-loader" class="loader icon-spinner" ng-if="nbLinks === 0"></div>
+              	</div>
             </div>
             
             <div id="tab-link-add" class="main-menu-tab">
@@ -81,18 +82,6 @@
             </div>
         </div>
 	</section>
-
-    <section id="front-panel-links" class="text-center wrapper">
-        <div class="inner-wrapper">
-            <perfect-scrollbar id="scroller" class="scroller" ng-show="nbLinks !== 0" ng-hide="activeTab != null" wheel-propagation="true" wheel-speed="1" refresh-on-change="links">
-                <ul id="link-list" class="link-list">
-                    <li zori-link ng-repeat="(id, link) in links" class="form-group pull-left category-block wrapper"></li>
-                </ul>
-            </perfect-scrollbar>
-            
-            <div id="link-loader" class="loader icon-spinner" ng-if="nbLinks === 0"></div>
-      	</div>
-    </section>
 
     <section id="front-panel-footer">
     	<blockquote class="lead opacity-transition">"Chausse tes sandales, et foule le sable qu'aucun esclave n'a pi&eacute;tin&eacute; !"</blockquote>

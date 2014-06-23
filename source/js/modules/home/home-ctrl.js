@@ -239,22 +239,11 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
             };
             
             /**
-             * Main menu tabs
+             * Front panel tabs
              */
-            $scope.mainMenuTabs = function() {
-                $('#toolbar-panel').tabs({
-                    collapsible: true,
-                    active: false
-                });
-                
-                // If the user click outside the tab, hide it
-                $('body').on('click', function(event){
-                    var target = $(event.target);
-
-                    if(target.parents('#toolbar-panel').length === 0){
-                        $("#toolbar-panel").tabs('option', 'active', false);
-                      	$scope.activeTab = null;
-                    }
+            $scope.frontPanelTabs = function() {
+                $('#front-panel-tabs').tabs({
+                    active: 1
                 });
             };
             
@@ -262,7 +251,7 @@ define(['./module', 'jquery', 'jquery-ui', './home-directives', 'firebase-simple
              * Init some stuff
              */
             $scope.tooltips();
-            $scope.mainMenuTabs();
+            $scope.frontPanelTabs();
         }
     ]);
 });
